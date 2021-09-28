@@ -17,7 +17,7 @@
             </div>
             <!--begin::Form-->
 
-            <form class="box" method="post" action="/staff">
+            <form class="box" method="post" action="/equipment">
                 {{ csrf_field() }}
                 <div class="card-body">
 
@@ -28,26 +28,30 @@
                         <div class="col-lg-9 col-xl-6">
 
                             <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" placeholder="الاسم " required />
+                                name="name"  placeholder="الاسم " required />
                         </div>
                     </div>
                     <div class="form-group row">
 
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> الطاقة</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> الطاقة\السعة</label>
                         <div class="col-lg-9 col-xl-6">
 
                             <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" placeholder="الطاقة " required />
+                                name="capacity"  placeholder="الطاقة " required />
                         </div>
                     </div>
 
                     <div class="form-group row">
 
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> المنشأ</label>
-                        <div class="col-lg-9 col-xl-6">
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> النوع</label>
+                        <div class="col-lg-9 col-xl-6 ">
 
-                            <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" placeholder="المنشأ " required />
+                            <select class="form-control  form-control-lg form-control-solid border border-primary " name="type">
+                                <option value="صناعي">صناعي </option>
+                                <option value="منزلي"> منزلي </option>
+                                <option value="تجاري"> تجاري</option>
+
+                            </select>
                         </div>
                     </div>
 
@@ -56,19 +60,17 @@
                         <label class="col-xl-3 col-lg-3 col-form-label text-right"> الكمية</label>
                         <div class="col-lg-9 col-xl-6">
 
-                            <input type="number"
-                                class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" placeholder="الكمية " required />
+                            <input type="number" class="form-control form-control-lg form-control-solid border border-primary"
+                                name="quantity"  placeholder="الكمية " required />
                         </div>
                     </div>
                     <div class="form-group row">
 
                         <label class="col-xl-3 col-lg-3 col-form-label text-right"> السعر</label>
-                        <div class="col-lg-9 col-xl-6">
+                        <div class="col-lg-9 col-xl-6 input-group ">
 
-                            <input type="number"
-                                class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" placeholder="السعر " required />
+                            <input type="number" class="form-control form-control-lg form-control-solid border border-primary "  name="price"  placeholder="السعر "  required />
+
                         </div>
                     </div>
                 </div>
@@ -81,14 +83,7 @@
             </form>
         </div>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script>
-        $(function() {
-            $('#department').select2({
-                placeholder: "اختر موظفي الكشف؟",
-            });
-        });
-    </script>
+
+
 
 @endsection

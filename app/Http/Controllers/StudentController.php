@@ -36,16 +36,16 @@ class StudentController extends Controller
     }
 
     public function create(){
-        $user = Auth::user();
-      
-        return view('student.create', compact('sections'));
-    }  
+
+
+        return view('student.create');
+    }
 
 
     public function store(CreateStudentRequest $request){
 
 
-        
+
         return redirect('student');
 
     }
@@ -53,16 +53,16 @@ class StudentController extends Controller
 
     public function show($id){
 
-    
+
 
         return view('student.show',compact(['student','student_section',]));
     }
 
     public function edit(Student $student){
         $user = Auth::user();
-       
+
          return view('student.edit',compact(['student','levels','student_section']));
-    
+
     }
 
     public function update(UpdateStudentRequest $request, $id){
@@ -88,37 +88,37 @@ class StudentController extends Controller
     }
 
     public function destroy($id){
-       
-        return redirect('student');}
-        
+
+        return redirect('student');
+
     }
 
     public function editPayment(Request $request, $id){
-        
-        return response()->json($student_payment);}
-       
+
+        return response()->json($student_payment);
+
     }
 
     public function addAbsence(Request $request){
-       
+
 
         return redirect('section');
-        
+
 
 
     }
 
     public function editAbsence(Request $request, $id){
-      
+
         return response()->json($student_absence);
-       
+
     }
 
     public function addMark(Request $request,$id){
-       
+
 
         return redirect('section');
-        
+
     }
 
     public function studentMarksDatatable(Request $request){

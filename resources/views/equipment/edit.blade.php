@@ -15,7 +15,7 @@
                 </div>
             </div>
             <!--begin::Form-->
-            <form  method="post" action="">
+            <form  method="post" action="{{ route('qeuipment.update', ['id' => $equipment->id]) }}">
                 @csrf
                 @method('patch')
                 <div class="card-body">
@@ -23,21 +23,26 @@
                         <label class="col-xl-3 col-lg-3 col-form-label text-right">اسم المعدة</label>
                         <div class="col-lg-9 col-xl-6">
                             <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" required />
+                                name="name" value="{{ $equipment->name }}" required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-xl-3 col-lg-3 col-form-label text-right"> الطاقة</label>
                         <div class="col-lg-9 col-xl-6">
                             <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" required />
+                                name="capacity" value="{{ $equipment->capacity }}" required />
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> المنشأ</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> النوع</label>
                         <div class="col-lg-9 col-xl-6">
-                            <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" required />
+
+                            <select class="form-control  form-control-lg form-control-solid border border-primary " name="type" required>
+                                <option @if($equipment->type == 'صناعي') selected @endif value="صناعي">صناعي </option>
+                                <option @if($equipment->type == 'منزلي') selected @endif value="منزلي"> منزلي </option>
+                                <option @if($equipment->type == 'تجاري') selected @endif value="تجاري"> تجاري</option>
+
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -45,7 +50,7 @@
                         <div class="col-lg-9 col-xl-6">
                             <input type="number"
                                 class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" required />
+                                name="quantity" value="{{ $equipment->quantity }}" required />
                         </div>
                     </div>
                     <div class="form-group row">
@@ -53,7 +58,7 @@
                         <div class="col-lg-9 col-xl-6">
                             <input type="number"
                                 class="form-control form-control-lg form-control-solid border border-primary"
-                                name="full_name" value="{{ old('full_name') }}" required />
+                                name="price" value="{{ $equipment->price }}" required />
                         </div>
                     </div>
                 </div>

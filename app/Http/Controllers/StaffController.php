@@ -29,14 +29,14 @@ class StaffController extends Controller
 
     public function create(){
         $user = Auth::user();
-     
+
               return view('staff.create');
     }
-    
 
 
-    public function store(){
-        Staff::create(request()->all());
+
+    public function store(Request $request){
+        Staff::create($request()->all());
         return redirect('staff');
     }
 

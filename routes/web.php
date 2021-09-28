@@ -48,8 +48,7 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::post( '/staff/{staff}/positions', 'StaffController@addPosition' );
     Route::get( '/staff/{id}/signatureStaffPosition', 'StaffController@addStaffSignatureView' );
     Route::post( '/staff/{id}/signatureStaffPosition', 'StaffController@addStaffSignature' );
-    Route::post( '/staff/getStaffDatatable', [
-        'as' => 'getStaffDatatable.data', 'uses' => 'StaffController@staffDatatable' ] );
+
     Route::post( '/new-visit-group', 'StaffController@createVisitGroup' );
     Route::post( '/staff/{staff}/positions', 'StaffController@addPosition' );
     Route::post( '/staff/getStaffDatatable', ['as' => 'getStaffDatatable.data', 'uses' => 'StaffController@staffDatatable' ] );
@@ -82,36 +81,36 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
    //SubjectController
 
 
-  //StudentController
-    Route::get( '/student', 'StudentController@index' );
-    Route::get( '/student/create', 'StudentController@create' );
-    Route::get( '/student/{student}', 'StudentController@show' );
-    Route::get( '/student/{student}/edit', 'StudentController@edit' );
-    Route::patch( '/student/{student}', 'StudentController@update' );
-    Route::delete( '/student/{id}', 'StudentController@destroy' );
-    Route::post( 'student/getStudentDatatable', ['as' => 'getStudentDatatable.data', 'uses' => 'StudentController@studentDatatable' ] );
+  //PersonController
+    Route::get( '/person', 'PersonController@index' );
+    Route::get( '/person/create', 'PersonController@create' );
+    Route::get( '/student/{student}', 'PersonController@show' );
+    Route::get( '/student/{student}/edit', 'PersonController@edit' );
+    Route::patch( '/student/{student}', 'PersonController@update' );
+    Route::delete( '/student/{id}', 'PersonController@destroy' );
+    Route::post( 'student/getStudentDatatable', ['as' => 'getStudentDatatable.data', 'uses' => 'PersonController@studentDatatable' ] );
 
     //without auth
-        // Route::post( 'student/add-payment', 'StudentController@addPayment' );
-    // Route::patch( '/student/edit-payment/{id}', 'StudentController@editPayment' );
+        // Route::post( 'student/add-payment', 'PersonController@addPayment' );
+    // Route::patch( '/student/edit-payment/{id}', 'PersonController@editPayment' );
 
-    Route::patch('/mark/{id}/edit','StudentController@editMark');
-    Route::post( 'section/{id}/add-payment', 'StudentController@addPayment');
-    Route::patch( '/student/edit-payment/{id}', 'StudentController@editPayment' );
-    Route::get('/section/{id}/add-mark','StudentController@showAddMark');
-    Route::post('/getAddStudentMarksDatatable', [  'as' => 'getAddStudentMarksDatatable.data' , 'uses' => 'StudentController@addStudentMarksDatatable' ]);
-    Route::get('/section/{id}/add-payment','StudentController@showAddPayment');
-    Route::post('/getAddStudentPaymentsDatatable', [  'as' => 'getAddStudentPaymentsDatatable.data' , 'uses' => 'StudentController@addStudentPaymentsDatatable' ]);
+    Route::patch('/mark/{id}/edit','PersonController@editMark');
+    Route::post( 'section/{id}/add-payment', 'PersonController@addPayment');
+    Route::patch( '/student/edit-payment/{id}', 'PersonController@editPayment' );
+    Route::get('/section/{id}/add-mark','PersonController@showAddMark');
+    Route::post('/getAddStudentMarksDatatable', [  'as' => 'getAddStudentMarksDatatable.data' , 'uses' => 'PersonController@addStudentMarksDatatable' ]);
+    Route::get('/section/{id}/add-payment','PersonController@showAddPayment');
+    Route::post('/getAddStudentPaymentsDatatable', [  'as' => 'getAddStudentPaymentsDatatable.data' , 'uses' => 'PersonController@addStudentPaymentsDatatable' ]);
     //without auth
-    //Route::post('/section/{id}/add-mark','StudentController@addMark');
-    Route::delete('/mark/{id}','StudentController@deleteMark');
+    //Route::post('/section/{id}/add-mark','PersonController@addMark');
+    Route::delete('/mark/{id}','PersonController@deleteMark');
 
 
-    Route::post('/section/{id}/add-mark','StudentController@addMark');
-    Route::get('/section/{id}/add-absence','StudentController@showAddAbsence');
-    Route::post('/getAddStudentAbsencesDatatable', ['as' => 'getAddStudentAbsencesDatatable.data' , 'uses' => 'StudentController@addStudentAbsencesDatatable' ]);
-    Route::post('/section/{id}/add-absence','StudentController@addAbsence');
-    Route::post('/getStudentMarksDatatable', [ 'as' => 'getStudentMarksDatatable.data' , 'uses' => 'StudentController@studentMarksDatatable' ]);
+    Route::post('/section/{id}/add-mark','PersonController@addMark');
+    Route::get('/section/{id}/add-absence','PersonController@showAddAbsence');
+    Route::post('/getAddStudentAbsencesDatatable', ['as' => 'getAddStudentAbsencesDatatable.data' , 'uses' => 'PersonController@addStudentAbsencesDatatable' ]);
+    Route::post('/section/{id}/add-absence','PersonController@addAbsence');
+    Route::post('/getStudentMarksDatatable', [ 'as' => 'getStudentMarksDatatable.data' , 'uses' => 'PersonController@studentMarksDatatable' ]);
 
 //SettingController
     Route::get( '/user', 'SettingController@showUsers' );
@@ -121,7 +120,7 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::patch( '/user/{user}', 'SettingController@update' );
     Route::post( 'user/getUserDatatable', ['as' => 'getUserDatatable.data', 'uses' => 'SettingController@userDatatable' ] );
     Route::get( '/level', 'SettingController@level' );
-    Route::get( '/student/{id}/edit', 'StudentController@edit' );
+    Route::get( '/student/{id}/edit', 'PersonController@edit' );
 
     Route::post( '/level/getSubjects', [ 'as' => 'getSubjectsOfLevelDatatable.data', 'uses' => 'SettingController@levelSubjectDatatable'] );
     Route::post( '/getLevelDatatable', [ 'as' => 'getLevelDatatable.data', 'uses' => 'SettingController@levelDatatable' ] );
@@ -142,11 +141,12 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
 //equipment
 Route::get( '/equipment', 'EquipmentController@index' );
 Route::get( '/equipment/create', 'EquipmentController@create' );
+Route::post( '/equipment', 'EquipmentController@store' );
 Route::get( '/equipment/{equipment}', 'EquipmentController@show' );
-Route::get( '/equipment/edit', 'EquipmentController@edit' );
+Route::get( '/equipment/{id}/edit', 'EquipmentController@edit' );
 Route::get( '/equipment/peron', 'EquipmentController@peron' );
-Route::patch( '/equipment/{equipment}', 'EquipmentController@update' );
-Route::delete( '/equipment/{id}', 'EquipmentController@destroy' );
+Route::patch( '/equipment/{id}', 'EquipmentController@update' )->name('qeuipment.update');
+Route::get( '/equipment/delete/{id}', 'EquipmentController@destroy' );
 Route::post( 'equipment/getequipmentDatatable', ['as' => 'getequipmentDatatable.data', 'uses' => 'EquipmentController@equipmentDatatable' ] );
 });
 
