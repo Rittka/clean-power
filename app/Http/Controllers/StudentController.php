@@ -89,13 +89,13 @@ class StudentController extends Controller
 
     public function destroy($id){
        
-        return redirect('student');}
+        return redirect('student');
         
     }
 
     public function editPayment(Request $request, $id){
         
-        return response()->json($student_payment);}
+        return response()->json($student_payment);
        
     }
 
@@ -110,7 +110,7 @@ class StudentController extends Controller
 
     public function editAbsence(Request $request, $id){
       
-        return response()->json($student_absence);
+     
        
     }
 

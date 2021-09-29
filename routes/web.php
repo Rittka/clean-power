@@ -148,5 +148,24 @@ Route::get( '/equipment/peron', 'EquipmentController@peron' );
 Route::patch( '/equipment/{equipment}', 'EquipmentController@update' );
 Route::delete( '/equipment/{id}', 'EquipmentController@destroy' );
 Route::post( 'equipment/getequipmentDatatable', ['as' => 'getequipmentDatatable.data', 'uses' => 'EquipmentController@equipmentDatatable' ] );
+
+//project
+Route::get( '/project', 'ProjectController@index' );
+Route::get( '/project/create', 'ProjectController@create' );
+Route::get( '/project/{project}', 'ProjectController@show' );
+Route::get( '/project/peron', 'EquipmentController@peron' );
+Route::get( '/project/edit', 'ProjectController@edit' );
+Route::patch( '/project/{project}', 'ProjectController@update' );
+Route::delete( '/project/{id}', 'ProjectController@destroy' );
+Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data', 'uses' => 'ProjectController@projectDatatable' ] );
+//invoices
+Route::get( '/invoice', 'InvoiceController@index' );
+Route::get( '/invoice/create', 'InvoiceController@create' );
+Route::get( '/invoice/{project}', 'InvoiceController@show' );
+Route::get( '/invoice/peron', 'InvoiceController@peron' );
+Route::get( '/invoice/edit', 'InvoiceController@edit' );
+Route::patch( '/invoice/{project}', 'InvoiceController@update' );
+Route::delete( '/invoice/{id}', 'InvoiceController@destroy' );
+Route::post( 'invoice/getinvoiceDatatable', ['as' => 'getinvoiceDatatable.data', 'uses' => 'InvoiceController@invoiceDatatable' ] );
 });
 
