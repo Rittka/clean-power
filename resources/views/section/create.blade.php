@@ -1,5 +1,6 @@
 @extends('layouts.master')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
 @section('title', 'إضافة كشف')
 @section('content')
     <div class="card card-custom">
@@ -23,7 +24,7 @@
                                         @foreach ($staffs as $staff)
                                             <option value="{{$staff->id}}">{{$staff->fname . " " . $staff->lname}}</option>
                                         @endforeach
-                                       
+
                                     </select>
                                 </div>
                             </div>
@@ -36,7 +37,7 @@
                                         @foreach ($projects as $project)
                                             <option value="{{$project->id}}">{{$project->id}}</option>
                                         @endforeach
-                                       
+
                                     </select>
                                 </div>
                             </div>

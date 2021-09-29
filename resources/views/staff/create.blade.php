@@ -30,8 +30,8 @@
                                         </span>
                                     </div>
                                     <input type="text"
-                                        class="form-control  {{ $errors ?? ('')->has('full_name') ? 'is-danger' : ' ' }}"
-                                        name="full_name" value="{{ old('full_name') }}" placeholder="الاسم الاول "
+                                        class="form-control "
+                                        name="fname"  placeholder="الاسم الاول "
                                         required />
                                 </div>
                             </div>
@@ -46,8 +46,8 @@
                                         </span>
                                     </div>
                                     <input type="text"
-                                        class="form-control  {{ $errors ?? ('')->has('full_name') ? 'is-danger' : ' ' }}"
-                                        name="full_name" value="{{ old('full_name') }}" placeholder="الاسم الثاني"
+                                        class="form-control  "
+                                        name="lname"  placeholder="الاسم الثاني"
                                         required />
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                     </div>
                                     <input type="text"
                                         class="form-control {{ $errors ?? ('')->has('address') ? 'is-danger' : ' ' }}"
-                                        name="address" value="{{ old('address') }}"
+                                        name="location"
                                         placeholder="العنوان الحالي" required />
                                 </div>
                             </div>
@@ -83,28 +83,28 @@
                                     </div>
                                     <input type="number"
                                         class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                        name="mobile" value="{{ old('mobile') }}" required />
+                                        name="phone"  required />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                     
+
                             <label class="col-2 col-form-label" style="margin-top: 30px">الجنس:</label>
                             <div class="col-4 col-form-label">
                                 <div class="radio-inline"style="margin-top: 30px">
                                     <label class="radio radio-solid" >
-                                        <input name="gender" value="M" type="radio" />ذكر
+                                        <input name="gender" value="0" type="radio" />ذكر
                                         <span></span>
                                     </label>
                                     <label class="radio radio-solid">
-                                        <input name="gender" value="F" type="radio" /> أنثى
+                                        <input name="gender" value="1" type="radio" /> أنثى
                                         <span></span>
                                     </label>
                                 </div>
                             </div>
-                      
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="status">الحالة الاجتماعية</label>
@@ -114,10 +114,10 @@
                                             <i class="fas fa-link text-primary icon-lg"></i>
                                         </span>
                                     </div>
-                                    <select class="form-control" name="status" id="status">
-                                        <option value="{{ trans('main.single') }}">أعزب</option>
-                                        <option value="{{ trans('main.married') }}">متزوج</option>
-                                      
+                                    <select class="form-control" name="material" id="status">
+                                        <option value="0">أعزب</option>
+                                        <option value="1">متزوج</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -125,8 +125,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-    
-    
+
+
                             <div class="form-group">
                                 <label>سنة التعيين </label>
                                 <div class="input-group input-group-solid input-group-lg border border-primary">
@@ -136,28 +136,29 @@
                                         </span>
                                     </div>
                                     <input type="year"
-                                        class="form-control {{ $errors ?? ('')->has('birth') ? 'is-danger' : ' ' }}"
-                                        name="birth" value="{{ old('birth') }}"
+                                        class="form-control {{ $errors ?? ('')->has('date_of_appoint') ? 'is-danger' : ' ' }}"
+                                        name="date_of_appoint"
                                         placeholder="سنة التعيين" required />
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-    
-    
+
+
                             <div class="form-group">
                                 <label> الراتب</label>
                                 <div class="input-group input-group-solid input-group-lg border border-primary">
-                              
+
                                     <input type="text"
                                         class="form-control "
+                                        name="salary"
                                         placeholder=" الراتب" required />
                                 </div>
                             </div>
                         </div>
                     </div>
-                
-                    
+
+
 
                     <div class="row">
                         <div class="col-md-6">
@@ -172,8 +173,8 @@
                                         </span>
                                     </div>
                                     <input type="year"
-                                        class="form-control {{ $errors ?? ('')->has('birth') ? 'is-danger' : ' ' }}"
-                                        name="birth" value="{{ old('birth') }}"
+                                        class="form-control {{ $errors ?? ('')->has('date_of_birth') ? 'is-danger' : ' ' }}"
+                                        name="date_of_birth"
                                         placeholder="سنة الميلاد" required />
                                 </div>
                             </div>
@@ -185,10 +186,11 @@
                                 <label>مكان الميلاد</label>
                                 <div class="input-group input-group-solid input-group-lg border border-primary">
                                     <div class="input-group-prepend">
-                                        
+
                                     </div>
                                     <input type="text"
                                         class="form-control "
+                                        name="place_of_birth"
                                         placeholder="مكان الميلاد" required />
                                 </div>
                             </div>
@@ -196,7 +198,7 @@
                     </div>
                 </div>
 
-               
+
                 <div class="card-footer row">
                     <div class="col-5"></div>
                     <button type="submit"

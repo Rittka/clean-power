@@ -20,26 +20,25 @@ class SectionController extends Controller {
     */
 
     public function index() {
-        // $phases = Phase::all();
-      $sections = Check::all();
-        // $levels = Level::all();
-        // return view( 'section.index', compact( ['sections', 'levels', 'phases'] ) );
-        return view( 'section.index',compact('sections'));
+
+      $checks = Check::all();
+
+        return view( 'section.index',compact('checks'));
     }
 
     public function create() {
-       
+
         $staffs = Staff::all();
         $projects = Project::all();
 
-     
-        return view( 'section.create' , compact(['staffs', 'projects']) );}
-   
 
-    
+        return view( 'section.create' , compact(['staffs', 'projects']) );}
+
+
+
 
     public function store( Request $request ) {
-       
+
 
        $check =  Check::create([
             'project_id' => $request->project_id ,
@@ -48,17 +47,17 @@ class SectionController extends Controller {
         ]);
         foreach($request->staffs as $staff){
             Staff_check::create([
-                
+
                 'check_id' => $check->id ,
-                'staff_id' => $staff 
+                'staff_id' => $staff
 
             ]);
         }
 
 
-     
-     
-       
+
+
+
         return redirect( 'section' );
     }
 

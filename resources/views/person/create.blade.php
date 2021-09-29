@@ -1,13 +1,12 @@
 @extends('layouts.master')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-@section('title', 'add mainetnance')
+@section('title', 'add customer')
 @section('content')
 
     <div class="container">
 
         <div class="card card-custom">
             <div class="card-header">
-                <h3 class="card-title">أضف معدة جديدة</h3>
+                <h3 class="card-title">أضف عميل جديد</h3>
                 <div class="card-toolbar">
                     <div class="example-tools justify-content-center">
                         <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -16,28 +15,26 @@
                 </div>
             </div>
             <!--begin::Form-->
-
-            <form class="box" method="post" action="/equipment">
+            <form class="box" method="post" action="/person" >
                 {{ csrf_field() }}
                 <div class="card-body">
 
-
                     <div class="form-group row">
 
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right">اسم المعدة</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right">اسم الكامل</label>
                         <div class="col-lg-9 col-xl-6">
 
                             <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="name"  placeholder="الاسم " required />
+                                name="fullname"  placeholder="الاسم والكنية " required />
                         </div>
                     </div>
                     <div class="form-group row">
 
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> الطاقة\السعة</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> العنوان</label>
                         <div class="col-lg-9 col-xl-6">
 
                             <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="capacity"  placeholder="الطاقة " required />
+                                name="location"  placeholder="العنوان " required />
                         </div>
                     </div>
 
@@ -47,9 +44,8 @@
                         <div class="col-lg-9 col-xl-6 ">
 
                             <select class="form-control  form-control-lg form-control-solid border border-primary " name="type">
-                                <option value="صناعي">صناعي </option>
-                                <option value="منزلي"> منزلي </option>
-                                <option value="تجاري"> تجاري</option>
+                                <option value="1"> موّرد</option>
+                                <option value="2">زبون</option>
 
                             </select>
                         </div>
@@ -57,33 +53,26 @@
 
                     <div class="form-group row">
 
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> الكمية</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> رقم الهاتف</label>
                         <div class="col-lg-9 col-xl-6">
 
                             <input type="number" class="form-control form-control-lg form-control-solid border border-primary"
-                                name="quantity"  placeholder="الكمية " required />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> السعر</label>
-                        <div class="col-lg-9 col-xl-6 input-group ">
-
-                            <input type="number" class="form-control form-control-lg form-control-solid border border-primary "  name="price"  placeholder="السعر "  required />
-
+                                name="number"  placeholder="الموبايل " required />
                         </div>
                     </div>
                 </div>
+
+
                 <div class="card-footer row">
                     <div class="col-5"></div>
-                    <button type="submit" class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">حفظ</button>
-                    <button type="reset" class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
+                    <button type="submit"
+                        class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">{{ trans('main.save') }}</button>
+                    <button type="reset"
+                        class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">{{ trans('main.cancel') }}</button>
                 </div>
-
             </form>
         </div>
+
     </div>
-
-
 
 @endsection

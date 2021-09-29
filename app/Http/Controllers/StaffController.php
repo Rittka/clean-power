@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Staff;
+use App\Staff;
 use App\Models\Position;
 use App\Models\PositionStaff;
 use Yajra\Datatables\Datatables;
@@ -28,76 +28,49 @@ class StaffController extends Controller
 
 
     public function create(){
-        $user = Auth::user();
-     
+
+
               return view('staff.create');
     }
-    
 
 
-    public function store(){
-        Staff::create(request()->all());
+
+    public function store(Request $request){
+        Staff::create($request->all());
         return redirect('staff');
     }
 
 
     public function show(Staff $staff){
-        $staffPos = PositionStaff::where('staff_id',$staff->id)->get();
-        return view('staff.show', compact(['staff','staffPos']));
+
+        return view('staff.show', compact(['staff']));
     }
 
 
     public function edit(Staff $staff) {
-        $user = Auth::user();
-        if($user->hasPermission('Employee Managemment'))
-        {$positions = Position::all();
-        $positions_Staff = PositionStaff::all();
-        $position_Staff = $positions_Staff->where('staff_id',$staff->id);
 
-        $selected_positions = array();
 
-         foreach ($position_Staff as $item) {
-            $selected_positions[] = $item['position_id'];
-                  }
-      $selected_positions  = json_encode($selected_positions);
-
-        $positionsManger = $positions->where('type_id',1);
-        $positionsEducational = $positions->where('type_id',2);
-        $positionsSupporter = $positions->where('type_id',3);
-        $generalService = $positions->where('type_id',4);
-
-        return view('staff.edit', compact(['staff','selected_positions', 'positionsManger' , 'positionsEducational' , 'positionsSupporter' , 'generalService' ]));
+        return view('staff.edit', compact('staff'));
     }
-    else return response()->json('Invalid Permission');
-}
+
 
 
 
     public function update(Staff $staff,Request $request){
 
 
-        $staff->update(request(['full_name', 'birth', 'gender', 'address', 'mobile', 'certification', 'status', 'description']));
-     $current_pos=   PositionStaff::where('staff_id',$staff->id)->first();
-     $current_year = $current_pos->year;
-     PositionStaff::where('staff_id',$staff->id)->delete();
-        $temp = $request->input( 'position_ids' );
-        foreach ( $temp as $pos ) {
-            PositionStaff::create( [
-                'staff_id' => $staff->id,
-                'position_id' => $pos,
-                'year' => $current_year,
-            ] );
-        }
+        $staff->update($request->all());
+
         return redirect('staff');
     }
 
 
     public function destroy(Staff $staff){
-        $user = Auth::user();
-        if($user->hasPermission('Employee Managemment'))
-        {$staff->delete();
-        return redirect('staff');}
-        else return response()->json('Invalid Permission');
+
+        $staff->delete();
+        return redirect('staff');
+
+
     }
 
     public function viewPosition( Staff $staff ) {
