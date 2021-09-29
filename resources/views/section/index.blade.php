@@ -26,7 +26,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-4 my-2 my-md-0">
                                     <div class="input-icon">
-                                        <input type="text" class="form-control" placeholder="بحث..." id="kt_datatable_search_query" />
+                                        <input type="text" class="form-control" placeholder="بحث..." id="kt_checks_datatable_search_query" />
                                         <span>
                                             <i class="flaticon2-search-1 text-muted"></i>
                                         </span>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <!--begin: Datatable-->
-                <div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+                <div class="datatable datatable-bordered datatable-head-custom" id="kt_checks_datatable"></div>
                 <!--end: Datatable-->
             </div>
         </div>
@@ -49,7 +49,7 @@
 
 @section('js')
     <script>
-         var datatable = $('#kt_datatable').KTDatatable({
+         var datatable = $('#kt_checks_datatable').KTDatatable({
             // datasource definition
             data: {
                 type: 'remote',
@@ -90,7 +90,7 @@
             pagination: true,
 
             search: {
-                input: $('#kt_datatable_search_query'),
+                input: $('#kt_checks_datatable_search_query'),
                 key: 'generalSearch'
             },
 
@@ -111,8 +111,8 @@
                 autoHide: false,
                 template: function(data) {
                     return `
-                   
-                    
+
+
                     <a href="{{ url('section')}}/`+data.id+`/teachers" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">
                         <i class="fas fa-chalkboard-teacher text-primary"></i>
                     </a>

@@ -84,11 +84,12 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
   //PersonController
     Route::get( '/person', 'PersonController@index' );
     Route::get( '/person/create', 'PersonController@create' );
-    Route::get( '/student/{student}', 'PersonController@show' );
-    Route::get( '/student/{student}/edit', 'PersonController@edit' );
-    Route::patch( '/student/{student}', 'PersonController@update' );
-    Route::delete( '/student/{id}', 'PersonController@destroy' );
-    Route::post( 'student/getStudentDatatable', ['as' => 'getStudentDatatable.data', 'uses' => 'PersonController@studentDatatable' ] );
+    Route::post( '/person', 'PersonController@store' );
+    Route::get( '/person/{person}', 'PersonController@show' );
+    Route::get( '/person/{person}/edit', 'PersonController@edit' );
+    Route::patch( '/person/{person}', 'PersonController@update' );
+    Route::delete( '/person/{id}', 'PersonController@destroy' );
+    Route::post( 'person/getPersonDatatable', ['as' => 'getPersonDatatable.data', 'uses' => 'PersonController@PersonDatatable' ] );
 
     //without auth
         // Route::post( 'student/add-payment', 'PersonController@addPayment' );
