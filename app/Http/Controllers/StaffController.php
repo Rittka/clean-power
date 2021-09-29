@@ -66,11 +66,11 @@ class StaffController extends Controller
 
 
     public function destroy(Staff $staff){
-        $user = Auth::user();
-        if($user->hasPermission('Employee Managemment'))
-        {$staff->delete();
-        return redirect('staff');}
-        else return response()->json('Invalid Permission');
+
+        $staff->delete();
+        return redirect('staff');
+
+
     }
 
     public function viewPosition( Staff $staff ) {

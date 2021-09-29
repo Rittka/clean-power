@@ -85,8 +85,8 @@
 <script>
     function staff_delete($this){
             var id = $this.data('id');
-            var name = $this.data('name');
-            _confirm('{{ trans('main.confirm') }}', '{{ trans('main.are_you_sure_to_delete')}} ('+name+')', 'error', '{{ trans('main.delete') }}', '{{ trans('main.cancel') }}', function(){
+            var name = $this.data('fname');
+            _confirm('{{ trans('main.confirm') }}', '{{ trans('main.are_you_sure_to_delete')}} ('+fname+')', 'error', '{{ trans('main.delete') }}', '{{ trans('main.cancel') }}', function(){
                 $.ajax({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
