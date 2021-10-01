@@ -92,8 +92,8 @@
                                         </span>
                                     </div>
                                     <select class="form-control" name="status" id="status">
-                                        <option value="{{ trans('main.single') }}">زبون</option>
-                                        <option value="{{ trans('main.married') }}">مورد</option>
+                                        <option value="">زبون</option>
+                                        <option value="">مورد</option>
 
                                     </select>
                                 </div>
@@ -103,9 +103,9 @@
                     <div class="card-footer row">
                         <div class="col-5"></div>
                         <button type="submit"
-                            class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">{{ trans('main.save') }}</button>
+                            class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">حفظ التغييرات</button>
                         <button type="reset"
-                            class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">{{ trans('main.cancel') }}</button>
+                            class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
                     </div>
             </form>
         </div>

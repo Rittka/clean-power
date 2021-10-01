@@ -77,7 +77,7 @@
                                     <div class="row">
                                         <div class="col-3"></div>
                                         <div class="col-9">
-                                            <button class="btn btn-primary" type="submit">حفظ</button>
+                                            <button class="btn btn-primary" type="submit">حفظ التغييرات</button>
                                             <button class="btn btn-secondary" type="reset">إلغاء</button>
                                         </div>
                                     </div>

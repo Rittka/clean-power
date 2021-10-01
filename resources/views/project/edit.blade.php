@@ -533,7 +533,7 @@
                                                     <div>
                                                         <button type="submit"
                                                             class="btn btn-success font-weight-bolder px-9 py-4"
-                                                            data-wizard-type="action-submit">حفظ</button>
+                                                            data-wizard-type="action-submit">حفظ التغييرات</button>
                                                         <button id="next-step"
                                                             class="btn btn-primary font-weight-bolder px-9 py-4"
                                                             data-wizard-type="action-next">التالي</button>

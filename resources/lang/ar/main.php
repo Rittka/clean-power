@@ -130,8 +130,8 @@ return [
 
 
     //level
-    'level'             =>  'الصف',
-    'levels'            =>  'الصفوف',
+    'project'             =>  'مشروع',
+    'projects'            =>  'المشاريع',
     'new_level'         =>  'صف جديد',
     'all_sections_for_this_level' => 'جميع الشعب لهذا الصف',
     'all_subjects_for_this_level' => 'جميع المواد لهذا الصف',

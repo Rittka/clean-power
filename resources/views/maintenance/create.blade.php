@@ -778,7 +778,9 @@
 
         });
         $(function() {
-            $('#staff_maintenance').select2();
+            $('#staff_maintenance').select2({
+               
+            });
 
         });
     </script>
