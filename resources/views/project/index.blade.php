@@ -60,7 +60,7 @@
                 source: {
                     read: {
 
-                         url: '{!! route('getStudentDatatable.data') !!}',
+                         url: '{!! route('getprojectDatatable.data') !!}',
                          data:{'id':0},
 
                         headers: {
@@ -94,10 +94,8 @@
                 field: 'id', title: '#', sortable: 'asc', width: 30, type: 'number', selector: false, textAlign: 'center',
                 },  {
                     field: 'first_name', title: 'رمز المشروع',
-                },  {
-                    field: 'last_name', title: 'اسم الزبون',
-                },  {
-                    field: 'mobile', title: 'كنية الزبون',
+                }, {
+                    field: 'mobile', title: ' الزبون',
                 },  {
                     field: 'address', title: 'المنطقة',
                 },

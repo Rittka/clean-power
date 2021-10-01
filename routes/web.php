@@ -114,6 +114,9 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::post('/getStudentMarksDatatable', [ 'as' => 'getStudentMarksDatatable.data' , 'uses' => 'PersonController@studentMarksDatatable' ]);
 
 //SettingController
+Route::get( '/settings/reportOfinvoice_details', 'SettingController@invoice_details' );
+Route::get( '/invoice/edit', 'SettingController@edit' );
+Route::get( '/invoice/show', 'SettingController@show' );
     Route::get( '/user', 'SettingController@showUsers' );
     Route::get( '/user/create', 'SettingController@create' );
     Route::post( '/user', 'SettingController@store' );
@@ -141,6 +144,8 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
 
 //equipment
 Route::get( '/equipment', 'EquipmentController@index' );
+Route::get( '/invoice/create', 'EquipmentController@inv' );
+
 Route::get( '/equipment/create', 'EquipmentController@create' );
 Route::post( '/equipment', 'EquipmentController@store' );
 Route::get( '/equipment/{equipment}', 'EquipmentController@show' );
@@ -162,7 +167,7 @@ Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data',
 //invoices
 Route::get( '/invoice', 'InvoiceController@index' );
 Route::get( '/invoice/create', 'InvoiceController@create' );
-Route::get( '/invoice/{project}', 'InvoiceController@show' );
+Route::get( '/invoice/{invoice}', 'InvoiceController@show' );
 Route::get( '/invoice/peron', 'InvoiceController@peron' );
 Route::get( '/invoice/edit', 'InvoiceController@edit' );
 Route::patch( '/invoice/{project}', 'InvoiceController@update' );

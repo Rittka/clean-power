@@ -101,7 +101,7 @@
             columns: [{
                 field: 'id', title: '#', sortable: 'asc', width: 30, type: 'number', selector: false, textAlign: 'center',
             }, {
-                field: 'fname', title: 'اسم المشروع',
+                field: 'fname', title: 'رمز المشروع',
             }, {
                 field: 'type', title: 'تاريخ الصيانة',
             },

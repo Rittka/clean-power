@@ -3,7 +3,7 @@
 @section('content')
     <form method="get">
         <div class="card-body">
-            <h3 class="card-label font-weight-bolder text-dark">{{ trans('main.personal_information') }} :</h3>
+            <h3 class="card-label font-weight-bolder text-dark">تفاصيل المشروع </h3>
             <br>
             <div class="form-group row">
                 <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">رمز المشروع</label>
@@ -11,8 +11,7 @@
                     <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
                         name="first_name" readonly />
                 </div>
-      
-      +6396******888888888888888888935253
+    
                 <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">اسم الزبون</label>
                 <div class="col-lg-6 col-xl-3">
                     <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
@@ -26,6 +25,42 @@
                         value="" name="birth" readonly />
                 </div>
                 <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">عدد الابراج</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">النوع</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> تاريخ الطلبية</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">تاريخ التنفيذ</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">  تاريخ انتهاء الكفالة</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> مدة دورة الكشف</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">    إجمالي التكلفة</label>
                 <div class="col-lg-6 col-xl-3">
                     <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
                         value="" name="gender" readonly />

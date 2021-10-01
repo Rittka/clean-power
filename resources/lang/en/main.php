@@ -2,7 +2,7 @@
 
 return [
 
-    'app_name'          =>  'Fasehet Sama',
+    'app_name'          =>  'Clean Power',
     'ar_name'           =>  'Arabic',
     'en_name'           =>  'English',
     'ar'                =>  '(AR)',
