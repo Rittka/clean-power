@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 
-
+@section('name', 'إضافة طلبية ')
 @section('title', 'Add project')
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">

@@ -66,15 +66,15 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
 
   //SectionController
   
-    Route::get( '/section/{section}', 'SectionController@show' );
-    Route::get( '/section/{section}/edit', 'SectionController@edit' );
+    Route::post( '/section/{section}', 'SectionController@show' );
+    Route::post( '/section/{section}/edit', 'SectionController@edit' );
     Route::post( '/section', 'SectionController@store' );
     Route::patch( '/section/{section}', 'SectionController@update' );
     Route::delete('/section/{id}', 'SectionController@destroy' );
-    Route::get( '/section/{section}/students', 'SectionController@showStudents' );
+    Route::post( '/section/{section}/students', 'SectionController@showStudents' );
     Route::patch( '/section/{id}/move', 'SectionController@move' );
     Route::post( '/getStudentSectionDatatable', [ 'as' => 'getStudentSectionDatatable.data', 'uses' => 'SectionController@StudentSectionDtatatable'] );
-    Route::get( '/section/{section}/teachers', 'SectionController@showTeachers' );
+    Route::post( '/section/{section}/teachers', 'SectionController@showTeachers' );
     Route::post( '/getTeacherSectionDatatable', [ 'as' => 'getTeacherSectionDatatable.data', 'uses' => 'SectionController@TeacherSectionDtatatable'] );
 
    //SubjectController

@@ -112,7 +112,7 @@
                 autoHide: false,
                 template: function(data) {
                     return '\
-                    <a href="{{ url('staff')}}/'+data.id+'/" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">\
+                    <a href="{{ url('staff')}}/'+data.id+'/show" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">\
                         <i class="far fa-eye text-primary"></i>\
                   </a>\
                         <a href="{{url('staff')}}/'+data.id+'/edit" class="btn btn-sm btn-clean btn-icon " title="تعديل">\

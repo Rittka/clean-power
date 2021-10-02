@@ -52,6 +52,8 @@ class EquipmentController extends Controller
     $equipment = Equipment::find($id);
     return view('equipment.edit',compact('equipment'));
    }
+
+   
    public function person(){
       return view('student.create');
      }

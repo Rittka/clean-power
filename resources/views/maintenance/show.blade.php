@@ -1,6 +1,7 @@
 @extends('layouts.master')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @section('title', 'show person')
+@section('name', ' تفاصيل الصيانة')
 @section('content')
 
 
@@ -68,7 +69,7 @@
             <div class="col-5"></div>
             <button type="submit" class="btn btn- mr-2">
                 <a href="maintenance/edit"
-                    class="btn  btn-light-primary font-weight-bolder text-uppercase mr-2">{{ trans('main.edit') }}</a>
+                    class="btn  btn-light-primary font-weight-bolder text-uppercase mr-2">تعديل</a>
             </button>
             @method('delete')
             @csrf
