@@ -1,8 +1,13 @@
 @extends('layouts.master')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
 @section('title', 'إضافة كشف')
 @section('content')
+<style>
+            .select2-container--default .select2-selection--single{line-height:32px; height:40px;background-color:#F3F6F9;border:1px solid border-radius:4px}
+
+    </style>
     <div class="card card-custom">
         <div class="card-header">
             <h3 class="card-title">أضف كشف جديد</h3>
@@ -30,10 +35,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">رقم المشروع</label>
+                            <label class="col-form-label col-3 text-lg-right text-left">رمز المشروع</label>
                             <div class="col-9">
                                 <div class="input-group input-group-lg input-group-solid border border-primary">
-                                    <select name="project_id" class="selecet2 "   style="width: 100%">
+                                    <select name="project_id" class="selecet2 " id="project_id" style="width: 100%">
                                         @foreach ($projects as $project)
                                             <option value="{{$project->id}}">{{$project->id}}</option>
                                         @endforeach
@@ -93,6 +98,11 @@
         $(function() {
             $('#department').select2({
                 placeholder: "اختر موظفي الكشف؟",
+            });
+        });
+        $(function() {
+            $('#project_id').select2({
+                placeholder: "اختر  رمز المشروع ؟",
             });
         });
     </script>

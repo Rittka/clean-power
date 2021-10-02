@@ -3,7 +3,7 @@
     <!--begin::Logo-->
     <a href="{{url('/')}}">
         {{-- <img alt="Logo" src="assets/media/logos/logo-light.png" /> --}}
-        <span class="text-white font-size-h6 logo">Fasehet Sama</span>
+        <span class="text-white font-size-h6 logo">Clean Power</span>
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->

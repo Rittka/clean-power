@@ -110,7 +110,7 @@ class StudentController extends Controller
 
     public function editAbsence(Request $request, $id){
 
-        return response()->json($student_absence);
+       
 
     }
 

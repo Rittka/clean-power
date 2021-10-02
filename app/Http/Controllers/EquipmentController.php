@@ -11,7 +11,9 @@ class EquipmentController extends Controller
    public function create(){
     return view('equipment.create');
    }
-
+   public function inv(){
+    return view('invoice.create');
+   }
    public function store(Request $request){
        $request->validate([
            'name' => 'required|string',

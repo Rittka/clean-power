@@ -17,9 +17,9 @@ class CreateStaffsTable extends Migration
             $table->id();
             $table->string('fname');
             $table->string('lname');
-            $table->date('date_of_appoint');
+            $table->year('date_of_appoint');
             $table->string('place_of_birth');
-            $table->date('date_of_birth');
+            $table->year('date_of_birth');
             $table->integer('phone');
             $table->string('location');
             $table->boolean('gender');

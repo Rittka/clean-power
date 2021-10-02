@@ -176,8 +176,8 @@
 
                 <div class="card-footer row">
                     <div class="col-5"></div>
-                    <button type="submit" class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">{{trans('main.save')}}</button>
-                    <button type="reset" class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">{{trans('main.cancel')}}</button>
+                    <button type="submit" class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">حفظ التغييرات</button>
+                    <button type="reset" class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
                 </div>
             </form>
         </div>

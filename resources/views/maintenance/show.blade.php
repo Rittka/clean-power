@@ -3,129 +3,66 @@
 @section('title', 'show person')
 @section('content')
 
-  
 
-        
-            <form  method="get" action="">
-              
+
+
+    <form method="get" action="">
+
         <div class="card-header py-3">
             <div class="card-title align-items-start flex-column">
                 <h3 class="card-label font-weight-bolder text-dark">معلومات الصيانة</h3>
             </div>
         </div>
-                <div class="card-body">
+        <div class="card-body">
 
 
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label> اسم المشروع </label>
-                            <div class="input-group input-group-solid input-group-lg  border border-primary">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                    </span>
-                                </div>
-                                <input type="text"
-                                    class="form-control  {{ $errors ?? ('')->has('full_name') ? 'is-danger' : ' ' }}"
-                                    name="full_name" value="{{ old('full_name') }}" readonly />
-                            </div>
-                        </div>
-                        <div class="col-md-4 offset-md-2">
-                            <div class="form-group">
-                                <label> اسم المعدة</label>
-                                <div class="input-group input-group-solid input-group-lg border border-primary">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text"
-                                        class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                        name="name"  value="{{ old('mobile') }}" readonly />
-                                </div>
-                            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> رمز المشروع</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
+                        name="first_name" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> موظفي الصيانة </label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
+                        name="last_name" readonly />
+                </div>
+               
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> تاريخ الصيانة</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">  الملاحظات </label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
+                        name="last_name" readonly />
+                </div>
 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label>تاريخ الصيانة</label>
-                                <div class="input-group input-group-solid input-group-lg border border-primary">
-                                    <input type="date"
-                                        class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                        name="date_of_maintenance" value="{{ old('mobile') }}" readonly />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 offset-md-2">
-                            <div class="form-group">
-                                <label> رمز البرج </label>
-                                <div class="input-group input-group-solid input-group-lg border border-primary">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text"
-                                        class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                        name="name"  value="{{ old('mobile') }}" readonly />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </br>
+    </br>
 
-                    <div class="row">
-                        <div class="col-md-5" style="margin-top:-15px">
-                            <div class="form-group ">
-                                <label class="col-form-label col-4 text-lg-right text-left" style="margin-right: -35px"> موظف الصيانة</label>
-                                <div class="input-group input-group-lg input-group-solid border border-primary">
-                                    <select name="staffs[]" class="Department" id="department" multiple
-                                        style="width: 100%">
-                                        <option value="1">خالد </option>
-                                        <option value="2">طاهر</option>
-                                        <option value="3">محمد</option>
-                                        <option value="4">زيد</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 offset-md-2">
-                            <div class="form-group">
-                                <label> العدد </label>
-                                <div class="input-group input-group-solid input-group-lg border border-primary">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                        </span>
-                                    </div>
-                                    <input type="number"
-                                        class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                        name="name" placeholder=" عدد المعدات " value="{{ old('mobile') }}" readonly />
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label> الملاحظات</label>
-                                <div class="input-group input-group-solid input-group-lg border border-primary">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text"
-                                        class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                        name="note" value="{{ old('mobile') }}" readonly />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </form>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> رمز البرج</label>
+                <div class="col-lg-4 col-xl-2">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+                <label class="col-xl-1 col-lg-1 col-form-label text-right font-weight-bolder">المعدة</label>
+                <div class="col-lg-4 col-xl-2">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-1 col-lg-1 col-form-label text-right font-weight-bolder"> العدد</label>
+                <div class="col-lg-4 col-xl-2">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+            </div>
+    </form>
     <form method="post" action="">
         <div class="card-footer row">
             <div class="col-5"></div>

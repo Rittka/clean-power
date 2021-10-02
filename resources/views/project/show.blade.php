@@ -1,93 +1,95 @@
 @extends('layouts.master')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-@section('title', 'show equipment')
+@section('title', 'show project')
 @section('content')
-
-
-
-
-    <form method="get" action="">
-
-        <div class="card-header py-3">
-            <div class="card-title align-items-start flex-column">
-                <h3 class="card-label font-weight-bolder text-dark">تفاصيل المعدة</h3>
-            </div>
-        </div>
+    <form method="get">
         <div class="card-body">
-
-
+            <h3 class="card-label font-weight-bolder text-dark">تفاصيل المشروع </h3>
+            <br>
             <div class="form-group row">
-
-                <label class="col-xl-3 col-lg-3 col-form-label text-right">اسم المعدة</label>
-                <div class="col-lg-9 col-xl-6">
-
-                    <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                        name="full_name" value="{{ old('full_name') }}"  readonly />
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">رمز المشروع</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
+                        name="first_name" readonly />
+                </div>
+    
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">اسم الزبون</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text" value=""
+                        name="last_name" readonly />
                 </div>
             </div>
             <div class="form-group row">
-
-                <label class="col-xl-3 col-lg-3 col-form-label text-right"> الطاقة</label>
-                <div class="col-lg-9 col-xl-6">
-
-                    <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                        name="full_name" value="{{ old('full_name') }}" readonly />
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">المنطقة</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
                 </div>
-            </div>
-
-            <div class="form-group row">
-
-                <label class="col-xl-3 col-lg-3 col-form-label text-right"> المنشأ</label>
-                <div class="col-lg-9 col-xl-6">
-
-                    <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
-                        name="full_name" value="{{ old('full_name') }}"  readonly />
-                </div>
-            </div>
-
-            <div class="form-group row">
-
-                <label class="col-xl-3 col-lg-3 col-form-label text-right"> الكمية</label>
-                <div class="col-lg-9 col-xl-6">
-
-                    <input type="number" class="form-control form-control-lg form-control-solid border border-primary"
-                        name="full_name" value="{{ old('full_name') }}"  readonly />
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">عدد الابراج</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
                 </div>
             </div>
             <div class="form-group row">
-
-                <label class="col-xl-3 col-lg-3 col-form-label text-right"> السعر</label>
-                <div class="col-lg-9 col-xl-6">
-
-                    <input type="number" class="form-control form-control-lg form-control-solid border border-primary"
-                        name="full_name" value="{{ old('full_name') }}"  readonly />
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">النوع</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> تاريخ الطلبية</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
                 </div>
             </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">تاريخ التنفيذ</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">  تاريخ انتهاء الكفالة</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> مدة دورة الكشف</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="birth" readonly />
+                </div>
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">    إجمالي التكلفة</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
+                        value="" name="gender" readonly />
+                </div>
+            </div>
+
         </div>
     </form>
-    <form method="post" action="">
+    <form method="post">
         <div class="card-footer row">
             <div class="col-5"></div>
+            {{-- <div class="col"> --}}
             <button type="submit" class="btn btn- mr-2">
-                <a href="equipment/edit"
+                <a href="/project/edit"
                     class="btn  btn-light-primary font-weight-bolder text-uppercase mr-2">تعديل</a>
             </button>
             @method('delete')
             @csrf
             <button type="submit" class="btn btn- mr-2">
-                <a class="btn btn-danger font-weight-bolder" onclick="staff_delete($(this))" data-id="'+data.id+'"
-                    data-name="'+data.full_name+'">{{ trans('main.delete') }}</a>
+                <a class="btn  btn-danger font-weight-bolder" onclick="project_delete($(this))" data-id="'+data.id+'"
+                    data-name="'+data.full_name+'">حذف</a>
             </button>
         </div>
     </form>
-  
 
 @endsection
-
-
 @section('js')
     <script>
-        function staff_delete($this) {
+        function project5_delete($this) {
             var id = $this.data('id');
             var name = $this.data('name');
             _confirm('{{ trans('main.confirm') }}', '{{ trans('main.are_you_sure_to_delete') }} (' + name + ')',
@@ -95,13 +97,16 @@
                 '{{ trans('main.delete') }}', '{{ trans('main.cancel') }}',
                 function() {
                     $.ajax({
+                        url: 'project/' + id,
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         method: 'DELETE',
-                        url: 'staff/' + id,
-                    }).done(function(res) {
-                        window.location.reload();
+
+                        success: function(data) {
+                            console.log("Response: " + data.data);
+                            window.location = "project"; //redirect section
+                        },
                     });
                 });
 

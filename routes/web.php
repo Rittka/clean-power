@@ -65,8 +65,7 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
         'as' => 'getTeacherDatatable.data', 'uses' => 'TeacherController@teacherDatatable' ] );
 
   //SectionController
-    Route::get( '/section', 'SectionController@index' );
-    Route::get('/section/create', 'SectionController@create');
+  
     Route::get( '/section/{section}', 'SectionController@show' );
     Route::get( '/section/{section}/edit', 'SectionController@edit' );
     Route::post( '/section', 'SectionController@store' );
@@ -114,6 +113,9 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::post('/getStudentMarksDatatable', [ 'as' => 'getStudentMarksDatatable.data' , 'uses' => 'PersonController@studentMarksDatatable' ]);
 
 //SettingController
+Route::get( '/settings', 'SettingController@invoice_details' );
+Route::get( '/invoice/edit', 'SettingController@edit' );
+Route::get( '/invoice/show', 'SettingController@show' );
     Route::get( '/user', 'SettingController@showUsers' );
     Route::get( '/user/create', 'SettingController@create' );
     Route::post( '/user', 'SettingController@store' );
@@ -141,6 +143,8 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
 
 //equipment
 Route::get( '/equipment', 'EquipmentController@index' );
+Route::get( '/invoice/create', 'EquipmentController@inv' );
+
 Route::get( '/equipment/create', 'EquipmentController@create' );
 Route::post( '/equipment', 'EquipmentController@store' );
 Route::get( '/equipment/{equipment}', 'EquipmentController@show' );
@@ -149,5 +153,38 @@ Route::get( '/equipment/peron', 'EquipmentController@peron' );
 Route::patch( '/equipment/{id}', 'EquipmentController@update' )->name('qeuipment.update');
 Route::get( '/equipment/delete/{id}', 'EquipmentController@destroy' );
 Route::post( 'equipment/getequipmentDatatable', ['as' => 'getequipmentDatatable.data', 'uses' => 'EquipmentController@equipmentDatatable' ] );
+
+//project
+Route::get( '/project', 'ProjectController@index' );
+Route::get( '/project/create', 'ProjectController@create' );
+Route::get( '/project/{project}', 'ProjectController@show' );
+Route::get( '/project/peron', 'EquipmentController@peron' );
+Route::get( '/project/edit', 'ProjectController@edit' );
+Route::patch( '/project/{project}', 'ProjectController@update' );
+Route::delete( '/project/{id}', 'ProjectController@destroy' );
+Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data', 'uses' => 'ProjectController@projectDatatable' ] );
+//invoices
+Route::get( '/invoice', 'InvoiceController@index' );
+Route::get( '/invoice/create', 'InvoiceController@create' );
+Route::get( '/invoice/{invoice}', 'InvoiceController@show' );
+Route::get( '/invoice/peron', 'InvoiceController@peron' );
+Route::get( '/invoice/edit', 'InvoiceController@edit' );
+Route::patch( '/invoice/{project}', 'InvoiceController@update' );
+Route::delete( '/invoice/{id}', 'InvoiceController@destroy' );
+Route::post( 'invoice/getinvoiceDatatable', ['as' => 'getinvoiceDatatable.data', 'uses' => 'InvoiceController@invoiceDatatable' ] );
+//report
+Route::get( '/report', 'ReportController@reportOfCustomer' )->name('reportOfCustomer');
+Route::get( '/report/reportofearnings', 'ReportController@reportofearnings' )->name('reportofearnings');
+Route::get( '/report/reportOfequipment', 'ReportController@reportOfequipment' )->name('reportOfequipment');
+Route::get( '/report/reportOfinvoice_details', 'ReportController@reportOfinvoice_details' )->name('reportOfinvoice_details');
+Route::get( '/report/reportOfmonthofchecks', 'ReportController@reportOfmonthofchecks' )->name('reportOfmonthofchecks');
+Route::get( '/report/reportofmonthofmaintenance', 'ReportController@reportofmonthofmaintenance' )->name('reportofmonthofmaintenance');
+Route::get( '/report/reportOfproject_numofcustomer', 'ReportController@reportOfproject_numofcustomer' )->name('reportOfproject_numofcustomer');
+Route::get( '/report/reportofproject_numofregions', 'ReportController@reportofproject_numofregions' )->name('reportofproject_numofregions');
+Route::get( '/report/reportOfStaff', 'ReportController@reportOfStaff' )->name('reportOfStaff');
+Route::get( '/report/reportOfSupplier', 'ReportController@reportOfSupplier' )->name('reportOfSupplier');
+
+
+
 });
 

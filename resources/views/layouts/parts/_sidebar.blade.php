@@ -40,56 +40,57 @@
             data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
-                <li class="menu-item <?= strpos($current_params, 'IndexController') ? 'menu-item-active' : '' ?>"
-                    aria-haspopup="true">
-                    <a href="{{ url('/') }}" class="menu-link">
-                        <span class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                    <path
-                                        d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z"
-                                        fill="#000000" fill-rule="nonzero" />
-                                    <path
-                                        d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z"
-                                        fill="#000000" opacity="0.3" />
-                                </g>
-                            </svg>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <span class="menu-text">الصفحة الرئيسية</span>
-                    </a>
-                </li>
+                
                 <!-- الاعدادات -->
                 <li class="menu-section">
                     <h4 class="menu-text">الاعدادات</h4>
                     <i class="menu-icon  ki ki-bold-more-hor icon-md"></i>
                 </li>
                 <!--الطلبيات-->
-                <li class="menu-item <?= strpos($current_params, 'SettingController@level') ? 'menu-item-active' : '' ?>"
-                    aria-haspopup="true">
-                    <a href="{{ url('project') }}" class="menu-link">
-                        <span class="svg-icon menu-icon">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\General\Duplicate.svg-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24" />
-                                    <path
-                                        d="M15.9956071,6 L9,6 C7.34314575,6 6,7.34314575 6,9 L6,15.9956071 C4.70185442,15.9316381 4,15.1706419 4,13.8181818 L4,6.18181818 C4,4.76751186 4.76751186,4 6.18181818,4 L13.8181818,4 C15.1706419,4 15.9316381,4.70185442 15.9956071,6 Z"
-                                        fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                    <path
-                                        d="M10.1818182,8 L17.8181818,8 C19.2324881,8 20,8.76751186 20,10.1818182 L20,17.8181818 C20,19.2324881 19.2324881,20 17.8181818,20 L10.1818182,20 C8.76751186,20 8,19.2324881 8,17.8181818 L8,10.1818182 C8,8.76751186 8.76751186,8 10.1818182,8 Z"
-                                        fill="#000000" />
-                                </g>
-                            </svg>
-                            <!--end::Svg Icon-->
-                        </span>
-                        <span class="menu-text">الطلبيات</span>
-                    </a>
-                </li>
+                <li class="menu-item menu-item-submenu @if (strpos($current_params, 'ProjectController')) menu-item-active menu-item-open @endif" aria-haspopup="true"
+                data-menu-toggle="hover">
+                <a href="javascript:;" class="menu-link menu-toggle">
+                    <span class="svg-icon menu-icon">
+                        <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Thumbtack.svg-->
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <path
+                                    d="M11.6734943,8.3307728 L14.9993074,6.09979492 L14.1213255,5.22181303 C13.7308012,4.83128874 13.7308012,4.19812376 14.1213255,3.80759947 L15.535539,2.39338591 C15.9260633,2.00286161 16.5592283,2.00286161 16.9497526,2.39338591 L22.6066068,8.05024016 C22.9971311,8.44076445 22.9971311,9.07392943 22.6066068,9.46445372 L21.1923933,10.8786673 C20.801869,11.2691916 20.168704,11.2691916 19.7781797,10.8786673 L18.9002333,10.0007208 L16.6692373,13.3265608 C16.9264145,14.2523264 16.9984943,15.2320236 16.8664372,16.2092466 L16.4344698,19.4058049 C16.360509,19.9531149 15.8568695,20.3368403 15.3095595,20.2628795 C15.0925691,20.2335564 14.8912006,20.1338238 14.7363706,19.9789938 L5.02099894,10.2636221 C4.63047465,9.87309784 4.63047465,9.23993286 5.02099894,8.84940857 C5.17582897,8.69457854 5.37719743,8.59484594 5.59418783,8.56552292 L8.79074617,8.13355557 C9.76799113,8.00149544 10.7477104,8.0735815 11.6734943,8.3307728 Z"
+                                    fill="#000000" />
+                                <polygon fill="#000000" opacity="0.3"
+                                    transform="translate(7.050253, 17.949747) rotate(-315.000000) translate(-7.050253, -17.949747) "
+                                    points="5.55025253 13.9497475 5.55025253 19.6640332 7.05025253 21.9497475 8.55025253 19.6640332 8.55025253 13.9497475" />
+                            </g>
+                        </svg>
+                        <!--end::Svg Icon-->
+                    </span>
+                    <span class="menu-text">الطلبيات </span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item @if (strpos($current_params, 'ProjectController@index')) menu-item-active @endif" aria-haspopup="true">
+                            <a href="{{ url('project') }}" class="menu-link">
+                                <i class="menu-bullet menu-bullet-dot">
+                                    <span></span>
+                                </i>
+                                <span class="menu-text">جميع الطلبيات</span>
+                            </a>
+                        </li>
+                        <li class="menu-item @if (strpos($current_params, 'ProjectController@create')) menu-item-active @endif" aria-haspopup="true">
+                            <a href="{{ url('project/create') }}" class="menu-link">
+                                <i class="menu-bullet menu-bullet-dot">
+                                    <span></span>
+                                </i>
+                                <span class="menu-text"> طلبية جديدة</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
                 <!-- المعدات -->
                 <li class="menu-item menu-item-submenu @if (strpos($current_params, 'EquipmentController')) menu-item-active menu-item-open @endif" aria-haspopup="true"
@@ -375,28 +376,84 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item @if (strpos($current_params, 'SettingController@reportOfStudent')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('settings/reportOfStudent') }}" class="menu-link">
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfCustomer')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfCustomer') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">تقارير الطلاب</span>
+                                    <span class="menu-text">تقارير الزبائن</span>
                                 </a>
                             </li>
-                            <li class="menu-item @if (strpos($current_params, 'SettingController@reportOfStaff')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('settings/reportOfStaff') }}" class="menu-link">
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfSupplier')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfSupplier') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير الموردين</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfStaff')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfStaff') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
                                     <span class="menu-text">تقارير الموظفين</span>
                                 </a>
                             </li>
-                            <li class="menu-item @if (strpos($current_params, 'SettingController@reportOfTeacher')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('settings/reportOfTeacher') }}" class="menu-link">
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfequipment')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfequipment') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">تقارير المدرّسين</span>
+                                    <span class="menu-text">تقارير مستودع المعدات</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfinvoice_details')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfinvoice') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير الفواتير</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportofearnings')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfearnings') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير العائدات</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfmonthofchecks')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfmonthofchecks') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير الكشوفات الشهرية</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportofmonthofmaintenance')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfmonthofmaintenance') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير الصيانات الشهرية</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportofproject_numofregions')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfproject_numofregions') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير  عدد المشاريع في المنطقة</span>
+                                </a>
+                            </li>
+                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfproject_numofcustomer')) menu-item-active @endif" aria-haspopup="true">
+                                <a href="{{ url('report/reportOfproject_numofcustomer') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">تقارير مشاريع الزبائن</span>
                                 </a>
                             </li>
                         </ul>

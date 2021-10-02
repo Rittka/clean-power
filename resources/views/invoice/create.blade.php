@@ -2,117 +2,117 @@
 
 
 
-@section('title', 'edit project')
+@section('title', 'Add invoice')
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
-    <link href="{{ asset('assets/css/pages/wizard/wizard-4.' . ($dir == 'rtl' ? 'rtl.' : '') . 'css?v=7.0.3') }}" rel="stylesheet"
-        type="text/css" />
-        <style>
-            .select2-container--default .select2-selection--single{line-height:32px; height:40px;background-color:#F3F6F9;border:1px solid #3699FF;border-radius:4px}
-            .table-wrapper {
-                width: 200%;
-                margin: 30px auto;
-                background: #fff;
-                padding: 20px;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-            }
-    
-            .table-title {
-                padding-bottom: 10px;
-                margin: 0 0 10px;
-            }
-    
-            .table-title h2 {
-                margin: 6px 0 0;
-                font-size: 22px;
-            }
-    
-            .table-title .add-new {
-                background-color: #3699FF;
-                border-color: #3699FF;
-                float: right;
-                height: 30px;
-                font-weight: bold;
-                font-size: 17px;
-                text-shadow: none;
-                min-width: 100px;
-                border-radius: 50px;
-                line-height: 13px;
-                position: relative;
-                left: -160px;
-            }
-    
-            .table-title .add-new i {
-                margin-right: 4px;
-            }
-    
-            table.table {
-                table-layout: fixed;
-            }
-    
-            table.table tr th,
-            table.table tr td {
-                border-color: #837c7c;
-            }
-    
-            table.table th i {
-                font-size: 13px;
-                margin: 0 5px;
-                cursor: pointer;
-            }
-    
-            table.table th:last-child {
-                width: 100px;
-            }
-    
-            table.table td a {
-                cursor: pointer;
-                display: inline-block;
-                margin: 0 5px;
-                min-width: 24px;
-            }
-    
-            table.table td a.add {
-                color: #27C46B;
-            }
-    
-            table.table td a.edit {
-                color: #FFC107;
-            }
-    
-            table.table td a.delete {
-                color: #E34724;
-            }
-    
-            table.table td i {
-                font-size: 19px;
-            }
-    
-            table.table td a.add i {
-                font-size: 24px;
-                margin-right: -1px;
-                position: relative;
-                top: 3px;
-            }
-    
-            table.table .form-control {
-                height: 40px;
-                line-height: 32px;
-                box-shadow: none;
-                border-radius: 2px;
-            }
-    
-            table.table .form-control.error {
-                border-color: #f50000;
-            }
-    
-            table.table td .add {
-                display: none;
-            }
-    
-        </style>
+
+    <link href="{{ asset('assets/css/pages/wizard/wizard-4.' . ($dir == 'rtl' ? 'rtl.' : '') . 'css?v=7.0.3') }}"
+        rel="stylesheet" type="text/css" />
+    <style>
+        .select2-container--default .select2-selection--single{line-height:32px; height:40px;background-color:#F3F6F9;border:1px solid #3699FF;border-radius:4px}
+        .table-wrapper {
+            width: 200%;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
+        .table-title {
+            padding-bottom: 10px;
+            margin: 0 0 10px;
+        }
+
+        .table-title h2 {
+            margin: 6px 0 0;
+            font-size: 22px;
+        }
+
+        .table-title .add-new {
+            background-color: #3699FF;
+            border-color: #3699FF;
+            float: right;
+            height: 30px;
+            font-weight: bold;
+            font-size: 17px;
+            text-shadow: none;
+            min-width: 100px;
+            border-radius: 50px;
+            line-height: 13px;
+            position: relative;
+            left: -160px;
+        }
+
+        .table-title .add-new i {
+            margin-right: 4px;
+        }
+
+        table.table {
+            table-layout: fixed;
+        }
+
+        table.table tr th,
+        table.table tr td {
+            border-color: #837c7c;
+        }
+
+        table.table th i {
+            font-size: 13px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        table.table th:last-child {
+            width: 100px;
+        }
+
+        table.table td a {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 5px;
+            min-width: 24px;
+        }
+
+        table.table td a.add {
+            color: #27C46B;
+        }
+
+        table.table td a.edit {
+            color: #FFC107;
+        }
+
+        table.table td a.delete {
+            color: #E34724;
+        }
+
+        table.table td i {
+            font-size: 19px;
+        }
+
+        table.table td a.add i {
+            font-size: 24px;
+            margin-right: -1px;
+            position: relative;
+            top: 3px;
+        }
+
+        table.table .form-control {
+            height: 40px;
+            line-height: 32px;
+            box-shadow: none;
+            border-radius: 2px;
+        }
+
+        table.table .form-control.error {
+            border-color: #f50000;
+        }
+
+        table.table td .add {
+            display: none;
+        }
+
+    </style>
 @endsection
 @section('content')
     <div class="container">
@@ -128,7 +128,7 @@
                                     <div class="wizard-number">1</div>
                                     <div class="wizard-label">
 
-                                        <div class="wizard-desc">بيانات الطلبية</div>
+                                        <div class="wizard-desc">بيانات الفاتورة</div>
                                     </div>
                                 </div>
                             </div>
@@ -137,18 +137,11 @@
                                     <div class="wizard-number">2</div>
                                     <div class="wizard-label">
 
-                                        <div class="wizard-desc">تفاصيل الابراج </div>
+                                        <div class="wizard-desc">تفاصيل الفاتورة</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="wizard-step" data-wizard-type="step">
-                                <div class="wizard-wrapper">
-                                    <div class="wizard-number">3</div>
-                                    <div class="wizard-label">
-                                        <div class="wizard-desc">تفاصيل الكفالة</div>
-                                    </div>
-                                </div>
-                            </div>
+
                             {{-- <div class="wizard-step" data-wizard-type="step">
                                 <div class="wizard-wrapper">
                                     <div class="wizard-number">4</div>
@@ -175,7 +168,7 @@
                                                 <!--begin::Wizard Step 1-->
                                                 <div class="my-5 step" data-wizard-type="step-content"
                                                     data-wizard-state="current">
-                                                    <h5 class="text-dark font-weight-bold mb-10">تعديل بيانات الطلبية</h5>
+                                                    <h5 class="text-dark font-weight-bold mb-10">بيانات الفاتورة</h5>
                                                     <!--begin::Group :: personal_picture-->
                                                     {{-- <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label text-left">{{ trans('main.personal_picture') }}</label>
@@ -196,269 +189,165 @@
                                                     <!--end::Group-->
                                                     <!--begin::Group :: first_name-->
                                                     <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">رمز المشروع</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            
-                                                               
-                                                            <select style="width:100%; " class="Department"  id="project_code">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label text-right">المورد</label>
+                            <div class="col-lg-9 col-xl-6">
+                                                          
+                                                                <select style="width:100%; " class="Department"  id="department">
                                                                 
-                                                                <option value="AL">طاهر</option>
-                                                                <option value="fs">علي</option>
-                                                                <option value="z">يوسف</option>
-                                                                <option value="WY">سامر</option>
-                                                            </select>
+                                                                    <option value="AL">طاهر</option>
+                                                                    <option value="fs">علي</option>
+                                                                    <option value="z">يوسف</option>
+                                                                    <option value="WY">سامر</option>
+                                                                </select>
+                                                       
                                                         </div>
                                                     </div>
                                                     <!--end::Group-->
                                                     <!--begin::Group :: last_name-->
                                                     <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">اسم الزبون</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <select style="width:100%; " class="Department"  id="client_name">
-                                                                
-                                                                <option value="AL">طاهر</option>
-                                                                <option value="fs">علي</option>
-                                                                <option value="z">يوسف</option>
-                                                                <option value="WY">سامر</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Group-->
-                                                    <!--begin::Group :: gender , birth-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">النوع</label>
-                                                        <div class="col-lg-4 col-xl-4 col-form-label"
-                                                            style="margin-top:-7px ">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <select style="width:100%; "
-                                                                    class="form-control form-control-solid form-control-lg">
-                                                                    <option>منزلية</option>
-                                                                    <option>صناعية</option>
-                                                                    <option>تجارية</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <label class="col-xl-2 col-lg-2 col-form-label">عدد الابراج</label>
-                                                        <div class="col-lg-3 col-xl-3">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-
-                                                                <input id="input4" type="number"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="tower_num" value="" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Group-->
-                                                    <!--begin::Group :: mobile-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">المنطقة</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <select style="width:100%; " class="Department"  id="region_name">
-                                                                
-                                                                <option value="AL">طاهر</option>
-                                                                <option value="fs">علي</option>
-                                                                <option value="z">يوسف</option>
-                                                                <option value="WY">سامر</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Group-->
-                                                    <!--begin::Group :: address , rent-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
-                                                            الطلبية</label>
-                                                        <div class="col-lg-9 col-xl-9">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label text-right">التاريخ</label>
+                            <div class="col-lg-9 col-xl-6">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">
                                                                         <i
-                                                                            class="fas fa-calendar-alt text-primary icon-lg"></i>
+                                                                            class="fas fa-calendar text-primary icon-lg"></i>
                                                                     </span>
                                                                 </div>
-                                                                <input id="input6" type="text"
+                                                                <input id="input2"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="date" value="" />
+                                                                    name="last_name" type="text" value="" />
                                                             </div>
                                                         </div>
-
                                                     </div>
+                                                    <!--end::Group-->
+                                                    <!--begin::Group :: gender , birth-->
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label text-right">إجمالي المبلغ</label>
+                                                        <div class="col-lg-9 col-xl-6">
+                                                            <div
+                                                            class="input-group input-group-solid input-group-lg border border-primary">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">
+                                                                    <i
+                                                                        class="fas fa-dollar-sign text-primary icon-lg"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input id="input2"
+                                                                class="form-control form-control-solid form-control-lg"
+                                                                name="value_total" type="number" value="" />
+                                                        </div>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                    <!--end::Group-->
+                                                    <!--begin::Group :: mobile-->
+                                                 
+                                                    <!--end::Group-->
+                                                    <!--begin::Group :: address , rent-->
+                                                   
                                                     <!--end::Group-->
                                                 </div>
                                                 <!--end::Wizard Step 1-->
 
 
                                                 <!--begin::Wizard Step 2-->
-                                                <div class="my-5 step" id="details_tower" data-wizard-type="step-content">
-                                                    <h5 class="text-dark font-weight-bold mb-10 mt-5"> تعديل بيانات الابراج</h5>
+                                                <div class="my-5 step" data-wizard-type="step-content">
+                                                    <h5 class="text-dark font-weight-bold mb-10 mt-5">تفاصيل الفاتورة</h5>
                                                     <div class="d-flex flex-row-reverse bd-highlight">
                                                         <div class="d-flex flex-row bd-highlight mb-3">
                                                             <div class="table-wrapper">
                                                                 <div class="table-title">
                                                                     <div class="row">
-                                                                        <div class="col-sm-8"><h2><b>تفاصيل</b> البرج </h2></div>
+                                                                        <div class="col-sm-8">
+                                                                            <h2><b>تفاصيل</b> الفاتورة </h2>
+                                                                        </div>
                                                                         <div class="col-sm-4">
-                                                                            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>إضافة </button>
+                                                                            <button type="button"
+                                                                                class="btn btn-info add-new"><i
+                                                                                    class="fa fa-plus"></i>إضافة
+                                                                            </button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <table class="table table-bordered">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>رمز البرج</th>
-                                                                            <th>اسم المعدة</th>
-                                                                            <th>العدد</th>
-                                                                                                  <th>الشارع</th>
-                                                    
+                                                                            <th> اسم المعدة</th>
+                                                                            <th> العدد</th>
+                                                                            <th>السعر</th>
+
                                                                             <th>خيارات</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td>002 </td>
-                                                                            <td>لوح</td>
-                                                                                                  <td>4</td>
-                                                    
-                                                                            <td>كلاس</td>
+                                                                            <td>لوح </td>
+                                                                            <td>4</td>
+                                                                            <td>400</td>
+
+
                                                                             <td>
-                                                                                <a class="add" title="إضافة" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                                                <a class="edit" title="تعديل" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                                                <a class="delete" title="حذف" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                                                <a class="add" title="إضافة"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE03B;</i></a>
+                                                                                <a class="edit" title="تعديل"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE254;</i></a>
+                                                                                <a class="delete" title="حذف"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE872;</i></a>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>003 </td>
                                                                             <td>بطارية </td>
-                                                                                                  <td>5 </td>
-                                                    
-                                                                            <td>اسرة السعيدة</td>
+                                                                            <td>5 </td>
+                                                                            <td>500 </td>
+
+
                                                                             <td>
-                                                                                <a class="add" title="إضافة" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                                                <a class="edit" title="تعديل" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                                                <a class="delete" title="حذف" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                                                <a class="add" title="إضافة"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE03B;</i></a>
+                                                                                <a class="edit" title="تعديل"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE254;</i></a>
+                                                                                <a class="delete" title="حذف"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE872;</i></a>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>004 </td>
-                                                                                                  <td>سلك </td>
-                                                    
+                                                                            <td>سلك </td>
                                                                             <td>2 </td>
-                                                                            <td>الاكسبريس</td>
+
+                                                                            <td>200 </td>
+
                                                                             <td>
-                                                                                <a class="add" title="إضافة" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                                                <a class="edit" title="تعديل" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                                                <a class="delete" title="حذف" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                                                                <a class="add" title="إضافة"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE03B;</i></a>
+                                                                                <a class="edit" title="تعديل"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE254;</i></a>
+                                                                                <a class="delete" title="حذف"
+                                                                                    data-toggle="tooltip"><i
+                                                                                        class="material-icons">&#xE872;</i></a>
                                                                             </td>
-                                                                        </tr>      
+                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
-                                                        </div>     
-                                                </div>
-                                                   
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                                 <!--end::Wizard Step 2-->
 
 
                                                 <!--begin::Wizard Step 3-->
-                                                <div class="my-5 step" data-wizard-type="step-content">
-                                                    <h5 class="mb-10 font-weight-bold text-dark">تعديل تفاصيل الكفالة وإجمالي
-                                                        التكلفة</h5>
-                                                    <!--begin::Group :: level's student-->
-                                                    <div class="form-group row">
-                                                        <label class="col-form-label col-xl-3 col-lg-3">التاريخ
-                                                            المتوقع</label>
-                                                        <div class="col-xl-9 col-lg-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="text" value="" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Group-->
-                                                    <!--begin::Group :: payment-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
-                                                            التنفيذ</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="text" value="" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Group-->
-                                                    <!--begin::Group :: visit-->
-                                                    <div class="form-group row">
-                                                        <label class="col-form-label col-xl-3 col-lg-3"
-                                                            for="visited_from">تاريخ انتهاء الكفالة</label>
-                                                        <div class="col-xl-3 col-lg-3">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="text" value="" />
-                                                            </div>
-                                                        </div>
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">مدة دورة
-                                                            الكشف</label>
-                                                        <div class="col-lg-3 col-xl-3">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="fas fa- text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="number" value="" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-form-label col-xl-3 col-lg-3"> التكلفة
-                                                            الإجمالية</label>
-                                                        <div class="col-xl-9 col-lg-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-dollar-sign text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="number" value="" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Group-->
-                                                </div>
+
                                                 <!--end::Wizard Step 3-->
 
 
@@ -533,7 +422,7 @@
                                                     <div>
                                                         <button type="submit"
                                                             class="btn btn-success font-weight-bolder px-9 py-4"
-                                                            data-wizard-type="action-submit">حفظ التغييرات</button>
+                                                            data-wizard-type="action-submit">حفظ</button>
                                                         <button id="next-step"
                                                             class="btn btn-primary font-weight-bolder px-9 py-4"
                                                             data-wizard-type="action-next">التالي</button>
@@ -794,10 +683,8 @@
         jQuery(document).ready(function() {
             KTAddUser.init();
         });
-       
     </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
@@ -807,13 +694,13 @@
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
                 var row = '<tr>' +
-            '<td>  <select  class="form-control " id="kt_select2_1" name="param"> <option value="AK">Alaska</option> <option value="HI">Hawaii</option><option value="CA">California</option></select></td>' +
-              '<td>  <select class="form-control " id="kt_select2_1" name="param"> <option value="AK">لوح</option> <option value="HI">برج</option><option value="CA">بطارية</option></select></td>' +
-            '<td><input type="text" class="form-control" name="department" id="department"></td>' +
-            '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
-      
-			'<td>' + actions + '</td>' +
-        '</tr>';
+
+                    '<td>  <select class="form-control " id="kt_select2_1" name="param"> <option value="AK">لوح</option> <option value="HI">برج</option><option value="CA">بطارية</option></select></td>' +
+                    '<td><input type="text" class="form-control" name="department" id="department"></td>' +
+                    '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+
+                    '<td>' + actions + '</td>' +
+                    '</tr>';
                 $("table").append(row);
                 $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
                 $('[data-toggle="tooltip"]').tooltip();
@@ -843,7 +730,7 @@
             $(document).on("click", ".edit", function() {
                 $(this).parents("tr").find("td:not(:last-child)").each(function() {
                     $(this).html('<input type="text" class="form-control" value="' + $(this)
-                    .text() + '">');
+                        .text() + '">');
                 });
                 $(this).parents("tr").find(".add, .edit").toggle();
                 $(".add-new").attr("disabled", "disabled");
@@ -855,24 +742,27 @@
             });
         });
     </script>
-   
- 
-        <script>
-               $(function() {
-            $('#project_code').select2();
-         
-        });
+    <script>
         $(function() {
-            $('#client_name').select2();
+            $('#department').select2();
          
         });
-        $(function() {
-            $('#region_name').select2();
-         
-        });
-         
-                   </script>
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+

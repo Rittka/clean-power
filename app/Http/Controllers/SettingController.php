@@ -44,7 +44,19 @@ class SettingController extends Controller
         return Datatables::of($sections)->make(true);
     }
 
-
+    public function invoice_details()
+    {
+        return view('settings.reportOfinvoice_details');
+    }
+    public function edit()
+    {
+        return view('invoice.edit');
+    }
+   
+    public function show()
+    {
+        return view('invoice.show');
+    }
 public function section()
 {
     return view('section.index');
