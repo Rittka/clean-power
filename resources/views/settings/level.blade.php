@@ -57,11 +57,6 @@
         <!--end::Card-->
     </div>
 
-    {{-- Show Section Modal --}}
-    @include('settings.sectionsOflLevel')
-    {{-- Show Subject Modal --}}
-    @include('settings.subjectsOfLevel')
-
 
 @endsection
 
@@ -130,7 +125,7 @@
             }, {
                 field: 'customer_name',
                 title: 'اسم الزبون',
-            }, 
+            },
             {
                 field: 'customer_name',
                 title: ' المنطقة',
@@ -138,7 +133,7 @@
             {
                 field: 'customer_name',
                 title: ' تاريخ انتهاء الكفالة',
-            }, 
+            },
             {
                 field: 'customer_name',
                 title: ' التكلفة الاجمالية',
@@ -261,89 +256,89 @@
 
             // fix datatable layout after modal shown
             se_datatable.hide();
-            $.ajax({
-                url: '{!!  route('getSectionsOfLevelDatatable.data') !!}',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            // $.ajax({
+            //
+            //     headers: {
+            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 
-                },
-                method: 'POST',
+            //     },
+            //     method: 'POST',
 
-                data: {
-                    "id": level_id
-                },
-                success: function(data) {
-                    console.log("Response: " + data.data);
+            //     data: {
+            //         "id": level_id
+            //     },
+            //     success: function(data) {
+            //         console.log("Response: " + data.data);
 
-                    se_datatable.KTDatatable({
-                        // datasource definition
-                        data: {
-                            type: 'local',
-                            source: data,
-                            pageSize: 10, // display 20 records per page
-                            serverPaging: true,
-                            serverFiltering: false,
-                            serverSorting: true,
-                        },
+            //         se_datatable.KTDatatable({
+            //             // datasource definition
+            //             data: {
+            //                 type: 'local',
+            //                 source: data,
+            //                 pageSize: 10, // display 20 records per page
+            //                 serverPaging: true,
+            //                 serverFiltering: false,
+            //                 serverSorting: true,
+            //             },
 
-                        // layout definition
-                        layout: {
-                            theme: 'default',
-                            scroll: false,
-                            height: null,
-                            footer: false,
-                        },
+            //             // layout definition
+            //             layout: {
+            //                 theme: 'default',
+            //                 scroll: false,
+            //                 height: null,
+            //                 footer: false,
+            //             },
 
-                        // column sorting
-                        sortable: true,
+            //             // column sorting
+            //             sortable: true,
 
-                        pagination: true,
+            //             pagination: true,
 
-                        search: {
-                            input: el.find('#kt_datatable_sections_search_query'),
-                            key: 'generalSearch'
-                        },
+            //             search: {
+            //                 input: el.find('#kt_datatable_sections_search_query'),
+            //                 key: 'generalSearch'
+            //             },
 
-                        // columns definition
-                        columns: [{
-                            field: 'RecordID',
-                            title: '',
-                            sortable: false,
-                            width: 30,
-                            textAlign: 'center',
-                        }, {
-                            field: 'name',
-                            title: '\{{ trans('main.section') }}',
-                            sortable: 'asc',
-                        }, {
-                            field: 'year',
-                            title: '\{{ trans('main.year') }}',
-                            sortable: 'asc',
-                        },
-                        {
-                            field: 'Actions', title: '{{trans('main.actions')}}', sortable: false, width: 200, overflow: 'visible',
-                            autoHide: false,
-                            template: function(data) {
-                                return '\
-                                <a href="{{ url('section')}}/'+data.id+'/students" class="btn btn-sm btn-clean btn-icon mr-2" title="{{trans('main.show')}} {{trans('main.students')}}">\
-                                    <i class="fas fa-user-graduate text-primary "></i>\
-                                </a>\
-                                <a href="{{ url('section')}}/'+data.id+'/teachers" class="btn btn-sm btn-clean btn-icon mr-2" title="{{trans('main.show')}} {{trans('main.teachers')}}">\
-                                    <i class="fas fa-chalkboard-teacher text-primary"></i>\
-                                </a>\
-                                <a href="{{url('section')}}/'+data.id+'/edit" class="btn btn-sm btn-clean btn-icon " title="{{trans('main.edit')}}">\
-                                    <i class="fas fa-edit text-primary"></i>\
-                                    </a>\
-                                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon " title="{{trans('main.delete')}}">\
-                                        <i class="flaticon2-rubbish-bin  text-primary "></i>\
-                                    </a>\
-                                ';
-                            },
-                        }],
-                    });
+            //             // columns definition
+            //             columns: [{
+            //                 field: 'RecordID',
+            //                 title: '',
+            //                 sortable: false,
+            //                 width: 30,
+            //                 textAlign: 'center',
+            //             }, {
+            //                 field: 'name',
+            //                 title: '\{{ trans('main.section') }}',
+            //                 sortable: 'asc',
+            //             }, {
+            //                 field: 'year',
+            //                 title: '\{{ trans('main.year') }}',
+            //                 sortable: 'asc',
+            //             },
+            //             {
+            //                 field: 'Actions', title: '{{trans('main.actions')}}', sortable: false, width: 200, overflow: 'visible',
+            //                 autoHide: false,
+            //                 template: function(data) {
+            //                     return '\
+            //                     <a href="{{ url('section')}}/'+data.id+'/students" class="btn btn-sm btn-clean btn-icon mr-2" title="{{trans('main.show')}} {{trans('main.students')}}">\
+            //                         <i class="fas fa-user-graduate text-primary "></i>\
+            //                     </a>\
+            //                     <a href="{{ url('section')}}/'+data.id+'/teachers" class="btn btn-sm btn-clean btn-icon mr-2" title="{{trans('main.show')}} {{trans('main.teachers')}}">\
+            //                         <i class="fas fa-chalkboard-teacher text-primary"></i>\
+            //                     </a>\
+            //                     <a href="{{url('section')}}/'+data.id+'/edit" class="btn btn-sm btn-clean btn-icon " title="{{trans('main.edit')}}">\
+            //                         <i class="fas fa-edit text-primary"></i>\
+            //                         </a>\
+            //                         <a href="javascript:;" class="btn btn-sm btn-clean btn-icon " title="{{trans('main.delete')}}">\
+            //                             <i class="flaticon2-rubbish-bin  text-primary "></i>\
+            //                         </a>\
+            //                     ';
+            //                 },
+            //             }],
+            //         });
 
-                }
-            });
+            //     }
+            // });
 
 
         }
