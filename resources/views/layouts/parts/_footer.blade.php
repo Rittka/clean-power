@@ -9,10 +9,7 @@
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->
-        <div class="nav nav-dark">
-            <a href="#" target="_blank" class="nav-link pl-0 pr-5">{{trans('main.team')}}</a>
-            <a href="#" target="_blank" class="nav-link pl-0 pr-0">{{trans('main.contact')}}</a>
-        </div>
+    
         <!--end::Nav-->
     </div>
     <!--end::Container-->

@@ -1,5 +1,5 @@
 <!--begin::Header Mobile-->
-<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+<<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
     <!--begin::Logo-->
     <a href="{{url('/')}}">
         {{-- <img alt="Logo" src="assets/media/logos/logo-light.png" /> --}}

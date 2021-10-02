@@ -1,6 +1,7 @@
 
 @extends('layouts.master')
 @section('title', 'edit maintenance')
+@section('name', 'تعديل الصيانة ')
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

@@ -113,9 +113,7 @@
                     return `
 
 
-                    <a href="{{ url('section')}}/`+data.id+`/teachers" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">
-                        <i class="fas fa-chalkboard-teacher text-primary"></i>
-                    </a>
+                   
                     <a href="{{ url('section')}}/`+data.id+`/edit" class="btn btn-sm btn-clean btn-icon mr-2"title="تعديل">
                         <i class="fas fa-edit text-primary"></i>
                         </a>
