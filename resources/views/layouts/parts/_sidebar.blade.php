@@ -295,7 +295,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item @if (strpos($current_params, 'TeacherController@index')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('teacher') }}" class="menu-link">
+                                <a href="{{ url('region') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -303,7 +303,7 @@
                                 </a>
                             </li>
                             <li class="menu-item @if (strpos($current_params, 'TeacherController@create')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('teacher/create') }}" class="menu-link">
+                                <a href="{{ url('region/create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -388,7 +388,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfCustomer')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfCustomer') }}" class="menu-link">
+                                <a href="{{ route('reportOfCustomer') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -472,7 +472,7 @@
                 </li>
 
                 {{-- users --}}
-               
+
             </ul>
             <!--end::Menu Nav-->
         </div>

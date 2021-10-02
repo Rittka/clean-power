@@ -75,7 +75,7 @@
             // columns definition
             columns: [ {
                 field: 'full_name', title: 'الاسم ',
-            }, 
+            },
             {
                 field: 'mobile', title: ' الموبايل',
             },{

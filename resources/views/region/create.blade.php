@@ -11,7 +11,7 @@
             <div class="tab-content pt-5">
                 <!--begin::Tab Content-->
                 <div class="tab-pane active" id="kt_apps_projects_view_tab_2" role="tabpanel">
-                    <form class="form" method="post" action="/teacher">
+                    <form class="form" method="post" action="/region">
                         @csrf
 
                         <div class="form-group row">
@@ -19,17 +19,17 @@
                             <div class="col-lg-9 col-xl-6">
                                 <input type="text"
                                     class="form-control form-control-lg form-control-solid border border-primary"
-                                    name="full_name" value="{{ old('full_name') }}" placeholder="المنطقة " required />
+                                    name="name"  placeholder="المنطقة " required />
                             </div>
                         </div>
                         <div class="form-group row">
-                            
+
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">المكان</label>
                             <div class="col-lg-9 col-xl-6">
-                                
+
                                 <input type="text"
                                     class="form-control form-control-lg form-control-solid border border-primary"
-                                    name="full_name" value="{{ old('full_name') }}" placeholder="المكان " required />
+                                    name="street" placeholder="الشارع " required />
                             </div>
                         </div>
 

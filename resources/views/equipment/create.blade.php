@@ -1,7 +1,11 @@
 @extends('layouts.master')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @section('title', 'add mainetnance')
-@section('name', 'إضافة معدة ')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page">جميع المعدات</li>
+<li class="breadcrumb-item active" aria-current="page">معدة جديدة</li>
+
+@endsection
 @section('content')
 
     <div class="container">
