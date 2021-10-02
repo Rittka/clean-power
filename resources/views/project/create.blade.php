@@ -285,6 +285,22 @@
                                                         </div>
 
                                                     </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">موظفي
+                                                            تركيب المشروع</label>
+                                                        <div class="col-lg-9 col-xl-9">
+                                                            <select style="width:100%; " class="Department"
+                                                            id="staff_project">
+
+                                                            <option value="AL">طاهر</option>
+                                                            <option value="fs">علي</option>
+                                                            <option value="z">يوسف</option>
+                                                            <option value="WY">سامر</option>
+                                                        </select>
+                                                              
+                                                        </div>
+
+                                                    </div>
                                                     <!--end::Group-->
                                                 </div>
                                                 <!--end::Wizard Step 1-->
@@ -868,6 +884,10 @@
         });
         $(function() {
             $('#region_name').select2();
+         
+        });
+        $(function() {
+            $('#staff_project').select2();
          
         });
          
