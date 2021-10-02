@@ -42,7 +42,7 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::get( '/staff/{staff}/edit', 'StaffController@edit' );
     Route::post( '/staff', 'StaffController@store' );
     Route::patch( '/staff/{staff}', 'StaffController@update' );
-    Route::delete( '/staff/{staff}', 'StaffController@destroy' );
+    Route::get( '/staff/delete/{id}', 'StaffController@destroy' );
     Route::get( '/staff/{staff}/addPosition', 'StaffController@viewPosition' );
     Route::post( '/new-visit-group', 'StaffController@createVisitGroup' );
     Route::post( '/staff/{staff}/positions', 'StaffController@addPosition' );

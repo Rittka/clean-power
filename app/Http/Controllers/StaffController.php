@@ -65,8 +65,8 @@ class StaffController extends Controller
     }
 
 
-    public function destroy(Staff $staff){
-
+    public function destroy($id){
+        $staff = Staff::find($id);
         $staff->delete();
         return redirect('staff');
 
