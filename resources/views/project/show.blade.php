@@ -66,7 +66,12 @@
                         value="" name="gender" readonly />
                 </div>
             </div>
-
+            <div class="form-group row">
+                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder"> موظف  تركيب المشروع</label>
+                <div class="col-lg-6 col-xl-3">
+                    <input class="form-control form-control-lg form-control-solid  border border-primary" type="text"
+                        value="" name="staff_project" readonly />
+            </div>
         </div>
     </form>
     <form method="post">

@@ -1,5 +1,10 @@
 @extends('layouts.master')
 @section('title', 'edit equipment')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page">  المعدات</li>
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('equipment') }}"> جميع المعدات</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تعديل معدة </li>
+@endsection
 @section('content')
 
 

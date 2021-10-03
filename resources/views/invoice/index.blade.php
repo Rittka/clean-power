@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('title', 'الفواتير')
+<li class="breadcrumb-item active" aria-current="page">  التقارير</li>
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('report/reportOfinvoice') }}">  تقرير الفواتير</a></li>
+<li class="breadcrumb-item active" aria-current="page">  تفاصيل الفاتورة</li>
+
+@endsection
 
 @section('content')
     <div class="container">

@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('title', 'equipment')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> المعدات</li>
+<li class="breadcrumb-item active" aria-current="page">جميع المعدات</li>
+@endsection
 @section('name', 'جميع المعدات ')
 
 @section('content')

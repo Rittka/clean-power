@@ -12,6 +12,7 @@ class ReportController extends Controller
 
         return view('report.reportOfCustomer');
     }
+
     public function reportofearnings(){
 
 
