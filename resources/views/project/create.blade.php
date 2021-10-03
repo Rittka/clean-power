@@ -10,8 +10,13 @@
     <link href="{{ asset('assets/css/pages/wizard/wizard-4.' . ($dir == 'rtl' ? 'rtl.' : '') . 'css?v=7.0.3') }}" rel="stylesheet"
         type="text/css" />
         <style>
-            .select2-container--default .select2-selection--single{line-height:32px; height:40px;background-color:#F3F6F9;border:1px solid #3699FF;border-radius:4px}
-            .table-wrapper {
+  .select2-container--default .select2-selection--single {
+            line-height: 32px;
+            height: 40px;
+            background-color: #F3F6F9;
+            border: 1px solid #3699FF;
+            border-radius: 4px
+        }            .table-wrapper {
                 width: 200%;
                 margin: 30px auto;
                 background: #fff;
@@ -132,14 +137,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="wizard-step" data-wizard-type="step">
-                                <div class="wizard-wrapper">
-                                    <div class="wizard-number">2</div>
-                                    <div class="wizard-label">
-
-                                        <div class="wizard-desc">تفاصيل الابراج</div>
-                                    </div>
-                                </div>
+                            <div class="card-toolbar" style="position: absolute; left:500px;top:22px">
+                                <a href="{{url('region/create')}}" class="btn btn-primary font-weight-bolder">
+                                    <span class="svg-icon  svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Add-user.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24"/>
+                                            <path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero"/>
+                                            <path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
+                                        </g>
+                                    </svg><!--end::Svg Icon--></span>  </span>
+                                إضافة منطقة
+                                </a>
+                            </div>
+                            <div class="card-toolbar" style="position: absolute; left:700px;top:22px">
+                                <a href="{{url('person/create')}}" class="btn btn-primary font-weight-bolder" >
+                                    <span class="svg-icon  svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Add-user.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24"/>
+                                            <path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero"/>
+                                            <path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
+                                        </g>
+                                    </svg><!--end::Svg Icon--></span>  </span>
+                                إضافة زبون
+                                </a>
                             </div>
                             <div class="wizard-step" data-wizard-type="step">
                                 <div class="wizard-wrapper">
@@ -257,7 +277,7 @@
                                                             تركيب المشروع</label>
                                                         <div class="col-lg-9 col-xl-9">
                                                             <select style="width:100%; " name="staffs_ids[]" class="Department"
-                                                            id="staff_project">
+                                                            id="staff_project" multiple>
                                                             @foreach ($staffs as  $staff)
                                                                 <option value="{{ $staff->id }}">{{ $staff->fname . " " . $staff->lname }}</option>
                                                             @endforeach
@@ -274,39 +294,7 @@
 
 
                                                 <!--begin::Wizard Step 2-->
-                                                <div class="my-5 step" id="details_tower" data-wizard-type="step-content">
-                                                    <h5 class="text-dark font-weight-bold mb-10 mt-5">بيانات الابراج</h5>
-                                                    <div class="d-flex flex-row-reverse bd-highlight">
-                                                        <div class="d-flex flex-row bd-highlight mb-3">
-                                                            <div class="table-wrapper">
-                                                                <div class="table-title">
-                                                                    <div class="row">
-                                                                        <div class="col-sm-8"><h2><b>تفاصيل</b> البرج </h2></div>
-                                                                        <div class="col-sm-4">
-                                                                            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i>إضافة </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <table id="tower" class="table table-bordered">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>رمز البرج</th>
-                                                                            <th>اسم المعدة</th>
-                                                                            <th>العدد</th>
-                                                                            <th>الشارع</th>
-                                                                            <th>خيارات</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody >
-
-
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                </div>
-
-                                                </div>
+                                              
                                                 <!--end::Wizard Step 2-->
 
 
@@ -826,10 +814,16 @@ console.log(myTableArray);
 
         });
         $(function() {
-            $('#staff_project').select2();
+            $('#staff_project').select2(
+                {
+        
+        });
+
 
         });
 
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 @endsection

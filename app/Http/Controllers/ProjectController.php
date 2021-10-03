@@ -34,5 +34,13 @@ class ProjectController extends Controller
         dd($request->all());
         return view('project.edit');
     }
-
+    public function createtower(){
+        return view('project.createTower');
+    }
+    public function createcustomer(){
+        return view('person.create');
+    }
+    public function createregion(){
+        return view('region.create');
+    }
 }

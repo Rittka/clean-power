@@ -104,6 +104,14 @@
                                 <span class="menu-text"> طلبية جديدة</span>
                             </a>
                         </li>
+                        <li class="menu-item @if (strpos($current_params, 'ProjectController@createفخصثق')) menu-item-active @endif" aria-haspopup="true">
+                            <a href="{{ url('project/createTower') }}" class="menu-link">
+                                <i class="menu-bullet menu-bullet-dot">
+                                    <span></span>
+                                </i>
+                                <span class="menu-text"> اضافة برج</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

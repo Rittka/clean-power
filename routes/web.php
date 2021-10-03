@@ -127,6 +127,8 @@ Route::post( 'equipment/getequipmentDatatable', ['as' => 'getequipmentDatatable.
 
 //project
 Route::get( '/project', 'ProjectController@index' );
+Route::get( '/project/createTower', 'ProjectController@createtower' );
+
 Route::post( '/project', 'ProjectController@store' );
 Route::get( '/project/create', 'ProjectController@create' );
 Route::get( '/project/{project}', 'ProjectController@show' );
