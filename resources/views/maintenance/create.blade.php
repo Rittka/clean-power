@@ -218,7 +218,7 @@
                                                         <div class="col-9">
 
                                                             <select style="width:100%; " class="Department"
-                                                                id="staff_maintenance">
+                                                                id="staff_maintenance" multiple>
 
                                                                 <option value="AL">طاهر</option>
                                                                 <option value="fs">علي</option>
