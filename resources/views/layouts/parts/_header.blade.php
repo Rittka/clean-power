@@ -21,31 +21,32 @@
 
             <div class="dropdown" id="kt_quick_search_toggle">
                 <!--begin::Toggle-->
-               
+
                 <div style="position: relative; margin-top:10px">
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">@yield('name')</li>
+                            @yield('breadcrumb')
+
                         </ol>
                     </nav>
 
                 </div>
-                
+
                 <!--end::Toggle-->
                 <!--begin::Dropdown-->
-               
+
                 <!--end::Dropdown-->
             </div>
             <!--end::Search-->
             <!--begin::Notifications-->
-          
+
             <!--end::Notifications-->
             <!--begin::Languages-->
-           
+
             <!--end::Languages-->
             <!--begin::User-->
-            
+
             <!--end::User-->
         </div>
         <!--end::Topbar-->

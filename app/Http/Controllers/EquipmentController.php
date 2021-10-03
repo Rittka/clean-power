@@ -40,9 +40,9 @@ class EquipmentController extends Controller
    }
 
    public function equipmentDatatable(){
-    $equipments = Equipment::all();
-    return Datatables::of($equipments)->make(true);
-}
+        $equipments = Equipment::all();
+        return Datatables::of($equipments)->make(true);
+    }
 
    public function show(){
     return view('equipment.show');
@@ -53,15 +53,15 @@ class EquipmentController extends Controller
     return view('equipment.edit',compact('equipment'));
    }
 
-   
+
    public function person(){
       return view('student.create');
      }
 
-     public function destroy($id){
+    public function destroy($id){
 
-       Equipment::find($id)->delete();
+        Equipment::find($id)->delete();
 
         return redirect('/equipment');;
-       }
+    }
 }

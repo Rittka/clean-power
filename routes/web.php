@@ -34,11 +34,11 @@ Route::group( [
     // Route::get('/logout', 'HomeController@doLogout')->middleware('auth');
     // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
+Route::get('level/{id}/subjects','RegionController@getSubjectsOfLevel');
     //StaffController
     Route::get( '/staff', 'StaffController@index' );
     Route::get( '/staff/create', 'StaffController@create' );
-    Route::get( '/staff/{staff}', 'StaffController@show' );
+    Route::get( '/staff/{id}', 'StaffController@show' );
     Route::get( '/staff/{staff}/edit', 'StaffController@edit' );
     Route::post( '/staff', 'StaffController@store' );
     Route::patch( '/staff/{staff}', 'StaffController@update' );
@@ -53,19 +53,19 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::post( '/staff/{staff}/positions', 'StaffController@addPosition' );
     Route::post( '/staff/getStaffDatatable', ['as' => 'getStaffDatatable.data', 'uses' => 'StaffController@staffDatatable' ] );
 
-    //TeacherController
-    Route::get( '/teacher', 'TeacherController@index' );
-    Route::get( '/teacher/create', 'TeacherController@create' );
-    Route::get( '/teacher/{teacher}', 'TeacherController@show' );
-    Route::get( '/teacher/{teacher}/edit', 'TeacherController@edit' );
-    Route::post( '/teacher', 'TeacherController@store' );
-    Route::patch( '/teacher/{teacher}', 'TeacherController@update' );
-    Route::delete( '/teacher/{teacher}', 'TeacherController@destroy' );
-    Route::post( 'teacher/getTeacherDatatable', [
-        'as' => 'getTeacherDatatable.data', 'uses' => 'TeacherController@teacherDatatable' ] );
+    //RegionController
+    Route::get( '/region', 'RegionController@index' );
+    Route::get( '/region/create', 'RegionController@create' );
+    Route::get( '/region/{region}', 'RegionController@show' );
+    Route::get( '/region/{id}/edit', 'RegionController@edit' );
+    Route::post( '/region', 'RegionController@store' );
+    Route::patch( '/region/{region}', 'RegionController@update' );
+    Route::get( '/region/delete/{region}', 'RegionController@destroy' );
+    Route::post( 'region/getRegionDatatable', [
+        'as' => 'getRegionDatatable.data', 'uses' => 'RegionController@regionDatatable' ] );
 
   //SectionController
-  
+
     Route::post( '/section/{section}', 'SectionController@show' );
     Route::post( '/section/{section}/edit', 'SectionController@edit' );
     Route::post( '/section', 'SectionController@store' );
@@ -74,7 +74,7 @@ Route::get('level/{id}/subjects','TeacherController@getSubjectsOfLevel');
     Route::post( '/section/{section}/students', 'SectionController@showStudents' );
     Route::patch( '/section/{id}/move', 'SectionController@move' );
     Route::post( '/getStudentSectionDatatable', [ 'as' => 'getStudentSectionDatatable.data', 'uses' => 'SectionController@StudentSectionDtatatable'] );
-    Route::post( '/section/{section}/teachers', 'SectionController@showTeachers' );
+    Route::post( '/section/{section}/regions', 'SectionController@showTeachers' );
     Route::post( '/getTeacherSectionDatatable', [ 'as' => 'getTeacherSectionDatatable.data', 'uses' => 'SectionController@TeacherSectionDtatatable'] );
 
    //SubjectController
@@ -173,17 +173,18 @@ Route::patch( '/invoice/{project}', 'InvoiceController@update' );
 Route::delete( '/invoice/{id}', 'InvoiceController@destroy' );
 Route::post( 'invoice/getinvoiceDatatable', ['as' => 'getinvoiceDatatable.data', 'uses' => 'InvoiceController@invoiceDatatable' ] );
 //report
-Route::get( '/report', 'ReportController@reportOfCustomer' )->name('reportOfCustomer');
+Route::get( '/report/reportOfCustomer', 'ReportController@reportOfCustomer' )->name('reportOfCustomer');
 Route::get( '/report/reportofearnings', 'ReportController@reportofearnings' )->name('reportofearnings');
 Route::get( '/report/reportOfequipment', 'ReportController@reportOfequipment' )->name('reportOfequipment');
 Route::get( '/report/reportOfinvoice_details', 'ReportController@reportOfinvoice_details' )->name('reportOfinvoice_details');
 Route::get( '/report/reportOfmonthofchecks', 'ReportController@reportOfmonthofchecks' )->name('reportOfmonthofchecks');
-Route::get( '/report/reportofmonthofmaintenance', 'ReportController@reportofmonthofmaintenance' )->name('reportofmonthofmaintenance');
+Route::get( '/report/reportOfmonthofmaintenance', 'ReportController@reportofmonthofmaintenance' )->name('reportofmonthofmaintenance');
 Route::get( '/report/reportOfproject_numofcustomer', 'ReportController@reportOfproject_numofcustomer' )->name('reportOfproject_numofcustomer');
 Route::get( '/report/reportofproject_numofregions', 'ReportController@reportofproject_numofregions' )->name('reportofproject_numofregions');
 Route::get( '/report/reportOfStaff', 'ReportController@reportOfStaff' )->name('reportOfStaff');
 Route::get( '/report/reportOfSupplier', 'ReportController@reportOfSupplier' )->name('reportOfSupplier');
 
+Route::post( 'report/getreportOfMMDatatable', ['as' => 'getreportOfMMDatatable.data', 'uses' => 'ReportController@MMDatatable' ] );
 
 
 });

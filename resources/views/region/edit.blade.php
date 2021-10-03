@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'edit teacher')
 @section('content')
-    <form method="post" action="/teacher/{{ $teacher->id }}/edit">
+    <form method="post" action="/region/{{ $region->id }}">
         @csrf
         @method('patch')
 
@@ -18,24 +18,19 @@
                     <div class="form-group row">
                         <label class="col-xl-3 col-lg-3 col-form-label text-right">المنطقة</label>
                         <div class="col-lg-9 col-xl-6">
-                            <select class="form-control form-control-lg form-control-solid border border-primary"
-                                name="position_ids[]">
-                                <option>جديدة</option>
-                                <option>سريان</option>
-                                <option>محطة</option>
-                            </select>
+                            <input type="text"
+                                class="form-control form-control-lg form-control-solid border border-primary"
+                                name="name" value="{{ $region->name }}" placeholder="المنطقة " required />
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label>المكان</label>
-                        <div class="input-group input-group-solid input-group-lg border border-primary">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="fas fa-phone fas text-primary icon-lg"></i>
-                                </span>
-                            </div>
-                            <input type="number" class="form-control {{ $errors ?? ('')->has('mobile') ? 'is-danger' : ' ' }}"
-                                name="area" value="{{ $staff->mobile }}" required />
+
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right">المكان</label>
+                        <div class="col-lg-9 col-xl-6">
+
+                            <input type="text"
+                                class="form-control form-control-lg form-control-solid border border-primary"
+                                name="street" value="{{ $region->street }}" placeholder="الشارع " required />
                         </div>
                     </div>
                 </div>
@@ -48,7 +43,7 @@
 
             </div>
         </div>
-        </div>
+
 
     </form>
 @endsection

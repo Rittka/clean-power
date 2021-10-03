@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'teachers')
+@section('title', 'regions')
 @section('content')
     <div class="container">
         <!--begin::Card-->
@@ -9,7 +9,7 @@
                     <h1 style="font-size : 3rem">المناطق</h1>
                 </div>
                 <div class="card-toolbar">
-                    <a href="{{ url('teacher/create') }}" class="btn btn-primary font-weight-bolder">
+                    <a href="{{ url('region/create') }}" class="btn btn-primary font-weight-bolder">
                         <span class="svg-icon  svg-icon-2x">
                             <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Add-user.svg--><svg
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -26,7 +26,7 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span> </span>
-                        إضافة موظف
+                        إضافة منطقة
                     </a>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 source: {
                     read: {
 
-                        url: '{!! route('getTeacherDatatable.data') !!}',
+                        url: '{!! route('getRegionDatatable.data') !!}',
                         data: {
                             'id': 0
                         },
@@ -104,13 +104,14 @@
                     width: 30,
                     type: 'number',
                     selector: false,
+
                     textAlign: 'center',
                 }, {
                     field: 'name',
                     title: 'المنطقة ',
                 }, {
-                    field: 'area',
-                    title: 'المكان ',
+                    field: 'street',
+                    title: 'الشارع ',
                 },
 
                 {
@@ -121,19 +122,17 @@
                     overflow: 'visible',
                     autoHide: false,
                     template: function(data) {
+                        console.log(data);
 
 
-                        return '\
-                            <a href="{{ url('teacher') }}/' + data.id + '/teachers" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">\
-                                <i class="fas fa-user-graduate text-primary "></i>\
-                            </a>\
-                            <a href="{{ url('teacher') }}/' + data.id + '/edit" class="btn btn-sm btn-clean btn-icon " title="تعديل">\
-                                <i class="fas fa-edit text-primary"></i>\
-                            </a>\
-                            <a href="javascript:;" class="btn btn-sm btn-clean btn-icon " title="حذف">\
-                                <i class="flaticon2-rubbish-bin  text-primary "></i>\
-                            </a>\
-                        ';
+                        return `
+                            <a href="{{ url('region') }}/` + data.id + `/edit" class="btn btn-sm btn-clean btn-icon " title="تعديل">
+                                <i class="fas fa-edit text-primary"></i>
+                            </a>
+                            <a href="javascript:;" onClick="region_delete($(this))" data-id="`+data.id+`" data-name="`+data.name+`"  class="btn btn-sm btn-clean btn-icon " title="حذف">
+                                <i class="flaticon2-rubbish-bin  text-primary "></i>
+                            </a>
+                        `;
 
                     },
                 }
@@ -164,7 +163,7 @@
 
         });
 
-        function teacher_delete($this) {
+        function region_delete($this) {
             var id = $this.data('id');
             var name = $this.data('name');
             _confirm('{{ trans('main.confirm') }}', '{{ trans('main.are_you_sure_to_delete') }} (' + name + ')',
@@ -174,8 +173,8 @@
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        method: 'DELETE',
-                        url: 'teacher/' + id,
+                        method: 'GET',
+                        url: 'region/delete' + id,
                     }).done(function(res) {
                         window.location.reload();
                     });
