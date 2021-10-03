@@ -64,58 +64,29 @@ Route::get('level/{id}/subjects','RegionController@getSubjectsOfLevel');
     Route::post( 'region/getRegionDatatable', [
         'as' => 'getRegionDatatable.data', 'uses' => 'RegionController@regionDatatable' ] );
 
-  //SectionController
 
-    Route::post( '/section/{section}', 'SectionController@show' );
-    Route::post( '/section/{section}/edit', 'SectionController@edit' );
-    Route::post( '/section', 'SectionController@store' );
-    Route::patch( '/section/{section}', 'SectionController@update' );
-    Route::delete('/section/{id}', 'SectionController@destroy' );
-    Route::post( '/section/{section}/students', 'SectionController@showStudents' );
-    Route::patch( '/section/{id}/move', 'SectionController@move' );
-    Route::post( '/getStudentSectionDatatable', [ 'as' => 'getStudentSectionDatatable.data', 'uses' => 'SectionController@StudentSectionDtatatable'] );
-    Route::post( '/section/{section}/regions', 'SectionController@showTeachers' );
-    Route::post( '/getTeacherSectionDatatable', [ 'as' => 'getTeacherSectionDatatable.data', 'uses' => 'SectionController@TeacherSectionDtatatable'] );
-
-   //SubjectController
 
 
   //PersonController
     Route::get( '/person', 'PersonController@index' );
     Route::get( '/person/create', 'PersonController@create' );
-    Route::post( '/person', 'PersonController@store' );
+    Route::post( '/person', 'PersonController@store' )->name('person.store');
     Route::get( '/person/{person}', 'PersonController@show' );
     Route::get( '/person/{person}/edit', 'PersonController@edit' );
     Route::patch( '/person/{person}', 'PersonController@update' );
     Route::delete( '/person/{id}', 'PersonController@destroy' );
     Route::post( 'person/getPersonDatatable', ['as' => 'getPersonDatatable.data', 'uses' => 'PersonController@PersonDatatable' ] );
 
-    //without auth
-        // Route::post( 'student/add-payment', 'PersonController@addPayment' );
-    // Route::patch( '/student/edit-payment/{id}', 'PersonController@editPayment' );
-
-    Route::patch('/mark/{id}/edit','PersonController@editMark');
-    Route::post( 'section/{id}/add-payment', 'PersonController@addPayment');
-    Route::patch( '/student/edit-payment/{id}', 'PersonController@editPayment' );
-    Route::get('/section/{id}/add-mark','PersonController@showAddMark');
-    Route::post('/getAddStudentMarksDatatable', [  'as' => 'getAddStudentMarksDatatable.data' , 'uses' => 'PersonController@addStudentMarksDatatable' ]);
-    Route::get('/section/{id}/add-payment','PersonController@showAddPayment');
-    Route::post('/getAddStudentPaymentsDatatable', [  'as' => 'getAddStudentPaymentsDatatable.data' , 'uses' => 'PersonController@addStudentPaymentsDatatable' ]);
-    //without auth
-    //Route::post('/section/{id}/add-mark','PersonController@addMark');
-    Route::delete('/mark/{id}','PersonController@deleteMark');
 
 
-    Route::post('/section/{id}/add-mark','PersonController@addMark');
-    Route::get('/section/{id}/add-absence','PersonController@showAddAbsence');
-    Route::post('/getAddStudentAbsencesDatatable', ['as' => 'getAddStudentAbsencesDatatable.data' , 'uses' => 'PersonController@addStudentAbsencesDatatable' ]);
-    Route::post('/section/{id}/add-absence','PersonController@addAbsence');
-    Route::post('/getStudentMarksDatatable', [ 'as' => 'getStudentMarksDatatable.data' , 'uses' => 'PersonController@studentMarksDatatable' ]);
 
-//SettingController
-Route::get( '/settings', 'SettingController@invoice_details' );
-Route::get( '/invoice/edit', 'SettingController@edit' );
-Route::get( '/invoice/show', 'SettingController@show' );
+
+
+
+    //SettingController
+    Route::get( '/settings', 'SettingController@invoice_details' );
+    Route::get( '/invoice/edit', 'SettingController@edit' );
+    Route::get( '/invoice/show', 'SettingController@show' );
     Route::get( '/user', 'SettingController@showUsers' );
     Route::get( '/user/create', 'SettingController@create' );
     Route::post( '/user', 'SettingController@store' );
@@ -123,7 +94,7 @@ Route::get( '/invoice/show', 'SettingController@show' );
     Route::patch( '/user/{user}', 'SettingController@update' );
     Route::post( 'user/getUserDatatable', ['as' => 'getUserDatatable.data', 'uses' => 'SettingController@userDatatable' ] );
     Route::get( '/level', 'SettingController@level' );
-    Route::get( '/student/{id}/edit', 'PersonController@edit' );
+
 
     Route::post( '/level/getSubjects', [ 'as' => 'getSubjectsOfLevelDatatable.data', 'uses' => 'SettingController@levelSubjectDatatable'] );
     Route::post( '/getLevelDatatable', [ 'as' => 'getLevelDatatable.data', 'uses' => 'SettingController@levelDatatable' ] );
@@ -156,6 +127,7 @@ Route::post( 'equipment/getequipmentDatatable', ['as' => 'getequipmentDatatable.
 
 //project
 Route::get( '/project', 'ProjectController@index' );
+Route::post( '/project', 'ProjectController@store' );
 Route::get( '/project/create', 'ProjectController@create' );
 Route::get( '/project/{project}', 'ProjectController@show' );
 Route::get( '/project/peron', 'EquipmentController@peron' );

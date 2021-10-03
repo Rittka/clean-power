@@ -336,7 +336,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item @if (strpos($current_params, 'StudentController@index')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('student') }}" class="menu-link">
+                                <a href="{{ url('person') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -344,7 +344,7 @@
                                 </a>
                             </li>
                             <li class="menu-item @if (strpos($current_params, 'StudentController@create')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('student/create') }}" class="menu-link">
+                                <a href="{{ url('person/create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
