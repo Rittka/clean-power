@@ -18,7 +18,7 @@ class PersonController extends Controller
     public function store(Request $request){
 
         Person::create($request->all());
-        return redirect('/equipment');
+        return redirect('/person');
     }
 
 }

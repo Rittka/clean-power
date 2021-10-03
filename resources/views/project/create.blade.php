@@ -6,7 +6,7 @@
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  
+
     <link href="{{ asset('assets/css/pages/wizard/wizard-4.' . ($dir == 'rtl' ? 'rtl.' : '') . 'css?v=7.0.3') }}" rel="stylesheet"
         type="text/css" />
         <style>
@@ -18,17 +18,17 @@
                 padding: 20px;
                 box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
             }
-    
+
             .table-title {
                 padding-bottom: 10px;
                 margin: 0 0 10px;
             }
-    
+
             .table-title h2 {
                 margin: 6px 0 0;
                 font-size: 22px;
             }
-    
+
             .table-title .add-new {
                 background-color: #3699FF;
                 border-color: #3699FF;
@@ -43,75 +43,75 @@
                 position: relative;
                 left: -160px;
             }
-    
+
             .table-title .add-new i {
                 margin-right: 4px;
             }
-    
+
             table.table {
                 table-layout: fixed;
             }
-    
+
             table.table tr th,
             table.table tr td {
                 border-color: #837c7c;
             }
-    
+
             table.table th i {
                 font-size: 13px;
                 margin: 0 5px;
                 cursor: pointer;
             }
-    
+
             table.table th:last-child {
                 width: 100px;
             }
-    
+
             table.table td a {
                 cursor: pointer;
                 display: inline-block;
                 margin: 0 5px;
                 min-width: 24px;
             }
-    
+
             table.table td a.add {
                 color: #27C46B;
             }
-    
+
             table.table td a.edit {
                 color: #FFC107;
             }
-    
+
             table.table td a.delete {
                 color: #E34724;
             }
-    
+
             table.table td i {
                 font-size: 19px;
             }
-    
+
             table.table td a.add i {
                 font-size: 24px;
                 margin-right: -1px;
                 position: relative;
                 top: 3px;
             }
-    
+
             table.table .form-control {
                 height: 40px;
                 line-height: 32px;
                 box-shadow: none;
                 border-radius: 2px;
             }
-    
+
             table.table .form-control.error {
                 border-color: #f50000;
             }
-    
+
             table.table td .add {
                 display: none;
             }
-    
+
         </style>
 @endsection
 @section('content')
@@ -149,15 +149,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="wizard-step" data-wizard-type="step">
-                                <div class="wizard-wrapper">
-                                    <div class="wizard-number">4</div>
-                                    <div class="wizard-label">
-                                        <div class="wizard-title">{{ trans('main.submission') }}</div>
-                                        <div class="wizard-desc">{{ trans('main.review_submit') }}</div>
-                                    </div>
-                                </div>
-                            </div> --}}
+
                         </div>
                     </div>
                     <!--end::Wizard Nav-->
@@ -168,7 +160,7 @@
                             <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
                                 <div class="col-xl-12 col-xxl-10">
                                     <!--begin::Wizard Form-->
-                                    <form class="form" id="kt_form" method="POST" action="/student">
+                                    <form class="form" id="kt_form" method="POST" action="/project">
                                         @csrf
                                         <div class="row justify-content-center">
                                             <div class="col-xl-12">
@@ -176,37 +168,16 @@
                                                 <div class="my-5 step" data-wizard-type="step-content"
                                                     data-wizard-state="current">
                                                     <h5 class="text-dark font-weight-bold mb-10">بيانات الطلبية</h5>
-                                                    <!--begin::Group :: personal_picture-->
-                                                    {{-- <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label text-left">{{ trans('main.personal_picture') }}</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <div class="image-input image-input-outline" id="kt_user_add_avatar">
-                                                                <div class="image-input-wrapper" style="background-image: url(assets/media/users/100_6.jpg)"></div>
-                                                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                                                    <i class="fa fa-pen icon-sm text-muted"></i>
-                                                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
-                                                                    <input type="hidden" name="profile_avatar_remove" />
-                                                                </label>
-                                                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Cancel avatar">
-                                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div> --}}
-                                                    <!--end::Group-->
+
+
                                                     <!--begin::Group :: first_name-->
                                                     <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">رمز المشروع</label>
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">اسم المشروع</label>
                                                         <div class="col-lg-9 col-xl-9">
-                                                            
-                                                               
-                                                            <select style="width:100%; " class="Department"  id="project_code">
-                                                                
-                                                                <option value="AL">طاهر</option>
-                                                                <option value="fs">علي</option>
-                                                                <option value="z">يوسف</option>
-                                                                <option value="WY">سامر</option>
-                                                            </select>
+
+                                                            <input id="input4" type="text"
+                                                            class="form-control form-control-solid form-control-lg border border-primary"
+                                                            name="name"  />
                                                         </div>
                                                     </div>
                                                     <!--end::Group-->
@@ -214,12 +185,13 @@
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label">اسم الزبون</label>
                                                         <div class="col-lg-9 col-xl-9">
-                                                            <select style="width:100%; " class="Department"  id="client_name">
-                                                                
-                                                                <option value="AL">طاهر</option>
-                                                                <option value="fs">علي</option>
-                                                                <option value="z">يوسف</option>
-                                                                <option value="WY">سامر</option>
+                                                            <select style="width:100%; " class="Department"  id="client_name" name="customer_id">
+                                                                @foreach ($customers as $customer )
+                                                                    <option value="{{ $customer->id }}">{{ $customer->fullname }}</option>
+
+                                                                @endforeach
+
+
                                                             </select>
                                                         </div>
                                                     </div>
@@ -233,9 +205,9 @@
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
                                                                 <select style="width:100%; "
                                                                     class="form-control form-control-solid form-control-lg">
-                                                                    <option>منزلية</option>
-                                                                    <option>صناعية</option>
-                                                                    <option>تجارية</option>
+                                                                    <option value="منزلية">منزلية</option>
+                                                                    <option value="صناعية">صناعية</option>
+                                                                    <option value="تجارية">تجارية</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -246,7 +218,7 @@
 
                                                                 <input id="input4" type="number"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="tower_num" value="" />
+                                                                    name="num_tower" value="" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -255,12 +227,12 @@
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label">المنطقة</label>
                                                         <div class="col-lg-9 col-xl-9">
-                                                            <select style="width:100%; " class="Department"  id="region_name">
-                                                                
-                                                                <option value="AL">طاهر</option>
-                                                                <option value="fs">علي</option>
-                                                                <option value="z">يوسف</option>
-                                                                <option value="WY">سامر</option>
+                                                            <select style="width:100%; " class="Department" name="region_id" id="region_name">
+                                                                @foreach ($regions as $region)
+                                                                    <option value="{{ $region->id }}">{{ $region->name }}</option>
+
+                                                                @endforeach
+
                                                             </select>
                                                         </div>
                                                     </div>
@@ -272,13 +244,8 @@
                                                         <div class="col-lg-9 col-xl-9">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar-alt text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
-                                                                <input id="input6" type="text"
+
+                                                                <input id="input6" type="date"
                                                                     class="form-control form-control-solid form-control-lg"
                                                                     name="date" value="" />
                                                             </div>
@@ -289,15 +256,15 @@
                                                         <label class="col-xl-3 col-lg-3 col-form-label">موظفي
                                                             تركيب المشروع</label>
                                                         <div class="col-lg-9 col-xl-9">
-                                                            <select style="width:100%; " class="Department"
+                                                            <select style="width:100%; " name="staffs_ids[]" class="Department"
                                                             id="staff_project">
+                                                            @foreach ($staffs as  $staff)
+                                                                <option value="{{ $staff->id }}">{{ $staff->fname . " " . $staff->lname }}</option>
+                                                            @endforeach
 
-                                                            <option value="AL">طاهر</option>
-                                                            <option value="fs">علي</option>
-                                                            <option value="z">يوسف</option>
-                                                            <option value="WY">سامر</option>
+
                                                         </select>
-                                                              
+
                                                         </div>
 
                                                     </div>
@@ -320,60 +287,25 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <table class="table table-bordered">
+                                                                <table id="tower" class="table table-bordered">
                                                                     <thead>
                                                                         <tr>
                                                                             <th>رمز البرج</th>
                                                                             <th>اسم المعدة</th>
                                                                             <th>العدد</th>
-                                                                                                  <th>الشارع</th>
-                                                    
+                                                                            <th>الشارع</th>
                                                                             <th>خيارات</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>002 </td>
-                                                                            <td>لوح</td>
-                                                                                                  <td>4</td>
-                                                    
-                                                                            <td>كلاس</td>
-                                                                            <td>
-                                                                                <a class="add" title="إضافة" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                                                <a class="edit" title="تعديل" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                                                <a class="delete" title="حذف" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>003 </td>
-                                                                            <td>بطارية </td>
-                                                                                                  <td>5 </td>
-                                                    
-                                                                            <td>اسرة السعيدة</td>
-                                                                            <td>
-                                                                                <a class="add" title="إضافة" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                                                <a class="edit" title="تعديل" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                                                <a class="delete" title="حذف" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>004 </td>
-                                                                                                  <td>سلك </td>
-                                                    
-                                                                            <td>2 </td>
-                                                                            <td>الاكسبريس</td>
-                                                                            <td>
-                                                                                <a class="add" title="إضافة" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                                                                <a class="edit" title="تعديل" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                                                                <a class="delete" title="حذف" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                                                            </td>
-                                                                        </tr>      
+                                                                    <tbody >
+
+
                                                                     </tbody>
                                                                 </table>
                                                             </div>
-                                                        </div>     
+                                                        </div>
                                                 </div>
-                                                   
+
                                                 </div>
                                                 <!--end::Wizard Step 2-->
 
@@ -396,7 +328,7 @@
                                                                 </div>
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="text" value="" />
+                                                                    name="expected_delivery" type="date"  />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -416,7 +348,7 @@
                                                                 </div>
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="text" value="" />
+                                                                    name="recieved_date" type="date" value="" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -436,7 +368,7 @@
                                                                 </div>
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="text" value="" />
+                                                                    name="date_of_check" type="text" value="" />
                                                             </div>
                                                         </div>
                                                         <label class="col-xl-3 col-lg-3 col-form-label">مدة دورة
@@ -451,7 +383,7 @@
                                                                 </div>
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="number" value="" />
+                                                                    name="period_of_warranty" type="number" value="" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -469,7 +401,7 @@
                                                                 </div>
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="payment" type="number" value="" />
+                                                                    name="cost" type="number" value="" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -478,65 +410,6 @@
                                                 <!--end::Wizard Step 3-->
 
 
-                                                <!--begin::Wizard Step 4-->
-                                                {{-- <div class="my-5 step" data-wizard-type="step-content">
-                                                    <h5 class="mb-10 font-weight-bold text-dark">{{ trans('main.review_submit_information') }}</h5>
-                                                    <!--begin::Item-->
-                                                    <div class="border-bottom mb-5 pb-5">
-                                                        <div class="font-weight-bolder mb-3">
-                                                            {{ trans('main.student_personal_info') }}
-                                                        </div>
-                                                        <div class="line-height-xl">
-                                                            <label id="first-name-label">{{ trans('main.first_name') }}</label>
-                                                            <br />
-                                                            <label id="last-name-label">{{ trans('main.last_name') }}</label>
-                                                            <br />
-                                                            <label id="gender-label">{{ trans('main.gender') }}</label>
-                                                            <br />
-                                                            <label id="birth-label">{{ trans('main.birth') }}</label>
-                                                            <br />
-                                                            <label id="mobile-label">{{ trans('main.mobile') }}</label>
-                                                            <br />
-                                                            <label id="address-label">{{ trans('main.address') }}</label>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Item-->
-                                                    <!--begin::Item-->
-                                                    <div class="border-bottom mb-5 pb-5">
-                                                        <div class="font-weight-bolder mb-3">
-                                                            {{ trans('main.parents_personal_info') }}
-                                                        </div>
-                                                        <div class="line-height-xl">
-                                                            <label id="father-name-label">{{ trans('main.father_name') }}</label>   - <label id="mother-name-label">{{ trans('main.mother_name') }}</label>
-                                                            <br />
-                                                            <label id="father-birth-label">{{ trans('main.father_birth') }}</label>   - <label id="mother-birth-label">{{ trans('main.mother_birth') }}</label>
-                                                            <br />
-                                                            <label id="father-education-level-label">{{ trans('main.father_education_level') }}</label>   - <label id="mother-education-level-label">{{ trans('main.mother_education_level') }}</label>
-                                                            <br />
-                                                            <label id="father-job-label">{{ trans('main.father_job') }}</label>    - <label id="mother-job-label">{{ trans('main.mother_job') }}</label>
-                                                            <br />
-                                                            <label id="father-salary-label">{{ trans('main.father_salary') }}</label>   - <label id="mother-salary-label">{{ trans('main.mother_salary') }}</label>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Item-->
-                                                    <!--begin::Item-->
-                                                    <div>
-                                                        <div class="font-weight-bolder">
-                                                            {{ trans('main.registration_detail') }}
-                                                        </div>
-                                                        <div class="line-height-xl">
-                                                            <label id="level-label">{{ trans('main.level') }}</label>
-                                                            <br />
-                                                            <label id="payment-label">{{ trans('main.payment') }}</label>
-                                                            <br />
-                                                            <label id="visited-from-label">{{ trans('main.visited_from') }}</label>
-                                                            <br />
-                                                            <label id="visited-date-label">{{ trans('main.visited_date') }}</label>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Item-->
-                                                </div> --}}
-                                                <!--end::Wizard Step 4-->
 
 
                                                 <!--begin::Wizard Actions-->
@@ -547,7 +420,7 @@
                                                             data-wizard-type="action-prev">السابق</button>
                                                     </div>
                                                     <div>
-                                                        <button type="submit"
+                                                        <button type="submit" id="submit"
                                                             class="btn btn-success font-weight-bolder px-9 py-4"
                                                             data-wizard-type="action-submit">حفظ</button>
                                                         <button id="next-step"
@@ -576,8 +449,62 @@
     @include('errors')
 @endsection
 @section('js')
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-        "use strict";
+       $('#submit').click(function(){
+        var myTableArray = [];
+
+
+var array = [];
+    var headers = [];
+
+    var $rows= $("table#tower tbody tr");
+    var data = [];
+
+    $rows.each(function(row, v) {
+        $(this).find("td").each(function(cell, v) {
+            if (typeof data[cell] === 'undefined') {
+                data[cell] = [];
+            }
+            data[cell][row] = $(this).innerText();
+        });
+    });
+alert(JSON.stringify(data));
+
+function table_to_array(table_id) {
+                    myData = document.getElementById(table_id).rows
+                    //console.log(myData)
+                    my_liste = []
+                    for (var i = 0; i < myData.length; i++) {
+                            el = myData[i].children
+                            my_el = []
+                            for (var j = 0; j < el.length; j++) {
+                                    my_el.push(el[j].innerText);
+                            }
+                            my_liste.push(my_el)
+
+                    }
+                    return my_liste
+            }
+
+myData = document.getElementById(table_id).rows
+                    //console.log(myData)
+                    my_liste = []
+                    for (var i = 0; i < myData.length; i++) {
+                            el = myData[i].children
+                            my_el = []
+                            for (var j = 0; j < el.length; j++) {
+                                    my_el.push(el[j].innerText);
+                            }
+                            my_liste.push(my_el)
+
+                    }
+                    return my_liste
+
+console.log(myTableArray);
+       });
 
         // Class Definition
         var KTAddUser = function() {
@@ -602,18 +529,7 @@
                         if (status == 'Valid') {
                             _wizard.goNext();
                             KTUtil.scrollTop();
-                            // if(_wizard.islaststep())
-                            // {
-                            //      //step 4
-                            //     var form_data = $('#kt_form').serializeArray();
-                            //         for(var i=0; i<form_data.length; i++){
-                            //             var name = form_data[i]['name'];
-                            //             var value = form_data[i]['value'];
 
-                            //             document.write(('#'+name+'-label').text(value));
-                            //         }
-
-                            // }
                         } else {
                             Swal.fire({
                                 text: "عذراً ، هناك حقول فارغة ، يرجى إدخال كافة البيانات ",
@@ -790,9 +706,7 @@
 
 
 
-            // var _initAvatar = function() {
-            //     _avatar = new KTImageInput('kt_user_add_avatar');
-            // }
+
 
             return {
                 // public functions
@@ -810,10 +724,9 @@
         jQuery(document).ready(function() {
             KTAddUser.init();
         });
-       
+
     </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
@@ -822,18 +735,44 @@
             $(".add-new").click(function() {
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
-                var row = '<tr>' +
-            '<td>  <select  class="form-control " id="kt_select2_1" name="param"> <option value="AK">Alaska</option> <option value="HI">Hawaii</option><option value="CA">California</option></select></td>' +
-              '<td>  <select class="form-control " id="kt_select2_1" name="param"> <option value="AK">لوح</option> <option value="HI">برج</option><option value="CA">بطارية</option></select></td>' +
-            '<td><input type="text" class="form-control" name="department" id="department"></td>' +
-            '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
-      
-			'<td>' + actions + '</td>' +
-        '</tr>';
+                var row =  `<tr>
+                                <td>
+                                    <input type="text" class="form-control" name="barcode" id="barcode"></td>
+                                <td>
+                                    <select class="form-control " id="kt_select2_1" name="equipment_id">
+                                        @foreach ($equipments as $value)
+                                            <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="num_of_equipment" id="num_of_equipment">
+                                </td>
+
+                                <td>
+                                    <select class="form-control " id="kt_select2_1" name="street[]">
+                                        @foreach ($regions as $region)
+                                            <option value="{{ $region->id }}">{{ $region->street }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <a class="add" title="إضافة" data-toggle="tooltip"><i class="fas fa-plus-circle"></i></a>
+                                    <a class="edit" title="تعديل" data-toggle="tooltip"><i class="far fa-edit"></i></a>
+                                    <a class="delete" title="حذف" data-toggle="tooltip"><i class="far fa-trash-alt"></i></a>
+                                </td>
+                        </tr>`;
+
+
+
+
+
                 $("table").append(row);
                 $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
                 $('[data-toggle="tooltip"]').tooltip();
             });
+
+
             // Add row on add button click
             $(document).on("click", ".add", function() {
                 var empty = false;
@@ -871,28 +810,26 @@
             });
         });
     </script>
-   
- 
-        <script>
-               $(function() {
+
+
+    <script>
+        $(function() {
             $('#project_code').select2()
-         
+
         });
         $(function() {
             $('#client_name').select2();
-         
+
         });
         $(function() {
             $('#region_name').select2();
-         
+
         });
         $(function() {
             $('#staff_project').select2();
-         
-        });
-         
-                   </script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        });
+
+    </script>
+
 @endsection
