@@ -44,7 +44,7 @@
                 source: {
                     read: {
 
-                         url: '{!! route('getreportOfStudentsDatatable.data') !!}',
+                         url: '{!! route('getreportOfMMDatatable.data') !!}',
                         //  method : 'GET'
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
