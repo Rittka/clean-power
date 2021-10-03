@@ -8,7 +8,7 @@
         <div class="card card-custom">
             <div class="card-header flex-wrap border-0 pt-6 pb-0">
                 <div class="card-title">
-                    <h1 style="font-size : 3rem">المشاريع</h1>
+                    <h1 style="font-size : 3rem"> مشاريع الكشف</h1>
                 </div>
                 <div class="card-toolbar">
                     {{-- <a href="#" class="btn btn-primary font-weight-bolder">
@@ -135,9 +135,6 @@
                 title: ' تاريخ انتهاء الكفالة',
             },
             {
-                field: 'customer_name',
-                title: ' التكلفة الاجمالية',
-            }, {
                 field: 'Actions',
                 title: 'خيارات',
                 sortable: false,
