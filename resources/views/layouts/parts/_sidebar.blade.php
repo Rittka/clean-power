@@ -236,6 +236,14 @@
                                 <span class="menu-text">صيانة جديدة</span>
                             </a>
                         </li>
+                        <li class="menu-item @if (strpos($current_params, 'MaintenanceController@createNotWork_equip')) menu-item-active @endif" aria-haspopup="true">
+                            <a href="{{ url('maintenance/createNotWorking_equipment') }}" class="menu-link">
+                                <i class="menu-bullet menu-bullet-dot">
+                                    <span></span>
+                                </i>
+                                <span class="menu-text">اضافة معدة معطلة</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>

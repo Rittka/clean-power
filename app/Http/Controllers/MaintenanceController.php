@@ -19,4 +19,7 @@ class MaintenanceController extends Controller
     public function create(){
         return view('maintenance.create');
     }
+    public function createNotWork_equip(){
+        return view('maintenance.createNotWorking_equipment');
+    }
 }

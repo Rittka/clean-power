@@ -20,7 +20,7 @@
             margin: 30px auto;
             background: #fff;
             padding: 20px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(124, 117, 117, 0.05);
         }
 
         .table-title {
