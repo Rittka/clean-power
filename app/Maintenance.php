@@ -13,4 +13,7 @@ class Maintenance extends Model
     public function notworking_equipment(){
         return $this->hasMany('App\Notworking_equipment');
     }
+    public function project(){
+        return $this->belongsTo('App\Project');
+    }
 }
