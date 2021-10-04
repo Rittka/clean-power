@@ -146,7 +146,7 @@ Route::post( '/project', 'ProjectController@store' );
 Route::get( '/project/create', 'ProjectController@create' );
 Route::get( '/project/{project}', 'ProjectController@show' );
 Route::get( '/project/peron', 'EquipmentController@peron' );
-Route::get( '/project/edit', 'ProjectController@edit' );
+Route::get( '/project/{id}/edit', 'ProjectController@edit' );
 Route::patch( '/project/{project}', 'ProjectController@update' );
 Route::delete( '/project/{id}', 'ProjectController@destroy' );
 Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data', 'uses' => 'ProjectController@projectDatatable' ] );
@@ -166,7 +166,7 @@ Route::get( '/report/reportOfinvoice_details', 'ReportController@reportOfinvoice
 Route::get( '/report/reportOfproject_numofcustomer', 'ReportController@reportOfproject_numofcustomer' )->name('reportOfproject_numofcustomer');
 Route::get( '/report/reportOfSupplier', 'ReportController@reportOfSupplier' )->name('reportOfSupplier');
 
-Route::post( 'report/getreportOfMMDatatable', ['as' => 'getreportOfMMDatatable.data', 'uses' => 'ReportController@MMDatatable' ] );
+Route::post( 'report/CustomerDatatable', ['as' => 'CustomerDatatable.data', 'uses' => 'ReportController@CustomerDatatable' ] );
 
 
 });

@@ -44,7 +44,7 @@
                 source: {
                     read: {
 
-                         url: '{!! route('getreportOfStudentsDatatable.data') !!}',
+                         url: '{!! route('CustomerDatatable.data') !!}',
                         //  method : 'GET'
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -74,18 +74,19 @@
 
             // columns definition
             columns: [ {
-                field: 'full_name', title: 'الاسم ',
+                field: 'fullname', title: 'الاسم ' , width : 125
             },
             {
-                field: 'mobile', title: ' الموبايل',
-            },{
-                field: 'adress', title: ' العنوان ',
+                field: 'number', title: ' الموبايل', width : 125
+            },
+            {
+                field: 'location', title: ' العنوان ' , width:125
             },
             {
                 field: 'total', title: ' إجمالي المبيعات ',
             },
-           \
-           \
+
+
             ],
 
             translate: {

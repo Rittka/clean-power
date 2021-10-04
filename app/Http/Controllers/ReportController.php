@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use App\Person;
 
 class ReportController extends Controller
 {
@@ -59,22 +60,15 @@ class ReportController extends Controller
         return view('report.reportOfSupplier');
     }
 
-    public function MMDatatable(){
-
-        $this_month = date("m");
-        $this_year = date("Y");
-
-        $from = date("1-".$this_month ."-".$this_year);
-        $to = date("30-".$this_month ."-".$this_year);
+    public function CustomerDatatable(){
 
 
-        $data = Maintenance::whereBetween('date_of_maintenance',[$from , $to]);
+
+        $data = Person::where('type' , 2)->get();
         return Datatables::of($data)
-        ->addColumn('custom_name', function($col){
-            return $col->person->fullname;
-        })->
-        addColumn('region_name', function($col){
-            return $col->region->name .", ".$col->region->street ;
+        ->addColumn('total', function($col){
+            $total = $col->projects->sum('cost') ;
+            return $total;
         })->make(true);
     }
 }

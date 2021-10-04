@@ -41,13 +41,28 @@ class MaintenanceController extends Controller
             'date_of_maintenance' => $request->date_of_maintenance
         ]);
         foreach($request->staffs as $staff){
-            Maintenance::create([
+            Staff_maintenance::create([
                 'employee_id' => $staff ,
                 'maintenance_id' => $maintenance->id ,
                 'date_of_maintenance' =>$request->date_of_maintenance
                 ]);
         }
         return redirect('/maintenance');
+    }
+
+    public function update(Request $request , $id){
+        Staff_maintenance::where('maintenance_id' , $id)->delete();
+        $check = Maintenance::find($id);
+        $check->update($request->all());
+        foreach($request->staffs as $staff){
+            Staff_maintenance::create([
+                'employee_id' => $staff ,
+                'maintenance_id' => $maintenance->id ,
+                'date_of_maintenance' =>$request->date_of_maintenance
+                ]);
+        }
+        return redirect('/maintenance');
+
     }
 
     public function maintenanceDatatable(){
@@ -60,6 +75,15 @@ class MaintenanceController extends Controller
            return $col->project->region->name ;
         })
         ->make(true);
+    }
+
+    public function destroy($id){
+        Staff_maintenance::where('maintenance_id' , $id)->delete();
+        $check = Maintenance::find($id);
+        $check->delete();
+        return redirect('maintenance');
+
+
     }
     public function createNotWork_equip(){
         return view('maintenance.createNotWorking_equipment');

@@ -227,7 +227,7 @@
                                                             style="margin-top:-7px ">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <select style="width:100%; " name="gener"
+                                                                <select style="width:100%; " name="genre"
                                                                     class="form-control form-control-solid form-control-lg">
                                                                     <option value="شارع" >إنارة شارع</option>
                                                                     <option value="منزل" >إنارة منزل</option>
@@ -282,10 +282,6 @@
                                                     <!--end::Group-->
                                                 </div>
                                                 <!--end::Wizard Step 1-->
-
-
-
-
                                                 <!--begin::Wizard Step 3-->
                                                 <div class="my-5 step" data-wizard-type="step-content">
                                                     <h5 class="mb-10 font-weight-bold text-dark">تفاصيل الكفالة وإجمالي
@@ -297,7 +293,7 @@
                                                         <div class="col-xl-9 col-lg-9">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
                                                                     name="expected_delivery" type="date"  />
@@ -309,17 +305,15 @@
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
                                                             التنفيذ</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <div
+                                                                    class="input-group input-group-solid input-group-lg border border-primary">
 
+                                                                    <input id="input18"
+                                                                        class="form-control form-control-solid form-control-lg"
+                                                                        name="actualdelivery" type="date"  />
                                                                 </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="actualdelivery" type="date" value="" />
                                                             </div>
-                                                        </div>
                                                     </div>
                                                     <!--end::Group-->
                                                     <!--begin::Group :: visit-->
@@ -414,7 +408,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
 
-       });
 
         // Class Definition
         var KTAddUser = function() {
