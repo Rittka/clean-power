@@ -19,7 +19,7 @@
                                 <path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
                             </g>
                         </svg><!--end::Svg Icon--></span>  </span>
-                    إضافة صيانة 
+                    إضافة صيانة
                     </a>
                 </div>
             </div>
@@ -57,10 +57,10 @@
             data: {
                 type: 'remote',
 
-                // ajax: '{!! route('getStaffDatatable.data') !!}',
+
                 source: {
                     read: {
-                        url: '{!! route('getStaffDatatable.data') !!}',
+                        url: '{!! route('getmaintenanceDatatable.data') !!}',
                         // sample custom headers
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -103,12 +103,12 @@
             }, {
                 field: 'fname', title: 'رمز المشروع',
             }, {
-                field: 'type', title: 'تاريخ الصيانة',
+                field: 'date_of_maintenance', title: 'تاريخ الصيانة',
             },
             {
-                field: 'mobile', title: 'موظف الصيانة',
+                field: 'remarks', title: 'ملاحظات',
             },
-            
+
 
             {
                 field: 'Actions', title: 'خيارات', sortable: false, width: 200, overflow: 'visible',
@@ -161,8 +161,8 @@
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    method: 'DELETE',
-                    url: 'staff/'+id,
+                    method: 'GET',
+                    url: 'maintenance/delete/'+id,
                 }).done(function (res) {
                     window.location.reload();
                 });
