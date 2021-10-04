@@ -11,7 +11,7 @@
     <link href="{{ asset('assets/css/pages/wizard/wizard-4.' . ($dir == 'rtl' ? 'rtl.' : '') . 'css?v=7.0.3') }}"
         rel="stylesheet" type="text/css" />
     <style>
-        
+
         .select2-container--default .select2-selection--single {
             line-height: 32px;
             height: 40px;
@@ -130,7 +130,7 @@
         </div>
     </div>
     <div class="card-toolbar" style="position: absolute; left:400px;top:175px">
-        <a href="{{url('region/create')}}" class="btn btn-primary font-weight-bolder">
+        <a href="{{url('maintenance/create')}}" class="btn btn-primary font-weight-bolder">
             <span class="svg-icon  svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Add-user.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <polygon points="0 0 24 0 24 24 0 24"/>
@@ -146,89 +146,79 @@
             <div class="tab-content pt-5">
                 <!--begin::Tab Content-->
                 <div class="tab-pane active" id="kt_apps_projects_view_tab_2" role="tabpanel">
-                    <form class="form" method="post" action="/region">
+                    <form class="form" method="post" action="/maintenance">
                         @csrf
+                        <div class="card-body card-custom">
+                            <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-xl-2"></div>
+                                <div class="col-xl-7 my-2">
 
-                        <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">رمز المشروع</label>
-                            <div class="col-lg-9 col-xl-6">
-                                <select style="width:100%; " class="Department"
-                                id="project_code">
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-3 text-lg-right text-left">اسم المشروع</label>
+                                        <div class="col-9">
+                                            <div class="input-group input-group-lg input-group-solid border border-primary">
+                                                <select name="project_id" class="selecet2 " id="project_id" style="width: 100%">
+                                                    @foreach ($projects as $project)
+                                                        <option value="{{$project->id}}">{{$project->name}}</option>
+                                                    @endforeach
 
-                                <option value="AL">طاهر</option>
-                                <option value="fs">علي</option>
-                                <option value="z">يوسف</option>
-                                <option value="WY">سامر</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">موظف الصيانة</label>
-                            <div class="col-lg-9 col-xl-6">
-
-                                <select style="width:100%; " class="Department"
-                                id="staff_maintenance" multiple>
-
-                                <option value="AL">طاهر</option>
-                                <option value="fs">علي</option>
-                                <option value="z">يوسف</option>
-                                <option value="WY">سامر</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">التاريخ</label>
-                            <div class="col-lg-9 col-xl-6">
-
-                                <div
-                                class="input-group input-group-solid input-group-lg border border-primary">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i
-                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                    </span>
-                                </div>
-                                <input id="input2"
-                                    class="form-control form-control-solid form-control-lg"
-                                    name="value_total" type="year" value="" />
-                            </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">الملاحظات</label>
-                            <div class="col-lg-9 col-xl-6">
-
-                                <div
-                                    class="input-group input-group-solid input-group-lg border border-primary">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i
-                                                class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                        </span>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <input id="input2"
-                                        class="form-control form-control-solid form-control-lg"
-                                        name="value_total" type="year" value="" />
-                                </div>
-                            </div>
-                        </div>
-                    
-                       
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-3 text-lg-right text-left">موظفي الصيانة</label>
+                                        <div class="col-9">
+                                            <div class="input-group input-group-lg input-group-solid border border-primary">
+                                                <select name="staffs[]" class="Department" id="department" multiple style="width: 100%">
+                                                    @foreach ($staffs as $staff)
+                                                        <option value="{{$staff->id}}">{{$staff->fname . " " . $staff->lname}}</option>
+                                                    @endforeach
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-3 text-lg-right text-left">التاريخ</label>
+                                        <div class="col-9 ">
+                                            <div class="input-group input-group-lg input-group-solid border border-primary">
+
+                                                <input type="date" name="date_of_maintenance" class="form-control form-control-lg form-control-solid "
+                                                    placeholder="تاريخ الكشف" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-form-label col-3 text-lg-right text-left">الملاحظات</label>
+                                        <div class="col-9">
+                                            <div class="input-group input-group-lg input-group-solid border border-primary">
+
+
+                                                <input type="text" name="remarks" class="form-control form-control-lg form-control-solid "  placeholder="  ادخل الملاحظات" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                         <!--end::Group-->
                         <!--begin::Group :: gender , birth-->
-                       
-                      
-                        
-                        <div class="card-footer row">
-                            <div class="col-5"></div>
-                            <button type="submit"
-                                class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">حفظ</button>
-                            <button type="reset"
-                                class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
+
+
+
+                                <div class="card-footer row">
+                                    <div class="col-5"></div>
+                                    <button type="submit"
+                                        class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">حفظ</button>
+                                    <button type="reset"
+                                        class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                     </form>
                 </div>
             </div>
@@ -537,7 +527,7 @@
         });
         $(function() {
             $('#staff_maintenance').select2({
-               
+
             });
 
         });

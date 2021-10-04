@@ -113,11 +113,12 @@ Route::get('level/{id}/subjects','RegionController@getSubjectsOfLevel');
     Route::get( '/settings/reportOfStudent', 'SettingController@reportOfStudent' );
 
     Route::post( '/subject/getSubjectDatatable', ['as' => 'getSubjectDatatable.data', 'uses' => 'SettingController@SubjectDatatable' ] );
-    //maintenance  
+    //maintenance
     Route::get( '/maintenance', 'MaintenanceController@index' );
     Route::get( '/maintenance/createNotWorking_equipment', 'MaintenanceController@createNotWork_equip' );
 
     Route::get( '/maintenance/create', 'MaintenanceController@create' );
+    Route::post( '/maintenance', 'MaintenanceController@store' );
     Route::get( '/maintenance/{id}', 'MaintenanceController@show' );
     Route::get( '/maintenance/{id}/edit', 'MaintenanceController@edit' );
     Route::patch( '/maintenance/{id}', 'MaintenanceController@update' );

@@ -33,6 +33,23 @@ class MaintenanceController extends Controller
         return view('maintenance.create',compact(['staffs' , 'projects']));
     }
 
+    public function store(Request $request){
+
+        $maintenance = Maintenance::create([
+            'project_id' => $request->project_id ,
+            'remarks' => $request->remarks ,
+            'date_of_maintenance' => $request->date_of_maintenance
+        ]);
+        foreach($request->staffs as $staff){
+            Maintenance::create([
+                'employee_id' => $staff ,
+                'maintenance_id' => $maintenance->id ,
+                'date_of_maintenance' =>$request->date_of_maintenance
+                ]);
+        }
+        return redirect('/maintenance');
+    }
+
     public function maintenanceDatatable(){
         $mains = Maintenance::all();
         return Datatables::of($mains)
