@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title', 'show invoice')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('report/reportOfinvoice') }}">  تقرير الفواتير</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تفاصيل فاتورة </li>
+@endsection
 @section('content')
     <form method="get">
         <div class="card-body">

@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title', 'add customer')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة عميل </li>
+@endsection
 @section('content')
 
     <div class="container">

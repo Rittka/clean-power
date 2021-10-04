@@ -139,6 +139,7 @@ Route::delete( '/project/{id}', 'ProjectController@destroy' );
 Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data', 'uses' => 'ProjectController@projectDatatable' ] );
 //invoices
 Route::get( '/invoice', 'InvoiceController@index' );
+Route::get( '/report/reportOfinvoice_details', 'InvoiceController@reportOfinvoice' );
 Route::get( '/invoice/create', 'InvoiceController@create' );
 Route::get( '/invoice/{invoice}', 'InvoiceController@show' );
 Route::get( '/invoice/peron', 'InvoiceController@peron' );

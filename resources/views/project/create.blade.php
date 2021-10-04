@@ -192,12 +192,17 @@
 
                                                     <!--begin::Group :: first_name-->
                                                     <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">اسم المشروع</label>
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">رمز المشروع</label>
                                                         <div class="col-lg-9 col-xl-9">
 
-                                                            <input id="input4" type="text"
-                                                            class="form-control form-control-solid form-control-lg border border-primary"
-                                                            name="name"  />
+                                                            <select style="width:100%; " class="Department"  id="project_code" name="customer_id">
+                                                                @foreach ($customers as $customer )
+                                                                    <option value="{{ $customer->id }}">{{ $customer->fullname }}</option>
+
+                                                                @endforeach
+
+
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <!--end::Group-->

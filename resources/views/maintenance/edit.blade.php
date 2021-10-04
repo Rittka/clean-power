@@ -1,6 +1,10 @@
 
 @extends('layouts.master')
 @section('title', 'edit maintenance')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('maintenance') }}">  جميع الصيانات</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تعديل صيانة </li>
+@endsection
 @section('name', 'تعديل الصيانة ')
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">

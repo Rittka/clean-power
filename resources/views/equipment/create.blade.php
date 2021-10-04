@@ -2,7 +2,6 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @section('title', 'add mainetnance')
 @section('breadcrumb')
-<li class="breadcrumb-item active" aria-current="page"> المعدات</li>
 <li class="breadcrumb-item active" aria-current="page">معدة جديدة</li>
 
 @endsection

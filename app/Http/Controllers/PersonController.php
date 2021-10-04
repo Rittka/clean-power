@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Person;
+use Yajra\Datatables\Datatables;
 
 class PersonController extends Controller
 {
@@ -20,5 +20,8 @@ class PersonController extends Controller
         Person::create($request->all());
         return redirect('/person');
     }
+    //
+    //
+   
 
 }

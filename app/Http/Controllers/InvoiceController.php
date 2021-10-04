@@ -21,4 +21,7 @@ class InvoiceController extends Controller
     public function show(){
         return view('invoice.show');
     }
+    public function reportOfinvoice(){
+        return view('report.reportOfinvoice_details');
+    }
 }

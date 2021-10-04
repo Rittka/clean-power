@@ -1,6 +1,9 @@
 
 @extends('layouts.master')
 @section('title', 'Add maintenance')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة صيانة </li>
+@endsection
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

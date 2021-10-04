@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('breadcrumb')
-<li class="breadcrumb-item active" aria-current="page">  التقارير</li>
 <li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('report/reportOfinvoice') }}">  تقرير الفواتير</a></li>
 <li class="breadcrumb-item active" aria-current="page"> تعديل فاتورة </li>
 @endsection
