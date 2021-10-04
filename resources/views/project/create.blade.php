@@ -163,7 +163,7 @@
                             </div>
                             <div class="wizard-step" data-wizard-type="step">
                                 <div class="wizard-wrapper">
-                                    <div class="wizard-number">3</div>
+                                    <div class="wizard-number">2</div>
                                     <div class="wizard-label">
                                         <div class="wizard-desc">تفاصيل الكفالة</div>
                                     </div>
