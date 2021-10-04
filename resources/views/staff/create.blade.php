@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title', 'add staff')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة موظف </li>
+@endsection
 @section('content')
 
     <div class="container">

@@ -45,8 +45,8 @@
 
             </div>
             <div class="form-group row">
-                <label class="col-xl-2 col-lg-2 col-form-label text-right font-weight-bolder">العنوان</label>
-                <div class="col-lg-6 col-xl-3">
+                <label class="col-xl-3 col-lg-3 col-form-label text-right font-weight-bolder">العنوان</label>
+                <div class="col-lg-9 col-xl-6">
                     <input class="form-control form-control-lg form-control-solid border border-primary" type="text"
                        name="address" value="{{ $person->location }}" readonly />
                 </div>
@@ -62,13 +62,13 @@
             <div class="col-5"></div>
             <button type="submit" class="btn btn- mr-2">
                 <a href="/person/{{ $person->id }}/edit"
-                    class="btn  btn-light-primary font-weight-bolder text-uppercase mr-2">{{ trans('main.edit') }}</a>
+                    class="btn  btn-light-primary font-weight-bolder text-uppercase mr-2">تعديل</a>
             </button>
             @method('delete')
             @csrf
             <button type="submit" class="btn btn- mr-2">
                 <a class="btn btn-danger font-weight-bolder" onclick="staff_delete($(this))" data-id="{{ $person->id }}"
-                    data-name="{{ $person->fullname }}">{{ trans('main.delete') }}</a>
+                    data-name="{{ $person->fullname }}">حذف</a>
             </button>
         </div>
     </form>

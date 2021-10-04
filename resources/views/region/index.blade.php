@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title', 'regions')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> جميع المناطق </li>
+@endsection
 @section('content')
     <div class="container">
         <!--begin::Card-->

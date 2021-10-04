@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title','show staff')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('staff') }}">  جميع الموظفين</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تفاصيل الموظف </li>
+@endsection
 @section('content')
 
 <form method ="get" action="staff/{{$staff->id}}">

@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'تقرير الكشوفات ')
+@section('title', 'تقرير الفواتير ')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> تقرير الفواتير </li>
+@endsection
 
 @section('content')
 <div class="container">

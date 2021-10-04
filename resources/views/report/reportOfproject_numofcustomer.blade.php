@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('title', 'تقرير  عدد المشاريع ')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> تقرير عدد المشاريع للزبون </li>
+@endsection
 
 @section('content')
 <div class="container">

@@ -54,6 +54,7 @@
 
 
 @section('js')
+<script src="">
     <script>
          var datatable = $('#kt_checks_datatable').KTDatatable({
             // datasource definition

@@ -1,113 +1,81 @@
 @extends('layouts.master')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+@section('title', 'add person')
 @section('breadcrumb')
-<li class="breadcrumb-item active" aria-current="page">كشف جديد </li>
-
+<li class="breadcrumb-item active" aria-current="page"> اضافة عميل </li>
 @endsection
-@section('title', 'إضافة كشف')
 @section('content')
-<style>
-            .select2-container--default .select2-selection--single{line-height:32px; height:40px;background-color:#F3F6F9;border:1px solid border-radius:4px}
 
-    </style>
-    <div class="card card-custom">
-        <div class="card-header">
-            <h3 class="card-title">أضف كشف جديد</h3>
-        </div>
-        <form method="post" action="{{ url('check') }}">
-            @csrf
-            <!--begin::Card body-->
-            <div class="card-body card-custom">
-                <!--begin::Row-->
-                <div class="row">
-                    <div class="col-xl-2"></div>
-                    <div class="col-xl-7 my-2">
-                        <!--begin::Group :: level-->
-                        <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">موظف الكشف</label>
-                            <div class="col-9">
-                                <div class="input-group input-group-lg input-group-solid border border-primary">
-                                    <select name="staffs[]" class="Department" id="department" multiple style="width: 100%">
-                                        @foreach ($staffs as $staff)
-                                            <option value="{{$staff->id}}">{{$staff->fname . " " . $staff->lname}}</option>
-                                        @endforeach
+    <div class="container">
 
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">رمز المشروع</label>
-                            <div class="col-9">
-                                <div class="input-group input-group-lg input-group-solid border border-primary">
-                                    <select name="project_id" class="selecet2 " id="project_id" style="width: 100%">
-                                        @foreach ($projects as $project)
-                                            <option value="{{$project->id}}">{{$project->name}}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">الملاحظات</label>
-                            <div class="col-9">
-                                <div class="input-group input-group-lg input-group-solid border border-primary">
-
-
-                                    <input type="text" name="remarks" class="form-control form-control-lg form-control-solid "  placeholder="  ادخل الملاحظات" />
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--end::Group-->
-                        <!--begin::Group :: year-->
-                        <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">التاريخ</label>
-                            <div class="col-9 ">
-                                <div class="input-group input-group-lg input-group-solid border border-primary">
-
-                                    <input type="date" name="date_of_check" class="form-control form-control-lg form-control-solid "
-                                        placeholder="تاريخ الكشف" />
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="separator my-10"></div>
-                        <div class="card-footer pb-0">
-                            <div class="row">
-                                <div class="col-xl-2"></div>
-                                <div class="col-xl-7">
-                                    <div class="row">
-                                        <div class="col-3"></div>
-                                        <div class="col-9">
-                                            <button class="btn btn-primary" type="submit">حفظ</button>
-                                            <button class="btn btn-secondary" type="reset">إلغاء</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="card card-custom">
+            <div class="card-header">
+                <h3 class="card-title">أضف عميل جديد</h3>
+                <div class="card-toolbar">
+                    <div class="example-tools justify-content-center">
+                        <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
+                        <span class="example-copy" data-toggle="tooltip" title="Copy code"></span>
                     </div>
                 </div>
             </div>
+            <!--begin::Form-->
+            <form class="box" method="post" action="/person" >
+                {{ csrf_field() }}
+                <div class="card-body">
 
-        </form>
+                    <div class="form-group row">
+
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right">اسم الكامل</label>
+                        <div class="col-lg-9 col-xl-6">
+
+                            <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
+                                name="fullname"  placeholder="الاسم والكنية " required />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> العنوان</label>
+                        <div class="col-lg-9 col-xl-6">
+
+                            <input type="text" class="form-control form-control-lg form-control-solid border border-primary"
+                                name="location"  placeholder="العنوان " required />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> النوع</label>
+                        <div class="col-lg-9 col-xl-6 ">
+
+                            <select class="form-control  form-control-lg form-control-solid border border-primary " name="type">
+                                <option value="1"> مورد</option>
+                                <option value="2">زبون</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right">  الهاتف</label>
+                        <div class="col-lg-9 col-xl-6">
+
+                            <input type="number" class="form-control form-control-lg form-control-solid border border-primary"
+                                name="number"  placeholder="الموبايل " required />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-footer row">
+                    <div class="col-5"></div>
+                    <button type="submit"
+                        class="btn btn-primary font-weight-bolder px-9 py-4 mr-2"> حفظ</button>
+                    <button type="reset"
+                        class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
+                </div>
+            </form>
+        </div>
+
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script>
-        $(function() {
-            $('#department').select2({
-                placeholder: "اختر موظفي الكشف؟",
-            });
-        });
-        $(function() {
-            $('#project_id').select2({
-                placeholder: "اختر  رمز المشروع ؟",
-            });
-        });
-    </script>
+
 @endsection

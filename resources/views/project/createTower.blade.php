@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title', 'اضافة برج')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة برج </li>
+@endsection
 @section('content')
 <style>   .select2-container--default .select2-selection--single {
     line-height: 32px;

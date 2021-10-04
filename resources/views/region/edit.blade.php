@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title', 'edit teacher')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('region') }}">  جميع المناطق</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تعديل منطقة </li>
+@endsection
 @section('content')
     <form method="post" action="/region/{{ $region->id }}">
         @csrf

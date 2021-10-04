@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title', 'اضافة منطقة')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة منطقة </li>
+@endsection
 @section('content')
     <div class="card card-custom">
         <div class="card-header">

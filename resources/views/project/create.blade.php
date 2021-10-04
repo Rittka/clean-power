@@ -3,6 +3,9 @@
 
 @section('name', 'إضافة طلبية ')
 @section('title', 'Add project')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة مشروع </li>
+@endsection
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

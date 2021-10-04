@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('title', 'show project')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('project') }}">  جميع المشاريع</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تفاصيل مشروع </li>
+@endsection
 @section('content')
     <form method="get">
         <div class="card-body">

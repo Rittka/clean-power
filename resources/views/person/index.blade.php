@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('title', 'العملاء')
-
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page">   جميع العملاء</li>
+@endsection
 @section('content')
     <div class="container">
         <!--begin::Card-->
