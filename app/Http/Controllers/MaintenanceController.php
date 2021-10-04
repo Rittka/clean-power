@@ -44,4 +44,7 @@ class MaintenanceController extends Controller
         })
         ->make(true);
     }
+    public function createNotWork_equip(){
+        return view('maintenance.createNotWorking_equipment');
+    }
 }

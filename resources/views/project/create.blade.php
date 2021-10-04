@@ -230,9 +230,10 @@
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
                                                                 <select style="width:100%; "
                                                                     class="form-control form-control-solid form-control-lg">
-                                                                    <option value="منزلية">منزلية</option>
-                                                                    <option value="صناعية">صناعية</option>
-                                                                    <option value="تجارية">تجارية</option>
+                                                                    <option >إنارة شارع</option>
+                                                                    <option >إنارة منزل</option>
+                                                                    <option >منشأة تجارية</option>
+                                                                 
                                                                 </select>
                                                             </div>
                                                         </div>

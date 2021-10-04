@@ -55,7 +55,7 @@ class EquipmentController extends Controller
 
 
    public function person(){
-      return view('student.create');
+      return view('person.create');
      }
 
     public function destroy($id){

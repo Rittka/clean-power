@@ -1,8 +1,8 @@
 
 @extends('layouts.master')
-@section('title', 'Add maintenance')
+@section('title', 'Add NotWorking_equipment')
 @section('breadcrumb')
-<li class="breadcrumb-item active" aria-current="page"> اضافة صيانة </li>
+<li class="breadcrumb-item active" aria-current="page"> اضافة معدة معطلة </li>
 @endsection
 @section('css')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
@@ -126,20 +126,8 @@
 @section('content')
     <div class="card card-custom">
         <div class="card-header">
-            <h3 class="card-title">إضافة صيانة جديدة</h3>
+            <h3 class="card-title">إضافة معدة معطلة </h3>
         </div>
-    </div>
-    <div class="card-toolbar" style="position: absolute; left:400px;top:175px">
-        <a href="{{url('region/create')}}" class="btn btn-primary font-weight-bolder">
-            <span class="svg-icon  svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Add-user.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <polygon points="0 0 24 0 24 24 0 24"/>
-                    <path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero"/>
-                    <path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
-                </g>
-            </svg><!--end::Svg Icon--></span>  </span>
-        إضافة منطقة
-        </a>
     </div>
     <div class="card-body px-0">
         <div style="background-color: white">
@@ -150,10 +138,10 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">رمز المشروع</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">رمز البرج </label>
                             <div class="col-lg-9 col-xl-6">
                                 <select style="width:100%; " class="Department"
-                                id="project_code">
+                                id="tower_code">
 
                                 <option value="AL">طاهر</option>
                                 <option value="fs">علي</option>
@@ -164,11 +152,11 @@
                         </div>
                         <div class="form-group row">
 
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">موظف الصيانة</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right"> اسم المعدة</label>
                             <div class="col-lg-9 col-xl-6">
 
                                 <select style="width:100%; " class="Department"
-                                id="staff_maintenance" multiple>
+                                id="equipment_num" >
 
                                 <option value="AL">طاهر</option>
                                 <option value="fs">علي</option>
@@ -179,16 +167,13 @@
                         </div>
                         <div class="form-group row">
 
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">التاريخ</label>
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">العدد</label>
                             <div class="col-lg-9 col-xl-6">
 
                                 <div
                                 class="input-group input-group-solid input-group-lg border border-primary">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i
-                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                    </span>
+                                  
                                 </div>
                                 <input id="input2"
                                     class="form-control form-control-solid form-control-lg"
@@ -196,25 +181,7 @@
                             </div>
                             </div>
                         </div>
-                        <div class="form-group row">
-
-                            <label class="col-xl-3 col-lg-3 col-form-label text-right">الملاحظات</label>
-                            <div class="col-lg-9 col-xl-6">
-
-                                <div
-                                    class="input-group input-group-solid input-group-lg border border-primary">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i
-                                                class="fas fa-pencil-alt text-primary icon-lg"></i>
-                                        </span>
-                                    </div>
-                                    <input id="input2"
-                                        class="form-control form-control-solid form-control-lg"
-                                        name="value_total" type="year" value="" />
-                                </div>
-                            </div>
-                        </div>
+                        
                     
                        
                         <!--end::Group-->
@@ -532,11 +499,11 @@
     </script>
     <script>
           $(function() {
-            $('#project_code').select2();
+            $('#tower_code').select2();
 
         });
         $(function() {
-            $('#staff_maintenance').select2({
+            $('#equipment_num').select2({
                
             });
 
