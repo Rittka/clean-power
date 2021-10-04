@@ -11,7 +11,7 @@ class Person extends Model
     public function invoice(){
         return $this->hasMany('App\Invoice');
     }
-     public function project(){
-        return $this->hasMany('App\Project');
+     public function projects(){
+        return $this->hasMany('App\Project' , 'customer_id');
     }
 }

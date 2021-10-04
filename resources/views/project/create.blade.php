@@ -203,7 +203,7 @@
 
                                                             <input id="input4" type="text"
                                                                 class="form-control form-control-solid form-control-lg"
-                                                                name="project_code" value="" />
+                                                                name="name" value="" />
                                                         </div>
                                                         </div>
                                                     </div>
@@ -230,12 +230,12 @@
                                                             style="margin-top:-7px ">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <select style="width:100%; "
+                                                                <select style="width:100%; " name="genre"
                                                                     class="form-control form-control-solid form-control-lg">
-                                                                    <option >إنارة شارع</option>
-                                                                    <option >إنارة منزل</option>
-                                                                    <option >منشأة تجارية</option>
-                                                                 
+                                                                    <option value="شارع" >إنارة شارع</option>
+                                                                    <option value="منزل" >إنارة منزل</option>
+                                                                    <option value="منشأة تجارية" >إنارة منشأة تجارية</option>
+
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -265,21 +265,7 @@
                                                         </div>
                                                     </div>
                                                     <!--end::Group-->
-                                                    <!--begin::Group :: address , rent-->
-                                                    <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
-                                                            الطلبية</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
 
-                                                                <input id="input6" type="date"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="date" value="" />
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label">موظفي
                                                             تركيب المشروع</label>
@@ -299,13 +285,6 @@
                                                     <!--end::Group-->
                                                 </div>
                                                 <!--end::Wizard Step 1-->
-
-
-                                                <!--begin::Wizard Step 2-->
-                                              
-                                                <!--end::Wizard Step 2-->
-
-
                                                 <!--begin::Wizard Step 3-->
                                                 <div class="my-5 step" data-wizard-type="step-content">
                                                     <h5 class="mb-10 font-weight-bold text-dark">تفاصيل الكفالة وإجمالي
@@ -317,11 +296,7 @@
                                                         <div class="col-xl-9 col-lg-9">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
                                                                     name="expected_delivery" type="date"  />
@@ -333,20 +308,15 @@
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
                                                             التنفيذ</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <div
+                                                                    class="input-group input-group-solid input-group-lg border border-primary">
+
+                                                                    <input id="input18"
+                                                                        class="form-control form-control-solid form-control-lg"
+                                                                        name="actualdelivery" type="date"  />
                                                                 </div>
-                                                                <input id="input18"
-                                                                    class="form-control form-control-solid form-control-lg"
-                                                                    name="recieved_date" type="date" value="" />
                                                             </div>
-                                                        </div>
                                                     </div>
                                                     <!--end::Group-->
                                                     <!--begin::Group :: visit-->
@@ -356,15 +326,10 @@
                                                         <div class="col-xl-3 col-lg-3">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="date_of_check" type="text" value="" />
+                                                                    name="date_of_check" type="date" value="" />
                                                             </div>
                                                         </div>
                                                         <label class="col-xl-3 col-lg-3 col-form-label">مدة دورة
@@ -372,14 +337,10 @@
                                                         <div class="col-lg-3 col-xl-3">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="fas fa- text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
-                                                                    name="period_of_warranty" type="number" value="" />
+                                                                    name="period_of_warranty" type="date" value="" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -449,58 +410,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-       $('#submit').click(function(){
-        var myTableArray = [];
 
-
-var array = [];
-    var headers = [];
-
-    var $rows= $("table#tower tbody tr");
-    var data = [];
-
-    $rows.each(function(row, v) {
-        $(this).find("td").each(function(cell, v) {
-            if (typeof data[cell] === 'undefined') {
-                data[cell] = [];
-            }
-            data[cell][row] = $(this).innerText();
-        });
-    });
-alert(JSON.stringify(data));
-
-function table_to_array(table_id) {
-                    myData = document.getElementById(table_id).rows
-                    //console.log(myData)
-                    my_liste = []
-                    for (var i = 0; i < myData.length; i++) {
-                            el = myData[i].children
-                            my_el = []
-                            for (var j = 0; j < el.length; j++) {
-                                    my_el.push(el[j].innerText);
-                            }
-                            my_liste.push(my_el)
-
-                    }
-                    return my_liste
-            }
-
-myData = document.getElementById(table_id).rows
-                    //console.log(myData)
-                    my_liste = []
-                    for (var i = 0; i < myData.length; i++) {
-                            el = myData[i].children
-                            my_el = []
-                            for (var j = 0; j < el.length; j++) {
-                                    my_el.push(el[j].innerText);
-                            }
-                            my_liste.push(my_el)
-
-                    }
-                    return my_liste
-
-console.log(myTableArray);
-       });
 
         // Class Definition
         var KTAddUser = function() {
@@ -723,89 +633,7 @@ console.log(myTableArray);
 
     </script>
 
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
-            // Append table with add row form on add new button click
-            $(".add-new").click(function() {
-                $(this).attr("disabled", "disabled");
-                var index = $("table tbody tr:last-child").index();
-                var row =  `<tr>
-                                <td>
-                                    <input type="text" class="form-control" name="barcode" id="barcode"></td>
-                                <td>
-                                    <select class="form-control " id="kt_select2_1" name="equipment_id">
-                                        @foreach ($equipments as $value)
-                                            <option value="{{ $value->id }}">{{ $value->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" name="num_of_equipment" id="num_of_equipment">
-                                </td>
 
-                                <td>
-                                    <select class="form-control " id="kt_select2_1" name="street[]">
-                                        @foreach ($regions as $region)
-                                            <option value="{{ $region->id }}">{{ $region->street }}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                                <td>
-                                    <a class="add" title="إضافة" data-toggle="tooltip"><i class="fas fa-plus-circle"></i></a>
-                                    <a class="edit" title="تعديل" data-toggle="tooltip"><i class="far fa-edit"></i></a>
-                                    <a class="delete" title="حذف" data-toggle="tooltip"><i class="far fa-trash-alt"></i></a>
-                                </td>
-                        </tr>`;
-
-
-
-
-
-                $("table").append(row);
-                $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-
-
-            // Add row on add button click
-            $(document).on("click", ".add", function() {
-                var empty = false;
-                var input = $(this).parents("tr").find('input[type="text"]');
-                input.each(function() {
-                    if (!$(this).val()) {
-                        $(this).addClass("error");
-                        empty = true;
-                    } else {
-                        $(this).removeClass("error");
-                    }
-                });
-                $(this).parents("tr").find(".error").first().focus();
-                if (!empty) {
-                    input.each(function() {
-                        $(this).parent("td").html($(this).val());
-                    });
-                    $(this).parents("tr").find(".add, .edit").toggle();
-                    $(".add-new").removeAttr("disabled");
-                }
-            });
-            // Edit row on edit button click
-            $(document).on("click", ".edit", function() {
-                $(this).parents("tr").find("td:not(:last-child)").each(function() {
-                    $(this).html('<input type="text" class="form-control" value="' + $(this)
-                    .text() + '">');
-                });
-                $(this).parents("tr").find(".add, .edit").toggle();
-                $(".add-new").attr("disabled", "disabled");
-            });
-            // Delete row on delete button click
-            $(document).on("click", ".delete", function() {
-                $(this).parents("tr").remove();
-                $(".add-new").removeAttr("disabled");
-            });
-        });
-    </script>
 
 
     <script>
@@ -819,14 +647,6 @@ console.log(myTableArray);
         });
         $(function() {
             $('#region_name').select2();
-
-        });
-        $(function() {
-            $('#staff_project').select2(
-                {
-        
-        });
-
 
         });
 

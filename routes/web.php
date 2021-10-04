@@ -113,11 +113,12 @@ Route::get('level/{id}/subjects','RegionController@getSubjectsOfLevel');
     Route::get( '/settings/reportOfStudent', 'SettingController@reportOfStudent' );
 
     Route::post( '/subject/getSubjectDatatable', ['as' => 'getSubjectDatatable.data', 'uses' => 'SettingController@SubjectDatatable' ] );
-    //maintenance  
+    //maintenance
     Route::get( '/maintenance', 'MaintenanceController@index' );
     Route::get( '/maintenance/createNotWorking_equipment', 'MaintenanceController@createNotWork_equip' );
 
     Route::get( '/maintenance/create', 'MaintenanceController@create' );
+    Route::post( '/maintenance', 'MaintenanceController@store' );
     Route::get( '/maintenance/{id}', 'MaintenanceController@show' );
     Route::get( '/maintenance/{id}/edit', 'MaintenanceController@edit' );
     Route::patch( '/maintenance/{id}', 'MaintenanceController@update' );
@@ -145,7 +146,7 @@ Route::post( '/project', 'ProjectController@store' );
 Route::get( '/project/create', 'ProjectController@create' );
 Route::get( '/project/{project}', 'ProjectController@show' );
 Route::get( '/project/peron', 'EquipmentController@peron' );
-Route::get( '/project/edit', 'ProjectController@edit' );
+Route::get( '/project/{id}/edit', 'ProjectController@edit' );
 Route::patch( '/project/{project}', 'ProjectController@update' );
 Route::delete( '/project/{id}', 'ProjectController@destroy' );
 Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data', 'uses' => 'ProjectController@projectDatatable' ] );
@@ -165,7 +166,7 @@ Route::get( '/report/reportOfinvoice_details', 'ReportController@reportOfinvoice
 Route::get( '/report/reportOfproject_numofcustomer', 'ReportController@reportOfproject_numofcustomer' )->name('reportOfproject_numofcustomer');
 Route::get( '/report/reportOfSupplier', 'ReportController@reportOfSupplier' )->name('reportOfSupplier');
 
-Route::post( 'report/getreportOfMMDatatable', ['as' => 'getreportOfMMDatatable.data', 'uses' => 'ReportController@MMDatatable' ] );
+Route::post( 'report/CustomerDatatable', ['as' => 'CustomerDatatable.data', 'uses' => 'ReportController@CustomerDatatable' ] );
 
 
 });

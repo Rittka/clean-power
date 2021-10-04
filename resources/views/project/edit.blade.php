@@ -183,8 +183,13 @@
                             <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
                                 <div class="col-xl-12 col-xxl-10">
                                     <!--begin::Wizard Form-->
+<<<<<<< HEAD
                                     <form class="form" id="kt_form" method="POST" action="/project">
+=======
+                                    <form class="form" id="kt_form" method="POST" action="/project/{{ $project->id  }}">
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                         @csrf
+                                        @method('PATCH')
                                         <div class="row justify-content-center">
                                             <div class="col-xl-12">
                                                 <!--begin::Wizard Step 1-->
@@ -203,7 +208,11 @@
 
                                                             <input id="input4" type="text"
                                                                 class="form-control form-control-solid form-control-lg"
+<<<<<<< HEAD
                                                                 name="project_code" value="" />
+=======
+                                                                name="name" value="{{ $project->name }}" />
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                         </div>
                                                         </div>
                                                     </div>
@@ -214,7 +223,11 @@
                                                         <div class="col-lg-9 col-xl-9">
                                                             <select style="width:100%; " class="Department"  id="client_name" name="customer_id">
                                                                 @foreach ($customers as $customer )
+<<<<<<< HEAD
                                                                     <option value="{{ $customer->id }}">{{ $customer->fullname }}</option>
+=======
+                                                                    <option value="{{ $customer->id }}" @if($customer->id == $project->customer_id) selected @endif>{{ $customer->fullname }}</option>
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
 
                                                                 @endforeach
 
@@ -230,12 +243,19 @@
                                                             style="margin-top:-7px ">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <select style="width:100%; "
+                                                                <select style="width:100%; " name="genre"
                                                                     class="form-control form-control-solid form-control-lg">
+<<<<<<< HEAD
                                                                     <option >إنارة شارع</option>
                                                                     <option >إنارة منزل</option>
                                                                     <option >منشأة تجارية</option>
                                                                  
+=======
+                                                                    <option @if($project->genre == 'شارع') selected @endif value="شارع" >إنارة شارع</option>
+                                                                    <option @if($project->genre == 'منزل') selected @endif value="منزل" >إنارة منزل</option>
+                                                                    <option @if($project->genre == 'منشأة تجارية') selected @endif value="منشأة تجارية" >إنارة منشأة تجارية</option>
+
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -246,7 +266,11 @@
 
                                                                 <input id="input4" type="number"
                                                                     class="form-control form-control-solid form-control-lg"
+<<<<<<< HEAD
                                                                     name="num_tower" value="" />
+=======
+                                                                    name="num_tower" value="{{ $project->num_tower }}" />
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                             </div>
                                                         </div>
                                                     </div>
@@ -257,7 +281,11 @@
                                                         <div class="col-lg-9 col-xl-9">
                                                             <select style="width:100%; " class="Department" name="region_id" id="region_name">
                                                                 @foreach ($regions as $region)
+<<<<<<< HEAD
                                                                     <option value="{{ $region->id }}">{{ $region->name }}</option>
+=======
+                                                                    <option value="{{ $region->id }}" @if($region->id == $project->region_id) selected @endif>{{ $region->name }}</option>
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
 
                                                                 @endforeach
 
@@ -265,11 +293,12 @@
                                                         </div>
                                                     </div>
                                                     <!--end::Group-->
-                                                    <!--begin::Group :: address , rent-->
+
                                                     <div class="form-group row">
-                                                        <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
-                                                            الطلبية</label>
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">موظفي
+                                                            تركيب المشروع</label>
                                                         <div class="col-lg-9 col-xl-9">
+<<<<<<< HEAD
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
 
@@ -306,6 +335,23 @@
                                                 <!--end::Wizard Step 2-->
 
 
+=======
+                                                            <select style="width:100%; " name="staffs_ids[]" class="Department"
+                                                            id="staff_project" multiple>
+                                                            @foreach ($staffs as  $staff)
+                                                                <option value="{{ $staff->id }}">{{ $staff->fname . " " . $staff->lname }}</option>
+                                                            @endforeach
+
+
+                                                        </select>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <!--end::Group-->
+                                                </div>
+                                                <!--end::Wizard Step 1-->
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                 <!--begin::Wizard Step 3-->
                                                 <div class="my-5 step" data-wizard-type="step-content">
                                                     <h5 class="mb-10 font-weight-bold text-dark">تفاصيل الكفالة وإجمالي
@@ -317,14 +363,14 @@
                                                         <div class="col-xl-9 col-lg-9">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
+<<<<<<< HEAD
                                                                     name="expected_delivery" type="date"  />
+=======
+                                                                    name="expected_delivery" type="date" value="{{ $project->expected_delivery }}" />
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                             </div>
                                                         </div>
                                                     </div>
@@ -333,20 +379,21 @@
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-lg-3 col-form-label">تاريخ
                                                             التنفيذ</label>
-                                                        <div class="col-lg-9 col-xl-9">
-                                                            <div
-                                                                class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <div
+                                                                    class="input-group input-group-solid input-group-lg border border-primary">
+
+                                                                    <input id="input18"
+                                                                        class="form-control form-control-solid form-control-lg"
+                                                                        name="actualdelivery" type="date" value="{{ $project->actualdelivery }}"  />
                                                                 </div>
+<<<<<<< HEAD
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
                                                                     name="recieved_date" type="date" value="" />
+=======
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                             </div>
-                                                        </div>
                                                     </div>
                                                     <!--end::Group-->
                                                     <!--begin::Group :: visit-->
@@ -356,15 +403,14 @@
                                                         <div class="col-xl-3 col-lg-3">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i
-                                                                            class="fas fa-calendar text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
+<<<<<<< HEAD
                                                                     name="date_of_check" type="text" value="" />
+=======
+                                                                    name="date_of_check" type="date" value="{{ $project->date_of_check }}" />
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                             </div>
                                                         </div>
                                                         <label class="col-xl-3 col-lg-3 col-form-label">مدة دورة
@@ -372,14 +418,14 @@
                                                         <div class="col-lg-3 col-xl-3">
                                                             <div
                                                                 class="input-group input-group-solid input-group-lg border border-primary">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text">
-                                                                        <i class="fas fa- text-primary icon-lg"></i>
-                                                                    </span>
-                                                                </div>
+
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
+<<<<<<< HEAD
                                                                     name="period_of_warranty" type="number" value="" />
+=======
+                                                                    name="period_of_warranty" type="date" value="{{ $project->period_of_warranty }}" />
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                             </div>
                                                         </div>
                                                     </div>
@@ -397,7 +443,11 @@
                                                                 </div>
                                                                 <input id="input18"
                                                                     class="form-control form-control-solid form-control-lg"
+<<<<<<< HEAD
                                                                     name="cost" type="number" value="" />
+=======
+                                                                    name="cost" type="number" value="{{ $project->cost }}" />
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                                                             </div>
                                                         </div>
                                                     </div>
@@ -731,6 +781,7 @@ console.log(myTableArray);
             $(".add-new").click(function() {
                 $(this).attr("disabled", "disabled");
                 var index = $("table tbody tr:last-child").index();
+<<<<<<< HEAD
                 var row =  `<tr>
                                 <td>
                                     <input type="text" class="form-control" name="barcode" id="barcode"></td>
@@ -763,6 +814,16 @@ console.log(myTableArray);
 
 
 
+=======
+                var row = '<tr>' +
+            '<td>  <select  class="form-control " id="kt_select2_1" name="param"> <option value="AK">Alaska</option> <option value="HI">Hawaii</option><option value="CA">California</option></select></td>' +
+              '<td>  <select class="form-control " id="kt_select2_1" name="param"> <option value="AK">لوح</option> <option value="HI">برج</option><option value="CA">بطارية</option></select></td>' +
+            '<td><input type="text" class="form-control" name="department" id="department"></td>' +
+            '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+
+			'<td>' + actions + '</td>' +
+        '</tr>';
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
                 $("table").append(row);
                 $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
                 $('[data-toggle="tooltip"]').tooltip();
@@ -808,9 +869,15 @@ console.log(myTableArray);
     </script>
 
 
+<<<<<<< HEAD
     <script>
         $(function() {
             $('#project_code').select2()
+=======
+        <script>
+               $(function() {
+            $('#project_code').select2();
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
 
         });
         $(function() {
@@ -822,6 +889,7 @@ console.log(myTableArray);
 
         });
         $(function() {
+<<<<<<< HEAD
             $('#staff_project').select2(
                 {
         
@@ -829,6 +897,14 @@ console.log(myTableArray);
 
 
         });
+=======
+            $('#staff_project').select2();
+
+        });
+
+                   </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+>>>>>>> 007da0468d8498c68bc5c7b3bfb7570819a64130
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
