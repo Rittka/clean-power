@@ -7,6 +7,10 @@
 <li class="breadcrumb-item active" aria-current="page">تعديل كشف</li>
 
 @endsection
+<style>
+    .select2-container--default .select2-selection--single{line-height:32px; height:40px;background-color:#F3F6F9;border:1px solid border-radius:4px}
+
+</style>
 @section('content')
 
 <div class="card card-custom">
@@ -51,7 +55,7 @@
                             <label class="col-form-label col-3 text-lg-right text-left">موظف الكشف</label>
                             <div class="col-9">
                                 <div class="input-group input-group-lg input-group-solid border border-primary">
-                                    <select name="staffs[]" class="Department" id="department" multiple style="width: 100%">
+                                    <select name="staffs[]" class="Department" id="staff_check" multiple style="width: 100%">
                                         @foreach ($staffs as $staff)
                                             <option value="{{$staff->id}}">{{$staff->fname . " " . $staff->lname}}</option>
                                         @endforeach
@@ -94,5 +98,18 @@
 
     </form>
 </div>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(function() {
+            $('#staff_check').select2({
+                placeholder: "اختر موظفي الكشف؟",
+            });
+        });
+        $(function() {
+            $('#project_id').select2({
+                placeholder: "اختر  رمز المشروع ؟",
+            });
+        });
+    </script>
 @endsection

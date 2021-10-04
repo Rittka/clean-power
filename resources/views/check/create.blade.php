@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">اسم المشروع</label>
+                            <label class="col-form-label col-3 text-lg-right text-left">رمز المشروع</label>
                             <div class="col-9">
                                 <div class="input-group input-group-lg input-group-solid border border-primary">
                                     <select name="project_id" class="selecet2 " id="project_id" style="width: 100%">

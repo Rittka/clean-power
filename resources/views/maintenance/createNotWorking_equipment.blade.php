@@ -136,7 +136,19 @@
                 <div class="tab-pane active" id="kt_apps_projects_view_tab_2" role="tabpanel">
                     <form class="form" method="post" action="/region">
                         @csrf
+                        <div class="form-group row">
+                            <label class="col-xl-3 col-lg-3 col-form-label text-right">رمز المشروع</label>
+                            <div class="col-lg-9 col-xl-6">
+                                <select style="width:100%; " class="Department"
+                                id="project_code">
 
+                                <option value="AL">طاهر</option>
+                                <option value="fs">علي</option>
+                                <option value="z">يوسف</option>
+                                <option value="WY">سامر</option>
+                            </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label class="col-xl-3 col-lg-3 col-form-label text-right">رمز البرج </label>
                             <div class="col-lg-9 col-xl-6">
@@ -500,6 +512,10 @@
     <script>
           $(function() {
             $('#tower_code').select2();
+
+        });
+        $(function() {
+            $('#project_code').select2();
 
         });
         $(function() {

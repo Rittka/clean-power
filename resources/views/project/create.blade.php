@@ -195,10 +195,13 @@
                                                         <label class="col-xl-3 col-lg-3 col-form-label">رمز المشروع</label>
                                                         <div class="col-lg-9 col-xl-9">
 
+                                                            <div
+                                                            class="input-group input-group-solid input-group-lg border border-primary">
 
                                                             <input id="input4" type="text"
-                                                            class="form-control form-control-solid form-control-lg"
-                                                            name="name" value="" />
+                                                                class="form-control form-control-solid form-control-lg"
+                                                                name="name" value="" />
+                                                        </div>
                                                         </div>
                                                     </div>
                                                     <!--end::Group-->

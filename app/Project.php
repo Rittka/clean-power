@@ -14,6 +14,9 @@ class Project extends Model
     public function check(){
         return $this->hasMany('App\Check');
     }
+    public function maintenance(){
+        return $this->hasMany('App\Maintenance');
+    }
     public function staff_project(){
         return $this->hasMany('App\Staff_project');
     }

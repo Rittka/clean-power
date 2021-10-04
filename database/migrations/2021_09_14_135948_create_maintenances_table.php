@@ -15,6 +15,8 @@ class CreateMaintenancesTable extends Migration
     {
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->date('date_of_maintenance');
             $table->string('remarks');
             $table->timestamps();
