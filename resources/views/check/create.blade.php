@@ -12,7 +12,7 @@
         <div class="card-header">
             <h3 class="card-title">أضف كشف جديد</h3>
         </div>
-        <form method="post" action="{{ url('section') }}">
+        <form method="post" action="{{ url('check') }}">
             @csrf
             <!--begin::Card body-->
             <div class="card-body card-custom">
@@ -35,12 +35,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-3 text-lg-right text-left">رمز المشروع</label>
+                            <label class="col-form-label col-3 text-lg-right text-left">اسم المشروع</label>
                             <div class="col-9">
                                 <div class="input-group input-group-lg input-group-solid border border-primary">
                                     <select name="project_id" class="selecet2 " id="project_id" style="width: 100%">
                                         @foreach ($projects as $project)
-                                            <option value="{{$project->id}}">{{$project->id}}</option>
+                                            <option value="{{$project->id}}">{{$project->name}}</option>
                                         @endforeach
 
                                     </select>
@@ -53,7 +53,7 @@
                                 <div class="input-group input-group-lg input-group-solid border border-primary">
 
 
-                                    <input type="text" name="note" class="form-control form-control-lg form-control-solid "  placeholder="  ادخل الملاحظات" />
+                                    <input type="text" name="remarks" class="form-control form-control-lg form-control-solid "  placeholder="  ادخل الملاحظات" />
 
                                 </div>
                             </div>
@@ -65,22 +65,23 @@
                             <div class="col-9 ">
                                 <div class="input-group input-group-lg input-group-solid border border-primary">
 
-                                    <input type="year" name="date_of_check" class="form-control form-control-lg form-control-solid "
+                                    <input type="date" name="date_of_check" class="form-control form-control-lg form-control-solid "
                                         placeholder="تاريخ الكشف" />
                                 </div>
-                                <div class="separator my-10"></div>
-                                <div class="card-footer pb-0">
-                                    <div class="row">
-                                        <div class="col-xl-2"></div>
-                                        <div class="col-xl-7">
-                                            <div class="row">
-                                                <div class="col-3"></div>
-                                                <div class="col-9">
-                                                    <button class="btn btn-primary" type="submit">حفظ</button>
-                                                    <button class="btn btn-secondary" type="reset">إلغاء</button>
 
-                                                </div>
-                                            </div>
+                            </div>
+                        </div>
+                        <div class="separator my-10"></div>
+                        <div class="card-footer pb-0">
+                            <div class="row">
+                                <div class="col-xl-2"></div>
+                                <div class="col-xl-7">
+                                    <div class="row">
+                                        <div class="col-3"></div>
+                                        <div class="col-9">
+                                            <button class="btn btn-primary" type="submit">حفظ</button>
+                                            <button class="btn btn-secondary" type="reset">إلغاء</button>
+
                                         </div>
                                     </div>
                                 </div>

@@ -62,7 +62,7 @@
             @csrf
             <button type="submit" class="btn btn- mr-2">
                 <a class="btn btn-danger font-weight-bolder" onclick="staff_delete($(this))" data-id="{{ $person->id }}"
-                    data-name="{{ $peson->fullname }}">{{ trans('main.delete') }}</a>
+                    data-name="{{ $person->fullname }}">{{ trans('main.delete') }}</a>
             </button>
         </div>
     </form>
