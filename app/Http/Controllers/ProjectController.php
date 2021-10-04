@@ -7,6 +7,7 @@ use App\Region;
 use App\Staff;
 use App\Person;
 use App\Equipment;
+use Yajra\Datatables\Datatables;
 
 class ProjectController extends Controller
 {
@@ -32,6 +33,13 @@ class ProjectController extends Controller
     public function store(Request $request){
 
         dd($request->all());
+
+        $project = Project::create([
+            'customer_id' => $request->customer_id ,
+            'region_id' => $request->region_id,
+        ]);
+
+
         return view('project.edit');
     }
     public function createtower(){

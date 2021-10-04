@@ -11,7 +11,7 @@
                 <h1 style="font-size : 3rem">العملاء</h1>
                 </div>
                 <div class="card-toolbar">
-                    <a href="{{url('student/create')}}" class="btn btn-primary font-weight-bolder">
+                    <a href="{{url('person/create')}}" class="btn btn-primary font-weight-bolder">
                         <span class="svg-icon  svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Add-user.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <polygon points="0 0 24 0 24 24 0 24"/>
@@ -19,7 +19,7 @@
                                 <path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
                             </g>
                         </svg><!--end::Svg Icon--></span>  </span>
-                    إضافة عميل 
+                    إضافة عميل
                     </a>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 // ajax: '{!! route('getStaffDatatable.data') !!}',
                 source: {
                     read: {
-                        url: '{!! route('getStaffDatatable.data') !!}',
+                        url: '{!! route('getPersonDatatable.data') !!}',
                         // sample custom headers
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -103,22 +103,24 @@
             }, {
                 field: 'fullname', title: 'الاسم',
             }, {
-                field: 'type', title: 'النوع',
+                field: 'person_type', title: 'النوع',
+            },{
+                field: 'location', title: 'العنوان',
             },
-        
+
 
             {
                 field: 'Actions', title: 'خيارات', sortable: false, width: 200, overflow: 'visible',
                 autoHide: false,
                 template: function(data) {
                     return '\
-                    <a href="{{ url('student')}}/'+data.id+'/" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">\
+                    <a href="{{ url('person')}}/'+data.id+'/" class="btn btn-sm btn-clean btn-icon mr-2" title="تفاصيل">\
                         <i class="far fa-eye text-primary"></i>\
                   </a>\
-                        <a href="{{url('student')}}/'+data.id+'/edit" class="btn btn-sm btn-clean btn-icon " title="تعديل">\
+                        <a href="{{url('person')}}/'+data.id+'/edit" class="btn btn-sm btn-clean btn-icon " title="تعديل">\
                             <i class="fas fa-edit text-primary"></i>\
                         </a>\
-                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" onclick="staff_delete($(this))" data-id="'+data.id+'" data-name="'+data.full_name+'" title="حذف">\
+                        <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" onclick="person_delete($(this))" data-id="'+data.id+'" data-name="'+data.fullname+'" title="حذف">\
                             <i class="flaticon2-rubbish-bin  text-primary "></i>\
                         </a>\
                     ';
@@ -150,7 +152,7 @@
 
         });
 
-        function staff_delete($this){
+        function person_delete($this){
             var id = $this.data('id');
             var name = $this.data('name');
             _confirm('{{ trans('main.confirm') }}', '{{ trans('main.are_you_sure_to_delete')}} ('+name+')', 'error', '{{ trans('main.delete') }}', '{{ trans('main.cancel') }}', function(){
@@ -158,8 +160,8 @@
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    method: 'DELETE',
-                    url: 'staff/'+id,
+                    method: 'GET',
+                    url: 'person/delete/'+id,
                 }).done(function (res) {
                     window.location.reload();
                 });

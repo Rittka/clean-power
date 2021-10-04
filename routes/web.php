@@ -74,10 +74,20 @@ Route::get('level/{id}/subjects','RegionController@getSubjectsOfLevel');
     Route::get( '/person/{person}', 'PersonController@show' );
     Route::get( '/person/{person}/edit', 'PersonController@edit' );
     Route::patch( '/person/{person}', 'PersonController@update' );
-    Route::delete( '/person/{id}', 'PersonController@destroy' );
-    Route::post( 'person/getPersonDatatable', ['as' => 'getPersonDatatable.data', 'uses' => 'PersonController@PersonDatatable' ] );
+    Route::get( '/person/delete/{id}', 'PersonController@destroy' );
+    Route::post( 'person/getPersonDatatable', ['as' => 'getPersonDatatable.data', 'uses' => 'PersonController@personDatatable' ] );
 
 
+    //CheckController
+
+    Route::get( '/check', 'CheckController@index' );
+    Route::get( '/check/create', 'CheckController@create' );
+    Route::post( '/check', 'CheckController@store' )->name('check.store');
+    Route::get( '/check/{check}', 'CheckController@show' );
+    Route::get( '/check/{check}/edit', 'CheckController@edit' );
+    Route::patch( '/check/{check}', 'CheckController@update' );
+    Route::get( '/check/delete/{id}', 'CheckController@destroy' );
+    Route::post( 'check/getCheckDatatable', ['as' => 'getCheckDatatable.data', 'uses' => 'CheckController@checkDatatable' ] );
 
 
 
@@ -108,10 +118,10 @@ Route::get('level/{id}/subjects','RegionController@getSubjectsOfLevel');
     Route::get( '/maintenance/createNotWorking_equipment', 'MaintenanceController@createNotWork_equip' );
 
     Route::get( '/maintenance/create', 'MaintenanceController@create' );
-    Route::get( '/maintenance/{maintenance}', 'MaintenanceController@show' );
-    Route::get( '/maintenance/{studmaintenanceent}/edit', 'MaintenanceController@edit' );
-    Route::patch( '/maintenance/{maintenance}', 'MaintenanceController@update' );
-    Route::delete( '/maintenance/{id}', 'MaintenanceController@destroy' );
+    Route::get( '/maintenance/{id}', 'MaintenanceController@show' );
+    Route::get( '/maintenance/{id}/edit', 'MaintenanceController@edit' );
+    Route::patch( '/maintenance/{id}', 'MaintenanceController@update' );
+    Route::get( '/maintenance/delete/{id}', 'MaintenanceController@destroy' );
     Route::post( 'maintenance/getmaintenanceDatatable', ['as' => 'getmaintenanceDatatable.data', 'uses' => 'maintenanceController@maintenanceDatatable' ] );
 
 //equipment

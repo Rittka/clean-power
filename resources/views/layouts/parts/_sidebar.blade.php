@@ -180,7 +180,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item @if (strpos($current_params, 'SectionController@index')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('section') }}" class="menu-link">
+                                <a href="{{ url('check') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -188,7 +188,7 @@
                                 </a>
                             </li>
                             <li class="menu-item @if (strpos($current_params, 'SectionController@create')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('section/create') }}" class="menu-link">
+                                <a href="{{ url('check/create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

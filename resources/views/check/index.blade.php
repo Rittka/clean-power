@@ -17,7 +17,7 @@
                 <h1 style="font-size : 3rem">الكشوف</h1>
                 </div>
                 <div class="card-toolbar">
-                    <form method="GET" action="/section/create">
+                    <form method="GET" action="/check/create">
                     <button type="submit" class="btn btn-primary font-weight-bolder">
                         <i class="fas fa-plus"></i> كشف جديد
                     </button>
@@ -63,7 +63,7 @@
                 // ajax: '{!! route('getSectionDatatable.data') !!}',
                 source: {
                     read: {
-                        url: '{!! route('getSectionDatatable.data') !!}',
+                        url: '{!! route('getCheckDatatable.data') !!}',
                         // sample custom headers
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -104,13 +104,16 @@
             columns: [{
                 field: 'id', title: '#', sortable: 'asc', width: 30, type: 'number', selector: false, textAlign: 'center',
             }, {
-                field: 'project_id', title: 'رقم المشروع',
+                field: 'project_name', title: 'اسم المشروع',
             },
             {
-                field: 'region', title: 'المنطقة',
+                field: 'location', title: 'المنطقة',
             },
             {
-                field: 'dateofcheck', title: 'التاريخ',
+                field: 'remarks', title: 'ملاحظات',
+            },
+            {
+                field: 'date_of_check', title: 'التاريخ',
             },
              {
                 field: 'Actions', title: '{{trans('main.actions')}}', sortable: false, width: 200, overflow: 'visible',
@@ -119,8 +122,8 @@
                     return `
 
 
-                   
-                    <a href="{{ url('section')}}/`+data.id+`/edit" class="btn btn-sm btn-clean btn-icon mr-2"title="تعديل">
+
+                    <a href="{{ url('check')}}/`+data.id+`/edit" class="btn btn-sm btn-clean btn-icon mr-2"title="تعديل">
                         <i class="fas fa-edit text-primary"></i>
                         </a>
                             <a  data-id=`+data.id+` class="btn deleteBtn btn-sm btn-clean btn-icon" type ="submit" value="DELETE"  title="حذف">
@@ -159,15 +162,15 @@
             var id =   $(this).data('id')
 
                   $.ajax({
-                url: '/section/'+id,
+                url: '/check/delete/'+id,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 
                 },
-                method: 'DELETE',
+                method: 'GET',
                 success: function(data) {
                     console.log("Response: " + data.data);
-                    window.location = "section";//redirect section
+                    window.location = "check";//redirect section
                    },
                     });
                 });

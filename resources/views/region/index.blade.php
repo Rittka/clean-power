@@ -174,7 +174,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         method: 'GET',
-                        url: 'region/delete' + id,
+                        url: 'region/delete/' + id,
                     }).done(function(res) {
                         window.location.reload();
                     });
