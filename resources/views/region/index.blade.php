@@ -166,8 +166,8 @@
         function region_delete($this) {
             var id = $this.data('id');
             var name = $this.data('name');
-            _confirm('{{ trans('main.confirm') }}', '{{ trans('main.are_you_sure_to_delete') }} (' + name + ')',
-                'error', '{{ trans('main.delete') }}', '{{ trans('main.cancel') }}',
+            _confirm(' متأكد ', ' هل متأكد من حذف (' + name + ')',
+                'error', 'حذف', 'إلغاء',
                 function() {
                     $.ajax({
                         headers: {

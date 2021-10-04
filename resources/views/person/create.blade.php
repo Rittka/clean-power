@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('title', 'add customer')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> اضافة عميل </li>
+@endsection
 @section('content')
 
     <div class="container">
@@ -44,7 +47,7 @@
                         <div class="col-lg-9 col-xl-6 ">
 
                             <select class="form-control  form-control-lg form-control-solid border border-primary " name="type">
-                                <option value="1"> موّرد</option>
+                                <option value="1"> مورد</option>
                                 <option value="2">زبون</option>
 
                             </select>
@@ -53,7 +56,7 @@
 
                     <div class="form-group row">
 
-                        <label class="col-xl-3 col-lg-3 col-form-label text-right"> رقم الهاتف</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label text-right">  الهاتف</label>
                         <div class="col-lg-9 col-xl-6">
 
                             <input type="number" class="form-control form-control-lg form-control-solid border border-primary"
@@ -66,9 +69,9 @@
                 <div class="card-footer row">
                     <div class="col-5"></div>
                     <button type="submit"
-                        class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">{{ trans('main.save') }}</button>
+                        class="btn btn-primary font-weight-bolder px-9 py-4 mr-2">حفظ</button>
                     <button type="reset"
-                        class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">{{ trans('main.cancel') }}</button>
+                        class="btn btn-secondary font-weight-bolder px-9 py-4 mr-2">إلغاء</button>
                 </div>
             </form>
         </div>

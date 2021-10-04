@@ -1,5 +1,9 @@
 @extends('layouts.master')
-@section('title', 'edit person')
+@section('title', 'edit student')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('person') }}">  جميع العملاء</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تعديل عميل </li>
+@endsection
 @section('content')
 
 

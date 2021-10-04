@@ -285,6 +285,15 @@
                                                         </div>
 
                                                     </div>
+                                                    <select style="width:100%; " class="Department"
+                                                    id="staff_project">
+
+                                                    <option value="AL">طاهر</option>
+                                                    <option value="fs">علي</option>
+                                                    <option value="z">يوسف</option>
+                                                    <option value="WY">سامر</option>
+                                                </select>
+                                                      
                                                     <!--end::Group-->
                                                 </div>
                                                 <!--end::Wizard Step 1-->
@@ -868,6 +877,10 @@
         });
         $(function() {
             $('#region_name').select2();
+         
+        });
+        $(function() {
+            $('#staff_project').select2();
          
         });
          

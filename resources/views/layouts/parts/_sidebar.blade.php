@@ -104,6 +104,14 @@
                                 <span class="menu-text"> طلبية جديدة</span>
                             </a>
                         </li>
+                        <li class="menu-item @if (strpos($current_params, 'ProjectController@createفخصثق')) menu-item-active @endif" aria-haspopup="true">
+                            <a href="{{ url('project/createTower') }}" class="menu-link">
+                                <i class="menu-bullet menu-bullet-dot">
+                                    <span></span>
+                                </i>
+                                <span class="menu-text"> اضافة برج</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
@@ -403,22 +411,8 @@
                                     <span class="menu-text">تقارير الموردين</span>
                                 </a>
                             </li>
-                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfStaff')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfStaff') }}" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">تقارير الموظفين</span>
-                                </a>
-                            </li>
-                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfequipment')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfequipment') }}" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">تقارير مستودع المعدات</span>
-                                </a>
-                            </li>
+                           
+                           
                             <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfinvoice_details')) menu-item-active @endif" aria-haspopup="true">
                                 <a href="{{ url('report/reportOfinvoice') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
@@ -427,38 +421,7 @@
                                     <span class="menu-text">تقارير الفواتير</span>
                                 </a>
                             </li>
-                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportofearnings')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfearnings') }}" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">تقارير العائدات</span>
-                                </a>
-                            </li>
-                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfmonthofchecks')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfmonthofchecks') }}" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">تقارير الكشوفات الشهرية</span>
-                                </a>
-                            </li>
-                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportofmonthofmaintenance')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfmonthofmaintenance') }}" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">تقارير الصيانات الشهرية</span>
-                                </a>
-                            </li>
-                            <li class="menu-item @if (strpos($current_params, 'ReportController@reportofproject_numofregions')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ url('report/reportOfproject_numofregions') }}" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">تقارير  عدد المشاريع في المنطقة</span>
-                                </a>
-                            </li>
+                         
                             <li class="menu-item @if (strpos($current_params, 'ReportController@reportOfproject_numofcustomer')) menu-item-active @endif" aria-haspopup="true">
                                 <a href="{{ url('report/reportOfproject_numofcustomer') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">

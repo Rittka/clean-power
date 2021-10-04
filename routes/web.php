@@ -137,6 +137,8 @@ Route::post( 'equipment/getequipmentDatatable', ['as' => 'getequipmentDatatable.
 
 //project
 Route::get( '/project', 'ProjectController@index' );
+Route::get( '/project/createTower', 'ProjectController@createtower' );
+
 Route::post( '/project', 'ProjectController@store' );
 Route::get( '/project/create', 'ProjectController@create' );
 Route::get( '/project/{project}', 'ProjectController@show' );
@@ -147,6 +149,7 @@ Route::delete( '/project/{id}', 'ProjectController@destroy' );
 Route::post( 'project/getprojectDatatable', ['as' => 'getprojectDatatable.data', 'uses' => 'ProjectController@projectDatatable' ] );
 //invoices
 Route::get( '/invoice', 'InvoiceController@index' );
+Route::get( '/report/reportOfinvoice_details', 'InvoiceController@reportOfinvoice' );
 Route::get( '/invoice/create', 'InvoiceController@create' );
 Route::get( '/invoice/{invoice}', 'InvoiceController@show' );
 Route::get( '/invoice/peron', 'InvoiceController@peron' );
@@ -156,14 +159,8 @@ Route::delete( '/invoice/{id}', 'InvoiceController@destroy' );
 Route::post( 'invoice/getinvoiceDatatable', ['as' => 'getinvoiceDatatable.data', 'uses' => 'InvoiceController@invoiceDatatable' ] );
 //report
 Route::get( '/report/reportOfCustomer', 'ReportController@reportOfCustomer' )->name('reportOfCustomer');
-Route::get( '/report/reportofearnings', 'ReportController@reportofearnings' )->name('reportofearnings');
-Route::get( '/report/reportOfequipment', 'ReportController@reportOfequipment' )->name('reportOfequipment');
 Route::get( '/report/reportOfinvoice_details', 'ReportController@reportOfinvoice_details' )->name('reportOfinvoice_details');
-Route::get( '/report/reportOfmonthofchecks', 'ReportController@reportOfmonthofchecks' )->name('reportOfmonthofchecks');
-Route::get( '/report/reportOfmonthofmaintenance', 'ReportController@reportofmonthofmaintenance' )->name('reportofmonthofmaintenance');
 Route::get( '/report/reportOfproject_numofcustomer', 'ReportController@reportOfproject_numofcustomer' )->name('reportOfproject_numofcustomer');
-Route::get( '/report/reportofproject_numofregions', 'ReportController@reportofproject_numofregions' )->name('reportofproject_numofregions');
-Route::get( '/report/reportOfStaff', 'ReportController@reportOfStaff' )->name('reportOfStaff');
 Route::get( '/report/reportOfSupplier', 'ReportController@reportOfSupplier' )->name('reportOfSupplier');
 
 Route::post( 'report/getreportOfMMDatatable', ['as' => 'getreportOfMMDatatable.data', 'uses' => 'ReportController@MMDatatable' ] );

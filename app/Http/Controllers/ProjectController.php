@@ -42,5 +42,13 @@ class ProjectController extends Controller
 
         return view('project.edit');
     }
-
+    public function createtower(){
+        return view('project.createTower');
+    }
+    public function createcustomer(){
+        return view('person.create');
+    }
+    public function createregion(){
+        return view('region.create');
+    }
 }

@@ -1,6 +1,10 @@
 @extends('layouts.master')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @section('title', 'show person')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('maintenance') }}">  جميع الصيانات</a></li>
+<li class="breadcrumb-item active" aria-current="page"> تفاصيل صيانة </li>
+@endsection
 @section('name', ' تفاصيل الصيانة')
 @section('content')
 

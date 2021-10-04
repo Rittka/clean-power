@@ -1,5 +1,12 @@
 @extends('layouts.master')
-@section('title', 'تعديل ')
+@section('title', 'تعديل كشف')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page"> الكشف</li>
+<li class="breadcrumb-item active" aria-current="page"> <a href="{{ url('check') }}"> جميع الكشوفات</a></li>
+
+<li class="breadcrumb-item active" aria-current="page">تعديل كشف</li>
+
+@endsection
 @section('content')
 
 <div class="card card-custom">

@@ -82,7 +82,7 @@
                 field: 'adress', title: ' العنوان ',
             },
             {
-                field: 'total', title: ' إجمالي المبيات ',
+                field: 'total', title: ' إجمالي المبيعات ',
             },
            \
            \

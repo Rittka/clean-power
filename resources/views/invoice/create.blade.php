@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page">  <a href="equipment"> جميع المعدات</a></li>
 
+<li class="breadcrumb-item active" aria-current="page">  فاتورة جديدة </li>
+@endsection
 
 @section('title', 'Add invoice')
 @section('css')

@@ -22,10 +22,10 @@
             <div class="dropdown" id="kt_quick_search_toggle">
                 <!--begin::Toggle-->
 
-                <div style="position: relative; margin-top:10px">
+                <div style="position: relative; margin-top:10px; ">
 
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
+                    <nav aria-label="breadcrumb" >
+                        <ol class="breadcrumb" >
                             @yield('breadcrumb')
 
                         </ol>

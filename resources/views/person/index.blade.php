@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', trans('main.person'))
+@section('title', العملاء)
 
 @section('content')
     <div class="container">
